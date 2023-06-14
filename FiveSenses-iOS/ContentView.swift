@@ -8,8 +8,24 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            InputFieldsCollection(
+                sense: .feel,
+                placeholder: "O que você está vendo?"
+            )
+            
+            Spacer()
+            
+            // modificar com type/mode... e enum
+            ButtonCustom(
+                backgroundColor: .black,
+                foregroundColor: .white,
+                title: "Próximo") {
+                  print("indo pro próximo")
+            }
+        }
     }
 }
 

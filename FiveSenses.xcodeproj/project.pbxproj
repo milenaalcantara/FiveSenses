@@ -23,6 +23,11 @@
 		F378ED622A2F765E00FE9584 /* FiveSenses_WatchOS_Watch_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378ED612A2F765E00FE9584 /* FiveSenses_WatchOS_Watch_AppTests.swift */; };
 		F378ED6C2A2F765E00FE9584 /* FiveSenses_WatchOS_Watch_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378ED6B2A2F765E00FE9584 /* FiveSenses_WatchOS_Watch_AppUITests.swift */; };
 		F378ED6E2A2F765E00FE9584 /* FiveSenses_WatchOS_Watch_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378ED6D2A2F765E00FE9584 /* FiveSenses_WatchOS_Watch_AppUITestsLaunchTests.swift */; };
+		F378ED7F2A37620700FE9584 /* TextFieldStyleCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378ED7E2A37620700FE9584 /* TextFieldStyleCustom.swift */; };
+		F378ED832A39E65500FE9584 /* TextFieldCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378ED822A39E65500FE9584 /* TextFieldCustom.swift */; };
+		F378ED852A39F4D000FE9584 /* ButtonCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378ED842A39F4D000FE9584 /* ButtonCustom.swift */; };
+		F378ED872A39FFD200FE9584 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378ED862A39FFD200FE9584 /* ProgressBar.swift */; };
+		F378ED892A3A003B00FE9584 /* InputFieldsCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378ED882A3A003B00FE9584 /* InputFieldsCollection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +105,11 @@
 		F378ED672A2F765E00FE9584 /* FiveSenses-WatchOS Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FiveSenses-WatchOS Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F378ED6B2A2F765E00FE9584 /* FiveSenses_WatchOS_Watch_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveSenses_WatchOS_Watch_AppUITests.swift; sourceTree = "<group>"; };
 		F378ED6D2A2F765E00FE9584 /* FiveSenses_WatchOS_Watch_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveSenses_WatchOS_Watch_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F378ED7E2A37620700FE9584 /* TextFieldStyleCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldStyleCustom.swift; sourceTree = "<group>"; };
+		F378ED822A39E65500FE9584 /* TextFieldCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCustom.swift; sourceTree = "<group>"; };
+		F378ED842A39F4D000FE9584 /* ButtonCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCustom.swift; sourceTree = "<group>"; };
+		F378ED862A39FFD200FE9584 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
+		F378ED882A3A003B00FE9584 /* InputFieldsCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldsCollection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +197,8 @@
 			isa = PBXGroup;
 			children = (
 				080E78932A39F6D10013B163 /* FaceID */,
+				F378ED7D2A3761D800FE9584 /* UIComponents */,
+				F378ED7C2A3761CD00FE9584 /* View */,
 				F378ECBC2A2F713200FE9584 /* FiveSenses_iOSApp.swift */,
 				080E78982A3A049F0013B163 /* ContentView.swift */,
 				F378ECC02A2F713300FE9584 /* Assets.xcassets */,
@@ -254,6 +266,25 @@
 				F378ED6D2A2F765E00FE9584 /* FiveSenses_WatchOS_Watch_AppUITestsLaunchTests.swift */,
 			);
 			path = "FiveSenses-WatchOS Watch AppUITests";
+			sourceTree = "<group>";
+		};
+		F378ED7C2A3761CD00FE9584 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F378ED882A3A003B00FE9584 /* InputFieldsCollection.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F378ED7D2A3761D800FE9584 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				F378ED822A39E65500FE9584 /* TextFieldCustom.swift */,
+				F378ED7E2A37620700FE9584 /* TextFieldStyleCustom.swift */,
+				F378ED842A39F4D000FE9584 /* ButtonCustom.swift */,
+				F378ED862A39FFD200FE9584 /* ProgressBar.swift */,
+			);
+			path = UIComponents;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -505,6 +536,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				080E78952A39F74B0013B163 /* FaceidView.swift in Sources */,
+				F378ED7F2A37620700FE9584 /* TextFieldStyleCustom.swift in Sources */,
+				F378ED832A39E65500FE9584 /* TextFieldCustom.swift in Sources */,
+				F378ECBF2A2F713200FE9584 /* ContentView.swift in Sources */,
+				F378ED852A39F4D000FE9584 /* ButtonCustom.swift in Sources */,
+				F378ED872A39FFD200FE9584 /* ProgressBar.swift in Sources */,
+				F378ED892A3A003B00FE9584 /* InputFieldsCollection.swift in Sources */,
 				F378ECBD2A2F713200FE9584 /* FiveSenses_iOSApp.swift in Sources */,
 				080E78992A3A049F0013B163 /* ContentView.swift in Sources */,
 			);
