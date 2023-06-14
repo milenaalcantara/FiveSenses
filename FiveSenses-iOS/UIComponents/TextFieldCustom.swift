@@ -1,35 +1,36 @@
 //
-//  TextFieldCustom.swift
+//  TextFieldCollection.swift
 //  FiveSenses-iOS
 //
-//  Created by Milena Lima de Alcântara on 12/06/23.
+//  Created by Milena Lima de Alcântara on 14/06/23.
 //
 
 import SwiftUI
 
-struct TextFieldCustom: TextFieldStyle {
-    let canToTalk: Bool
-    
-    func _body(configuration: TextField<Self._Label>) -> some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 12.0)
-                .stroke() // sem isso ficava com fundo preto "???"
-                .frame(height: 54)
-    
-            if canToTalk {
-                Spacer()
-                
-                HStack {
-                    configuration
-                    
-                    Image(systemName: "mic")
-                    
-                    Spacer(minLength: 10.0)
-                }
-                .padding(.leading)
-                .foregroundColor(.gray)
-            }
-        }
+struct TextFieldCollection: View {
 
+    @State var value: String = ""
+
+    var body: some View {
+        VStack {
+            
+        }
+        .padding()
     }
 }
+
+struct TextFieldCollection_Previews: PreviewProvider {
+    static var previews: some View {
+        TextFieldCollection()
+    }
+}
+
+/*
+ //    @State var numberFields: Int
+ ForEach(1...numberFields, id: \.self) { index in
+     TextField("O que você está vendo?" , text: $value.)
+         .textFieldStyle(TextFieldCustom(canToTalk: true))
+     
+     Spacer(minLength: 8)
+ }
+ */

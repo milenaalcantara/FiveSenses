@@ -8,30 +8,56 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var value: String = ""
+    @State var value1: String = ""
+    @State var value2: String = ""
+    @State var value3: String = ""
+    @State var value4: String = ""
+    @State var value5: String = ""
     
     var body: some View {
         VStack {
-            TextField("O que você está vendo?" , text: $value.)
-                .textFieldStyle(TextFieldCustom(canToTalk: true))
+            VStack {
+                // MARK: Text Fields
+                TextField("O que você está vendo?" , text: $value1)
+                    .textFieldStyle(TextFieldStyleCustom(canToTalk: true))
+                
+                Spacer(minLength: 16)
+                
+                TextField("O que você está vendo?" , text: $value2)
+                    .textFieldStyle(TextFieldStyleCustom(canToTalk: true))
+                
+                Spacer(minLength: 16)
+                
+                TextField("O que você está vendo?" , text: $value3)
+                    .textFieldStyle(TextFieldStyleCustom(canToTalk: true))
+                
+                Spacer(minLength: 16)
+                
+                TextField("O que você está vendo?" , text: $value4)
+                    .textFieldStyle(TextFieldStyleCustom(canToTalk: true))
+                
+                Spacer(minLength: 16)
+                
+                TextField("O que você está vendo?" , text: $value4)
+                    .textFieldStyle(TextFieldStyleCustom(canToTalk: true))
+                
+                Spacer()
+                
+                // modificar com type... e enum
+            }
             
-            Spacer(minLength: 16)
+            .padding()
+            ButtonCustom(
+                backgroundColor: .black,
+                foregroundColor: .white,
+                title: "Próximo") {
+                  print("indo pro próximo")
+            }
             
-            TextField("O que você está vendo?" , text: $value.)
-                .textFieldStyle(TextFieldCustom(canToTalk: true))
-            
-            Spacer(minLength: 16)
-            
-            TextField("O que você está vendo?" , text: $value.)
-                .textFieldStyle(TextFieldCustom(canToTalk: true))
-            
-            Spacer(minLength: 16)
-            TextField("O que você está vendo?" , text: $value.)
-                .textFieldStyle(TextFieldCustom(canToTalk: true))
-            
-            Spacer(minLength: 16)
+            Spacer(minLength: 40)
         }
-        .padding()
+        
+        
     }
 }
 

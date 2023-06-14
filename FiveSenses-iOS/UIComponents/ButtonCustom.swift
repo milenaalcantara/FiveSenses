@@ -8,16 +8,28 @@
 import SwiftUI
 
 struct ButtonCustom: View {
-    let color: Color
+    let backgroundColor: Color
+    let foregroundColor: Color
     let title: String
+    let action: () -> Void
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button() {
+            action()
+        } label: {
+            Text(title)
+        }
+        .frame(width: UIScreen.main.bounds.size.width * 0.9, height: 54)
+        .background(backgroundColor)
+        .foregroundColor(foregroundColor)
+        .cornerRadius(12)
     }
 }
 
 struct ButtonCustom_Previews: PreviewProvider {
     static var previews: some View {
-        ButtonCustom(color: .black, title: "Próximo")
+        ButtonCustom(backgroundColor: .black, foregroundColor: .white, title: "Próximo") {
+            print("próximo")
+        }
     }
 }
