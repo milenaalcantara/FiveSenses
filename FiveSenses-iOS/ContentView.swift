@@ -8,12 +8,28 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var value: String = ""
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            TextField("O que você está vendo?" , text: $value.)
+                .textFieldStyle(TextFieldCustom(canToTalk: true))
+            
+            Spacer(minLength: 16)
+            
+            TextField("O que você está vendo?" , text: $value.)
+                .textFieldStyle(TextFieldCustom(canToTalk: true))
+            
+            Spacer(minLength: 16)
+            
+            TextField("O que você está vendo?" , text: $value.)
+                .textFieldStyle(TextFieldCustom(canToTalk: true))
+            
+            Spacer(minLength: 16)
+            TextField("O que você está vendo?" , text: $value.)
+                .textFieldStyle(TextFieldCustom(canToTalk: true))
+            
+            Spacer(minLength: 16)
         }
         .padding()
     }
