@@ -8,53 +8,24 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var value1: String = ""
-    @State var value2: String = ""
-    @State var value3: String = ""
-    @State var value4: String = ""
-    @State var value5: String = ""
     
     var body: some View {
+        
         VStack {
-            VStack {
-                // MARK: Text Fields
-                TextField("O que você está vendo?" , text: $value1)
-                    .textFieldStyle(TextFieldStyleCustom(canToTalk: true))
-                
-                Spacer(minLength: 16)
-                
-                TextField("O que você está vendo?" , text: $value2)
-                    .textFieldStyle(TextFieldStyleCustom(canToTalk: true))
-                
-                Spacer(minLength: 16)
-                
-                TextField("O que você está vendo?" , text: $value3)
-                    .textFieldStyle(TextFieldStyleCustom(canToTalk: true))
-                
-                Spacer(minLength: 16)
-                
-                TextField("O que você está vendo?" , text: $value4)
-                    .textFieldStyle(TextFieldStyleCustom(canToTalk: true))
-                
-                Spacer(minLength: 16)
-                
-                TextField("O que você está vendo?" , text: $value4)
-                    .textFieldStyle(TextFieldStyleCustom(canToTalk: true))
-                
-                Spacer()
-                
-                // modificar com type... e enum
-            }
+            InputFieldsCollection(
+                sense: .feel,
+                placeholder: "O que você está vendo?"
+            )
             
-            .padding()
+            Spacer()
+            
+            // modificar com type/mode... e enum
             ButtonCustom(
                 backgroundColor: .black,
                 foregroundColor: .white,
                 title: "Próximo") {
                   print("indo pro próximo")
             }
-            
-            Spacer(minLength: 40)
         }
         
         

@@ -7,30 +7,22 @@
 
 import SwiftUI
 
-struct TextFieldCollection: View {
-
+struct TextFieldCustom: View {
+    let placeholder: String
+    
     @State var value: String = ""
 
     var body: some View {
         VStack {
-            
+            TextField(placeholder, text: $value)
+                .textFieldStyle(TextFieldStyleCustom())
         }
-        .padding()
     }
 }
 
 struct TextFieldCollection_Previews: PreviewProvider {
+    static let text = "O que você está vendo?"
     static var previews: some View {
-        TextFieldCollection()
+        TextFieldCustom(placeholder: text)
     }
 }
-
-/*
- //    @State var numberFields: Int
- ForEach(1...numberFields, id: \.self) { index in
-     TextField("O que você está vendo?" , text: $value.)
-         .textFieldStyle(TextFieldCustom(canToTalk: true))
-     
-     Spacer(minLength: 8)
- }
- */
