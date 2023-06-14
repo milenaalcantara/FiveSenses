@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  FiveSenses-iOS
 //
-//  Created by Milena Lima de Alcântara on 06/06/23.
+//  Created by Davi Capistrano on 14/06/23.
 //
 
 import SwiftUI
@@ -10,7 +10,6 @@ import SwiftUI
 struct ContentView: View {
     
     var body: some View {
-        
         VStack {
             InputFieldsCollection(
                 sense: .feel,
@@ -27,8 +26,6 @@ struct ContentView: View {
                   print("indo pro próximo")
             }
         }
-        
-        
     }
 }
 

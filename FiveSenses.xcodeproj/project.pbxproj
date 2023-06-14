@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		080E78952A39F74B0013B163 /* FaceidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080E78942A39F74B0013B163 /* FaceidView.swift */; };
+		080E78992A3A049F0013B163 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080E78982A3A049F0013B163 /* ContentView.swift */; };
 		F378ECBD2A2F713200FE9584 /* FiveSenses_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378ECBC2A2F713200FE9584 /* FiveSenses_iOSApp.swift */; };
-		F378ECBF2A2F713200FE9584 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378ECBE2A2F713200FE9584 /* ContentView.swift */; };
 		F378ECC12A2F713300FE9584 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F378ECC02A2F713300FE9584 /* Assets.xcassets */; };
 		F378ECC42A2F713300FE9584 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F378ECC32A2F713300FE9584 /* Preview Assets.xcassets */; };
 		F378ECCE2A2F713300FE9584 /* FiveSenses_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378ECCD2A2F713300FE9584 /* FiveSenses_iOSTests.swift */; };
@@ -82,9 +83,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		080E78942A39F74B0013B163 /* FaceidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceidView.swift; sourceTree = "<group>"; };
+		080E78982A3A049F0013B163 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F378ECB92A2F713200FE9584 /* FiveSenses-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FiveSenses-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F378ECBC2A2F713200FE9584 /* FiveSenses_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveSenses_iOSApp.swift; sourceTree = "<group>"; };
-		F378ECBE2A2F713200FE9584 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F378ECC02A2F713300FE9584 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F378ECC32A2F713300FE9584 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F378ECC92A2F713300FE9584 /* FiveSenses-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FiveSenses-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,6 +158,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		080E78932A39F6D10013B163 /* FaceID */ = {
+			isa = PBXGroup;
+			children = (
+				080E78942A39F74B0013B163 /* FaceidView.swift */,
+			);
+			path = FaceID;
+			sourceTree = "<group>";
+		};
 		F378ECAE2A2F710700FE9584 = {
 			isa = PBXGroup;
 			children = (
@@ -186,10 +196,11 @@
 		F378ECBB2A2F713200FE9584 /* FiveSenses-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				080E78932A39F6D10013B163 /* FaceID */,
 				F378ED7D2A3761D800FE9584 /* UIComponents */,
 				F378ED7C2A3761CD00FE9584 /* View */,
 				F378ECBC2A2F713200FE9584 /* FiveSenses_iOSApp.swift */,
-				F378ECBE2A2F713200FE9584 /* ContentView.swift */,
+				080E78982A3A049F0013B163 /* ContentView.swift */,
 				F378ECC02A2F713300FE9584 /* Assets.xcassets */,
 				F378ECC22A2F713300FE9584 /* Preview Content */,
 			);
@@ -524,6 +535,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				080E78952A39F74B0013B163 /* FaceidView.swift in Sources */,
 				F378ED7F2A37620700FE9584 /* TextFieldStyleCustom.swift in Sources */,
 				F378ED832A39E65500FE9584 /* TextFieldCustom.swift in Sources */,
 				F378ECBF2A2F713200FE9584 /* ContentView.swift in Sources */,
@@ -531,6 +543,7 @@
 				F378ED872A39FFD200FE9584 /* ProgressBar.swift in Sources */,
 				F378ED892A3A003B00FE9584 /* InputFieldsCollection.swift in Sources */,
 				F378ECBD2A2F713200FE9584 /* FiveSenses_iOSApp.swift in Sources */,
+				080E78992A3A049F0013B163 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -659,7 +672,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_ASSET_PATHS = "\"FiveSenses-iOS/Preview Content\"";
-				DEVELOPMENT_TEAM = 2P65JA735T;
+				DEVELOPMENT_TEAM = TQJ8B2DX6J;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -678,12 +691,13 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -742,7 +756,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"FiveSenses-iOS/Preview Content\"";
-				DEVELOPMENT_TEAM = 2P65JA735T;
+				DEVELOPMENT_TEAM = TQJ8B2DX6J;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -755,12 +769,13 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
