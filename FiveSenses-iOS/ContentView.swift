@@ -8,13 +8,29 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var sense: Sense = .vision
+    private let widthScreen = UIScreen.main.bounds.size.width
     
     var body: some View {
         VStack {
-            InputFieldsCollection(
-                sense: .feel,
-                placeholder: "O que você está vendo?"
-            )
+            ZStack {
+                Circle()
+                    .fill(sense.color.opacity(0.9))
+                    .frame(
+                        width: widthScreen * 0.2,
+                        height: widthScreen * 0.2
+                    )
+                
+                Image(systemName: sense.icon)
+                    .foregroundColor(.white.opacity(0.95))
+                    .font(.title)
+            }
+            
+            ProgressView(value: sense.progress)
+                .progressViewStyle(BarProgressStyle(sense: sense))
+                .padding(.vertical, 20)
+            
+            InputFieldsCollection(sense: sense)
             
             Spacer()
             
@@ -23,7 +39,22 @@ struct ContentView: View {
                 backgroundColor: .black,
                 foregroundColor: .white,
                 title: "Próximo") {
-                  print("indo pro próximo")
+                    switch sense {
+                    case .vision:
+                        sense = .hearing
+                        return
+                    case .hearing:
+                        sense = .feel
+                        return
+                    case .feel:
+                        sense = .smell
+                        return
+                    case .smell:
+                        sense = .palate
+                        return
+                    case .palate:
+                        print("finish")
+                    }
             }
         }
     }
