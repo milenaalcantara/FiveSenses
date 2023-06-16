@@ -11,8 +11,10 @@ import SwiftUI
 struct FiveSenses_iOSApp: App {
     var body: some Scene {
         WindowGroup {
-//            FaceidView()
-            ContentView()
+            NavigationStack {
+                Onboarding_View()
+            }
+//            ContentView()
         }
     }
 }

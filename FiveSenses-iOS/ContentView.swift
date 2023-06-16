@@ -56,7 +56,7 @@ struct ContentView: View {
                         print("finish")
                     }
             }
-        }
+        }.navigationBarBackButtonHidden()
     }
 }
 
