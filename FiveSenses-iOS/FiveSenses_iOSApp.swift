@@ -6,15 +6,19 @@
 //
 
 import SwiftUI
+import CloudKit
 
 @main
 struct FiveSenses_iOSApp: App {
-//    @State var sense: Sense = .vision
+    // @State var sense: Sense = .vision
     @StateObject var sense: Sense = Sense()
-    
+    // let container = CKContainer(identifier: "iCloud.mapaPlacesLocation")
+
     var body: some Scene {
         WindowGroup {
-//            FaceidView()
+            // FaceidView()
+
+            // MapaView(vm: PlaceListViewModel(container: container))
             NavigationView {
                 ContentView()
             }.environmentObject(sense)
