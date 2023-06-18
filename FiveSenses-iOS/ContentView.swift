@@ -8,52 +8,51 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var sense: Sense = .vision
-    private let widthScreen = UIScreen.main.bounds.size.width
+    @EnvironmentObject var sense: Sense
     
     var body: some View {
         VStack {
-            ZStack {
-                Circle()
-                    .fill(sense.color.opacity(0.9))
-                    .frame(
-                        width: widthScreen * 0.2,
-                        height: widthScreen * 0.2
-                    )
-                
-                Image(systemName: sense.icon)
-                    .foregroundColor(.white.opacity(0.95))
-                    .font(.title)
-            }
+            HeaderSenseView()
             
-            ProgressView(value: sense.progress)
-                .progressViewStyle(BarProgressStyle(sense: sense))
-                .padding(.vertical, 20)
-            
-            InputFieldsCollection(sense: sense)
+            InputFieldsCollection()
+                .id(sense.senseOption.rawValue)
             
             Spacer()
             
-            // modificar com type/mode... e enum
             ButtonCustom(
                 backgroundColor: .black,
                 foregroundColor: .white,
                 title: "Próximo") {
-                    switch sense {
+                    switch sense.senseOption {
                     case .vision:
-                        sense = .hearing
-                        return
+                        if !sense.areEmptyFields {
+                            sense.senseOption = .hearing
+                            sense.isChangedSense = true
+                            return
+                        }
                     case .hearing:
-                        sense = .feel
-                        return
+                        if !sense.areEmptyFields {
+                            sense.senseOption = .feel
+                            sense.isChangedSense = true
+                            return
+                        }
                     case .feel:
-                        sense = .smell
-                        return
+                        if !sense.areEmptyFields {
+                            sense.senseOption = .smell
+                            sense.isChangedSense = true
+                            return
+                        }
                     case .smell:
-                        sense = .palate
-                        return
+                        if !sense.areEmptyFields {
+                            sense.senseOption = .palate
+                            sense.isChangedSense = true
+                            return
+                        }
                     case .palate:
-                        print("finish")
+                        if !sense.areEmptyFields {
+                            print("finish")
+                            return
+                        }
                     }
             }
         }

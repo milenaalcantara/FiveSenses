@@ -9,12 +9,11 @@ import Foundation
 import SwiftUI
 
 struct BarProgressStyle: ProgressViewStyle {
-    var sense: Sense
+    @EnvironmentObject var sense: Sense
 
     func makeBody(configuration: Configuration) -> some View {
 
         let progress = configuration.fractionCompleted ?? 0.0
-
         
         RoundedRectangle(cornerRadius: 12.0)
             .fill(sense.color.opacity(0.3))

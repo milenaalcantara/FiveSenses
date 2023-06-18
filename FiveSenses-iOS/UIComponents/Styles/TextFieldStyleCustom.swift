@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct TextFieldStyleCustom: TextFieldStyle {
+    
     func _body(configuration: TextField<Self._Label>) -> some View {
         ZStack {
             RoundedRectangle(cornerRadius: 12.0)
                 .stroke() // sem isso ficava com fundo preto "???"
-//                .frame(height: 54)
+                
             
             configuration
                 .padding(.leading)

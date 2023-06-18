@@ -9,10 +9,16 @@ import SwiftUI
 
 @main
 struct FiveSenses_iOSApp: App {
+//    @State var sense: Sense = .vision
+    @StateObject var sense: Sense = Sense()
+    
     var body: some Scene {
         WindowGroup {
 //            FaceidView()
-            ContentView()
+            NavigationView {
+                ContentView()
+            }.environmentObject(sense)
         }
+        
     }
 }

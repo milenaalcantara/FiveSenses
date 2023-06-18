@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 
-enum Sense: Int, CaseIterable {
+enum SenseOptions: Int, CaseIterable {
     case vision = 5
     case hearing = 4
     case feel = 3
