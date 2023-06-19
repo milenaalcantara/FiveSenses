@@ -20,7 +20,7 @@ class PlaceListViewModel: ObservableObject {
 
     init(container: CKContainer) {
         self.container = container
-        self.database = self.container.publicCloudDatabase
+        self.database = self.container.privateCloudDatabase
     }
 
     // salva o valor e atualiza o placeList

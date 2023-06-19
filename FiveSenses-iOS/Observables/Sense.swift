@@ -13,6 +13,7 @@ class Sense: ObservableObject {
     
     @Published var isChangedSense: Bool = false
     @Published var areEmptyFields: Bool = true
+
     
     var numberOfSenses: Int {
         return senseOption.rawValue

@@ -17,34 +17,14 @@ struct MapaView: View {
     @StateObject var locationDataManager = LocationDataManager()
     @StateObject private var vm: PlaceListViewModel
 
-
     @State var latitude = CLLocationDegrees()
     @State var longitude = CLLocationDegrees()
-
-
     init(vm: PlaceListViewModel) {
         _vm = StateObject(wrappedValue: vm)
     }
     var body: some View {
         VStack {
-            buttonSave
             location
-        }
-    }
-
-    var buttonSave: some View {
-        Button("Save") {
-            // dada a localizacao encontrar um lugar e atualizar a contagem ou criar um novo
-            var place = verifyList(latitude, longitude)
-            /* se ja existir um lugar com aquela latidude altera o numero de repeticoes e
-             salva o novo local
-             */
-            if place != nil {
-                place?.placeList.numbersRepeated += 1
-                vm.saveItem(place!.placeList)
-            } else {
-                vm.saveNewItem(name: "aqui", numbersRepeated: 1, latitude: latitude, longitude: longitude)
-            }
         }
     }
     var location: some View {
@@ -99,24 +79,7 @@ struct MapaView: View {
             longitude = locationDataManager.locationManager.location?.coordinate.longitude ?? 0.0
             Task {
                 try await vm.populatePlaces()
-
             }
-        }
-
-    }
-
-
-    func verifyList(_ latitudePlace: Double, _ longitudePlace: Double) -> PlaceViewModel? {
-        let collection = vm.places
-        let filtered = collection.filter {
-            $0.latitude.isAlmostEqual(to: latitudePlace, tolerance: 0.000001) &&
-            $0.longitude.isAlmostEqual(to: longitudePlace, tolerance: 0.000001)
-        }
-
-        if let place = filtered.first {
-            return place
-        } else {
-            return nil
         }
     }
 }

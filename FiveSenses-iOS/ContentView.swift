@@ -37,7 +37,7 @@ struct ContentView: View {
                     .multilineTextAlignment(.center)
 
                 NavigationLink {
-                    SenseView()
+                    SenseView(vm: PlaceListViewModel(container: container))
                 } label: {
                     Text("Iniciar Exercício")
                         .font(.body)
@@ -47,6 +47,9 @@ struct ContentView: View {
                 .background(.black)
                 .cornerRadius(12)
                 .padding(.vertical)
+                .task {
+                    sense.senseOption = .vision
+                }
                 Spacer()
             }
         }.padding()

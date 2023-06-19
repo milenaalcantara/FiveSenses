@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		080E78952A39F74B0013B163 /* FaceidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080E78942A39F74B0013B163 /* FaceidView.swift */; };
 		080E78992A3A049F0013B163 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080E78982A3A049F0013B163 /* ContentView.swift */; };
+		451F73FF2A40D4DB0025CEC2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378ED522A2F765D00FE9584 /* ContentView.swift */; };
+		451F74002A40D54A0025CEC2 /* InputFieldsCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378ED882A3A003B00FE9584 /* InputFieldsCollection.swift */; };
+		451F74012A40D5690025CEC2 /* TextFieldCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378ED822A39E65500FE9584 /* TextFieldCustom.swift */; };
+		451F74022A40D5730025CEC2 /* TextFieldStyleCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378ED7E2A37620700FE9584 /* TextFieldStyleCustom.swift */; };
 		454A47D42A3CA0EE00C28341 /* MapaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454A47D32A3CA0EE00C28341 /* MapaView.swift */; };
 		454A47D62A3CA12800C28341 /* LocationDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454A47D52A3CA12800C28341 /* LocationDataManager.swift */; };
 		454A47D82A3CA16A00C28341 /* Double+IsAlmostEqual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454A47D72A3CA16A00C28341 /* Double+IsAlmostEqual.swift */; };
@@ -26,7 +30,6 @@
 		F378ECDA2A2F713300FE9584 /* FiveSenses_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378ECD92A2F713300FE9584 /* FiveSenses_iOSUITestsLaunchTests.swift */; };
 		F378ED4C2A2F765D00FE9584 /* FiveSenses-WatchOS Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = F378ED4B2A2F765D00FE9584 /* FiveSenses-WatchOS Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F378ED512A2F765D00FE9584 /* FiveSenses_WatchOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378ED502A2F765D00FE9584 /* FiveSenses_WatchOSApp.swift */; };
-		F378ED532A2F765D00FE9584 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378ED522A2F765D00FE9584 /* ContentView.swift */; };
 		F378ED552A2F765D00FE9584 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F378ED542A2F765D00FE9584 /* Assets.xcassets */; };
 		F378ED582A2F765D00FE9584 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F378ED572A2F765D00FE9584 /* Preview Assets.xcassets */; };
 		F378ED622A2F765E00FE9584 /* FiveSenses_WatchOS_Watch_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378ED612A2F765E00FE9584 /* FiveSenses_WatchOS_Watch_AppTests.swift */; };
@@ -660,12 +663,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				F378ED902A3B405B00FE9584 /* ButtonCustom.swift in Sources */,
-				F378ED532A2F765D00FE9584 /* ContentView.swift in Sources */,
+				451F74022A40D5730025CEC2 /* TextFieldStyleCustom.swift in Sources */,
 				F378ED512A2F765D00FE9584 /* FiveSenses_WatchOSApp.swift in Sources */,
+				451F73FF2A40D4DB0025CEC2 /* ContentView.swift in Sources */,
+				451F74002A40D54A0025CEC2 /* InputFieldsCollection.swift in Sources */,
 				F378ED952A3B518700FE9584 /* Sense.swift in Sources */,
 				F378ED972A3B51AA00FE9584 /* BarProgressStyle.swift in Sources */,
 				F33D67172A3FE7AA0090F7C2 /* SenseView.swift in Sources */,
 				F378ED962A3B518F00FE9584 /* SenseOptions.swift in Sources */,
+				451F74012A40D5690025CEC2 /* TextFieldCustom.swift in Sources */,
 				F33D67192A3FED6F0090F7C2 /* FinishView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1639,7 +1645,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 2P65JA735T;
+				DEVELOPMENT_TEAM = U2M84KZ35U;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -1711,7 +1717,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 2P65JA735T;
+				DEVELOPMENT_TEAM = U2M84KZ35U;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
