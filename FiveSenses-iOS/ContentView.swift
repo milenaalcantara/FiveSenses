@@ -6,20 +6,36 @@
 //
 
 import SwiftUI
+import CloudKit
 
 struct ContentView: View {
+
     @EnvironmentObject var sense: Sense
-    
+    let container = CKContainer(identifier: "iCloud.mapaPlacesLocation")
+
     var body: some View {
+        TabView {
+            homeView
+                .tabItem {
+                    Label("Main", systemImage: "star.fill")
+                }
+            MapaView(vm: PlaceListViewModel(container: container))
+                .tabItem {
+                    Label("Mapa", systemImage: "star")
+                }
+        }
+
+    }
+
+    var homeView: some View {
         GeometryReader { geometry in
             VStack(alignment: .center) {
                 Spacer()
-                
+
                 Text("Vamos descobrir o que podemos realizar com nossos sentidos.")
                     .padding(.vertical)
                     .multilineTextAlignment(.center)
-                
-//                HStack(alignment: .center) {
+
                 NavigationLink {
                     SenseView()
                 } label: {
@@ -31,8 +47,6 @@ struct ContentView: View {
                 .background(.black)
                 .cornerRadius(12)
                 .padding(.vertical)
-//                }
-                
                 Spacer()
             }
         }.padding()
@@ -44,3 +58,5 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+

@@ -9,14 +9,14 @@ import SwiftUI
 
 struct SenseView: View {
     @EnvironmentObject var sense: Sense
+
+    @State var title = "Próximo"
     
     var body: some View {
         VStack(alignment: .center) {
             HeaderSenseView()
                 .background(.green)
-            
-//            Spacer(minLength: 10)
-            
+
             InputFieldsCollection()
                 .id(sense.senseOption.rawValue)
                 .padding()
@@ -28,37 +28,37 @@ struct SenseView: View {
                 backgroundColor: .black,
                 foregroundColor: .white,
                 font: .body,
-                title: "Próximo",
+                title: title,
                 height: 54
             ) {
                 switch sense.senseOption {
                 case .vision:
-                    if !sense.areEmptyFields {
+                    if sense.areEmptyFields {
                         sense.senseOption = .hearing
                         sense.isChangedSense = true
                         return
                     }
                 case .hearing:
-                    if !sense.areEmptyFields {
+                    if sense.areEmptyFields {
                         sense.senseOption = .feel
                         sense.isChangedSense = true
                         return
                     }
                 case .feel:
-                    if !sense.areEmptyFields {
+                    if sense.areEmptyFields {
                         sense.senseOption = .smell
                         sense.isChangedSense = true
                         return
                     }
                 case .smell:
-                    if !sense.areEmptyFields {
+                    if sense.areEmptyFields {
                         sense.senseOption = .palate
                         sense.isChangedSense = true
+                        title = "Finished"
                         return
                     }
                 case .palate:
-                    if !sense.areEmptyFields {
-                        print("finish")
+                    if sense.areEmptyFields {
                         return
                     }
                 }
@@ -67,6 +67,8 @@ struct SenseView: View {
             
         }
     }
+    
+
 }
 
 struct SenseView_Previews: PreviewProvider {

@@ -31,7 +31,7 @@ struct FaceidView: View {
                 Button("Usar o FaceID"){
                     authenticate()
                 }.buttonStyle(.borderedProminent)
-                NavigationLink(destination: ContentView(), isActive: $isShowingDetailView) { }
+                NavigationLink(destination: ContentView().navigationBarBackButtonHidden(), isActive: $isShowingDetailView) { }
                 // mudar para uma versão não depreciada 
                 // Carregar o valor boleano, e ao ficar true chama a TesteView()
             }
