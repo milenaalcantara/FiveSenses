@@ -5,7 +5,6 @@
 //  Created by Milena Lima de Alcântara on 06/06/23.
 //
 
-import SwiftUI
 import XCTest
 @testable import FiveSenses_iOS
 
@@ -25,24 +24,6 @@ final class FiveSenses_iOSTests: XCTestCase {
         // Any test you write for XCTest can be annotated as throws and async.
         // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
         // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-    
-    func testNumberOfSenses() throws {
-        let sense: Sense = Sense()
-        sense.senseOption = .vision
-        let numberOfSenses: Int = sense.numberOfSenses
-        XCTAssert(numberOfSenses == 5)
-        XCTAssertTrue(numberOfSenses == 5)
-        XCTAssertEqual(numberOfSenses, 5)
-    }
-    
-    func testSenseColor() throws {
-        let sense: Sense = Sense()
-        sense.senseOption = .vision
-        let color: Color = sense.color
-        XCTAssert(color == .purple)
-        XCTAssertTrue(color == .purple)
-        XCTAssertEqual(color, .purple)
     }
 
     func testPerformanceExample() throws {

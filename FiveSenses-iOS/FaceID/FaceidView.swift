@@ -13,8 +13,6 @@ struct FaceidView: View {
     @State private var text = "5SENSE BLOQUEADO"
     @State private var subtext = "Use o FaceID para desbloquear o aplicativo."
     @State private var isShowingDetailView = false //Booleano
-    @EnvironmentObject var sense: Sense
-    
     var body: some View {
 
         NavigationStack {
@@ -31,8 +29,7 @@ struct FaceidView: View {
                 Button("Usar o FaceID"){
                     authenticate()
                 }.buttonStyle(.borderedProminent)
-                NavigationLink(destination: ContentView().navigationBarBackButtonHidden(), isActive: $isShowingDetailView) { }
-                // mudar para uma versão não depreciada 
+                NavigationLink(destination: ContentView() , isActive: $isShowingDetailView) { }
                 // Carregar o valor boleano, e ao ficar true chama a TesteView()
             }
             .padding()
@@ -62,6 +59,6 @@ struct FaceidView: View {
 
 struct FaceidView_Previews: PreviewProvider {
     static var previews: some View {
-        FaceidView()
+        ContentView()
     }
 }
