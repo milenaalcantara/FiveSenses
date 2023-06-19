@@ -8,21 +8,40 @@
 import SwiftUI
 
 struct TextFieldCustom: View {
-    let placeholder: String
+    @EnvironmentObject var sense: Sense
+    
+    @Binding var isEmptyField: Bool
     
     @State var value: String = ""
-
+    @State var placeholder = ""
+    
     var body: some View {
         VStack {
-            TextField(placeholder, text: $value)
+            TextField(placeholder , text: $value)
+                .onChange(of: sense.isChangedSense) {
+                    if $0 {
+                        value = ""
+                    }
+                }
+                .onChange(of: value, perform: { newValue in
+                    if value.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                        value = ""
+                        isEmptyField = true
+                    } else {
+                        isEmptyField = false
+                    }
+                })
                 .textFieldStyle(TextFieldStyleCustom())
+        }
+        .onAppear {
+            placeholder = sense.placeholder
         }
     }
 }
 
 struct TextFieldCollection_Previews: PreviewProvider {
-    static let text = "O que você está vendo?"
+    @State static var isEmptyField = false
     static var previews: some View {
-        TextFieldCustom(placeholder: text)
+        TextFieldCustom(isEmptyField: $isEmptyField)
     }
 }

@@ -6,12 +6,28 @@
 //
 
 import SwiftUI
+import CloudKit
 
 struct ContentView: View {
-    @State private var sense: Sense = .vision
-    private let widthScreen = UIScreen.main.bounds.size.width
-    
+
+    @EnvironmentObject var sense: Sense
+    let container = CKContainer(identifier: "iCloud.mapaPlacesLocation")
+
     var body: some View {
+        TabView {
+            homeView
+                .tabItem {
+                    Label("Main", systemImage: "star.fill")
+                }
+            MapaView(vm: PlaceListViewModel(container: container))
+                .tabItem {
+                    Label("Mapa", systemImage: "star")
+                }
+        }
+
+    }
+
+    var homeView: some View {
         VStack {
             ZStack {
                 Circle()
@@ -65,3 +81,5 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+
