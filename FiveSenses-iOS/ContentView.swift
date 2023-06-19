@@ -28,28 +28,51 @@ struct ContentView: View {
     }
 
     var homeView: some View {
-        GeometryReader { geometry in
-            VStack(alignment: .center) {
-                Spacer()
-
-                Text("Vamos descobrir o que podemos realizar com nossos sentidos.")
-                    .padding(.vertical)
-                    .multilineTextAlignment(.center)
-
-                NavigationLink {
-                    SenseView()
-                } label: {
-                    Text("Iniciar Exercício")
-                        .font(.body)
-                        .foregroundColor(.white)
-                }
-                .frame(width: geometry.size.width, height: 50)
-                .background(.black)
-                .cornerRadius(12)
-                .padding(.vertical)
-                Spacer()
+        VStack {
+            ZStack {
+                Circle()
+                    .fill(sense.color.opacity(0.9))
+                    .frame(
+                        width: widthScreen * 0.2,
+                        height: widthScreen * 0.2
+                    )
+                
+                Image(systemName: sense.icon)
+                    .foregroundColor(.white.opacity(0.95))
+                    .font(.title)
             }
-        }.padding()
+            
+            ProgressView(value: sense.progress)
+                .progressViewStyle(BarProgressStyle(sense: sense))
+                .padding(.vertical, 20)
+            
+            InputFieldsCollection(sense: sense)
+            
+            Spacer()
+            
+            // modificar com type/mode... e enum
+            ButtonCustom(
+                backgroundColor: .black,
+                foregroundColor: .white,
+                title: "Próximo") {
+                    switch sense {
+                    case .vision:
+                        sense = .hearing
+                        return
+                    case .hearing:
+                        sense = .feel
+                        return
+                    case .feel:
+                        sense = .smell
+                        return
+                    case .smell:
+                        sense = .palate
+                        return
+                    case .palate:
+                        print("finish")
+                    }
+            }
+        }.navigationBarBackButtonHidden()
     }
 }
 
