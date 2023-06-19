@@ -16,12 +16,12 @@ struct FiveSenses_iOSApp: App {
 
     var body: some Scene {
         WindowGroup {
-             FaceidView().environmentObject(sense)
+//             FaceidView().environmentObject(sense)
 
             // MapaView(vm: PlaceListViewModel(container: container))
-//            NavigationView {
-//                ContentView()
-//            }.environmentObject(sense)
+            NavigationView {
+                ContentView()
+            }.environmentObject(sense)
         }
         
     }

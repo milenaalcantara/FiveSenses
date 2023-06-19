@@ -16,20 +16,16 @@ struct ButtonCustom: View {
     let action: () -> Void
     
     var body: some View {
-        GeometryReader { geometry in
-            Button() {
-                action()
-            } label: {
-                Text(title).font(font)
-            }
-            .frame(
-                width: geometry.size.width,
-                height: height
-            )
-            .background(backgroundColor)
-            .foregroundColor(foregroundColor)
-            .cornerRadius(12)
+        Button() {
+            action()
+        } label: {
+            Text(title).font(font)
         }
+        .frame(maxWidth: .infinity)
+        .frame(height: height)
+        .background(backgroundColor)
+        .foregroundColor(foregroundColor)
+        .cornerRadius(12)
     }
 }
 
