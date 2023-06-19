@@ -672,7 +672,7 @@
 				F378ECBD2A2F713200FE9584 /* FiveSenses_iOSApp.swift in Sources */,
 				080E78992A3A049F0013B163 /* ContentView.swift in Sources */,
 				454A47E02A3CA5B700C28341 /* ColorSenses.swift in Sources */,
-				F378ED8C2A3A5F8700FE9584 /* BarProgressStyle.swift in Sources */,\
+				F378ED8C2A3A5F8700FE9584 /* BarProgressStyle.swift in Sources */,
 				454A47D62A3CA12800C28341 /* LocationDataManager.swift in Sources */,
 				080E78A52A3CA14E0013B163 /* Onboarding_View.swift in Sources */,
 				F378ED8F2A3A768D00FE9584 /* SenseOptions.swift in Sources */,
