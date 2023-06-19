@@ -11,54 +11,31 @@ struct ContentView: View {
     @EnvironmentObject var sense: Sense
     
     var body: some View {
-        VStack {
-            HeaderSenseView()
-            
-            InputFieldsCollection()
-                .id(sense.senseOption.rawValue)
-            
-            Spacer()
-            
-            ButtonCustom(
-                backgroundColor: .black,
-                foregroundColor: .white,
-                font: .body,
-                title: "Próximo",
-                height: 54
-            ) {
-                switch sense.senseOption {
-                case .vision:
-                    if !sense.areEmptyFields {
-                        sense.senseOption = .hearing
-                        sense.isChangedSense = true
-                        return
-                    }
-                case .hearing:
-                    if !sense.areEmptyFields {
-                        sense.senseOption = .feel
-                        sense.isChangedSense = true
-                        return
-                    }
-                case .feel:
-                    if !sense.areEmptyFields {
-                        sense.senseOption = .smell
-                        sense.isChangedSense = true
-                        return
-                    }
-                case .smell:
-                    if !sense.areEmptyFields {
-                        sense.senseOption = .palate
-                        sense.isChangedSense = true
-                        return
-                    }
-                case .palate:
-                    if !sense.areEmptyFields {
-                        print("finish")
-                        return
-                    }
+        GeometryReader { geometry in
+            VStack(alignment: .center) {
+                Spacer()
+                
+                Text("Vamos descobrir o que podemos realizar com nossos sentidos.")
+                    .padding(.vertical)
+                    .multilineTextAlignment(.center)
+                
+//                HStack(alignment: .center) {
+                NavigationLink {
+                    SenseView()
+                } label: {
+                    Text("Iniciar Exercício")
+                        .font(.body)
+                        .foregroundColor(.white)
                 }
+                .frame(width: geometry.size.width, height: 50)
+                .background(.black)
+                .cornerRadius(12)
+                .padding(.vertical)
+//                }
+                
+                Spacer()
             }
-        }
+        }.padding()
     }
 }
 

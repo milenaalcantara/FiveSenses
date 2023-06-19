@@ -22,7 +22,7 @@ struct InputFieldsCollection: View {
         VStack {
             ForEach($textFieldModels) { $model in
                 TextFieldCustom(isEmptyField: $model.isEmpty)
-                    .padding(.vertical, 10)
+                    .padding(.vertical, 20)
             }
         }
         .onAppear {

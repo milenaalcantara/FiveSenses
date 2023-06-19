@@ -45,23 +45,3 @@ struct TextFieldCollection_Previews: PreviewProvider {
         TextFieldCustom(isEmptyField: $isEmptyField)
     }
 }
-
-/*
- , onEditingChanged: { isChanged in
-     if isChanged {
-         if value == "" {
-             sense.areEmptyFields = true
-             isEmptyField = true
-         } else {
-             sense.areEmptyFields = false
-             isEmptyField = false
-         }
-//                    if value.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-//                        sense.areEmptyFields = true
-//                        isEmptyField = true
-//                    } else {
-//                        sense.areEmptyFields = false
-//                        isEmptyField = false
-//                    }
-     }
- */

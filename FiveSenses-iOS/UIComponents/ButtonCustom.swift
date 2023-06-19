@@ -30,7 +30,6 @@ struct ButtonCustom: View {
             .foregroundColor(foregroundColor)
             .cornerRadius(12)
         }
-//        .padding(.horizontal)
     }
 }
 

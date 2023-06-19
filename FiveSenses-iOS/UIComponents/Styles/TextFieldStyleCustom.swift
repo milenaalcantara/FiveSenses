@@ -20,22 +20,7 @@ struct TextFieldStyleCustom: TextFieldStyle {
                     .padding(.leading)
                     .foregroundColor(.gray)
             }
-            .frame(width: geometry.size.width * 0.9, height: 54)
+            .frame(width: geometry.size.width, height: 54)
         }
     }
 }
-
-//            let canToTalk: Bool
-//            if canToTalk {
-//                Spacer()
-//
-//                HStack {
-//                    configuration
-//                    // Não possui mais o mic
-//                    Image(systemName: "mic")
-//
-//                    Spacer(minLength: 10.0)
-//                }
-//                .padding(.leading)
-//                .foregroundColor(.gray)
-//            }

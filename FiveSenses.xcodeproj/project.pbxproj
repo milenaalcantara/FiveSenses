@@ -17,6 +17,7 @@
 		454A47E02A3CA5B700C28341 /* ColorSenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454A47DF2A3CA5B700C28341 /* ColorSenses.swift */; };
 		F33D67172A3FE7AA0090F7C2 /* SenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33D67162A3FE7AA0090F7C2 /* SenseView.swift */; };
 		F33D67192A3FED6F0090F7C2 /* FinishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33D67182A3FED6F0090F7C2 /* FinishView.swift */; };
+		F33D671B2A3FF3C40090F7C2 /* SenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33D671A2A3FF3C40090F7C2 /* SenseView.swift */; };
 		F378ECBD2A2F713200FE9584 /* FiveSenses_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378ECBC2A2F713200FE9584 /* FiveSenses_iOSApp.swift */; };
 		F378ECC12A2F713300FE9584 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F378ECC02A2F713300FE9584 /* Assets.xcassets */; };
 		F378ECC42A2F713300FE9584 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F378ECC32A2F713300FE9584 /* Preview Assets.xcassets */; };
@@ -109,6 +110,7 @@
 		454A47DF2A3CA5B700C28341 /* ColorSenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSenses.swift; sourceTree = "<group>"; };
 		F33D67162A3FE7AA0090F7C2 /* SenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenseView.swift; sourceTree = "<group>"; };
 		F33D67182A3FED6F0090F7C2 /* FinishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishView.swift; sourceTree = "<group>"; };
+		F33D671A2A3FF3C40090F7C2 /* SenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenseView.swift; sourceTree = "<group>"; };
 		F378ECB92A2F713200FE9584 /* FiveSenses-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FiveSenses-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F378ECBC2A2F713200FE9584 /* FiveSenses_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveSenses_iOSApp.swift; sourceTree = "<group>"; };
 		F378ECC02A2F713300FE9584 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -245,7 +247,6 @@
 			children = (
 				454A47DD2A3CA2BA00C28341 /* FiveSenses-iOS.entitlements */,
 				454A47D22A3CA0B100C28341 /* Mapa */,
-				F378ED982A3CA5F200FE9584 /* Model */,
 				F378ED922A3B515600FE9584 /* Observables */,
 				F378ED8D2A3A767D00FE9584 /* Enum */,
 				080E78932A39F6D10013B163 /* FaceID */,
@@ -255,6 +256,7 @@
 				080E78982A3A049F0013B163 /* ContentView.swift */,
 				F378ECC02A2F713300FE9584 /* Assets.xcassets */,
 				F378ECC22A2F713300FE9584 /* Preview Content */,
+				F33D671A2A3FF3C40090F7C2 /* SenseView.swift */,
 			);
 			path = "FiveSenses-iOS";
 			sourceTree = "<group>";
@@ -365,13 +367,6 @@
 				F378ED932A3B516600FE9584 /* Sense.swift */,
 			);
 			path = Observables;
-			sourceTree = "<group>";
-		};
-		F378ED982A3CA5F200FE9584 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -633,6 +628,7 @@
 				F378ED942A3B516600FE9584 /* Sense.swift in Sources */,
 				F378ED872A39FFD200FE9584 /* HeaderSenseView.swift in Sources */,
 				F378ED892A3A003B00FE9584 /* InputFieldsCollection.swift in Sources */,
+				F33D671B2A3FF3C40090F7C2 /* SenseView.swift in Sources */,
 				F378ECBD2A2F713200FE9584 /* FiveSenses_iOSApp.swift in Sources */,
 				080E78992A3A049F0013B163 /* ContentView.swift in Sources */,
 				454A47E02A3CA5B700C28341 /* ColorSenses.swift in Sources */,

@@ -32,7 +32,7 @@ struct HeaderSenseView: View {
                 .padding()
             
             Text(sense.iosDescription)
-                .padding(.bottom, 40)
+                .padding(.bottom, 20)
         }
     }
 }
