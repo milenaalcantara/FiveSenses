@@ -22,38 +22,41 @@ struct ContentView: View {
             ButtonCustom(
                 backgroundColor: .black,
                 foregroundColor: .white,
-                title: "Próximo") {
-                    switch sense.senseOption {
-                    case .vision:
-                        if !sense.areEmptyFields {
-                            sense.senseOption = .hearing
-                            sense.isChangedSense = true
-                            return
-                        }
-                    case .hearing:
-                        if !sense.areEmptyFields {
-                            sense.senseOption = .feel
-                            sense.isChangedSense = true
-                            return
-                        }
-                    case .feel:
-                        if !sense.areEmptyFields {
-                            sense.senseOption = .smell
-                            sense.isChangedSense = true
-                            return
-                        }
-                    case .smell:
-                        if !sense.areEmptyFields {
-                            sense.senseOption = .palate
-                            sense.isChangedSense = true
-                            return
-                        }
-                    case .palate:
-                        if !sense.areEmptyFields {
-                            print("finish")
-                            return
-                        }
+                font: .body,
+                title: "Próximo",
+                height: 54
+            ) {
+                switch sense.senseOption {
+                case .vision:
+                    if !sense.areEmptyFields {
+                        sense.senseOption = .hearing
+                        sense.isChangedSense = true
+                        return
                     }
+                case .hearing:
+                    if !sense.areEmptyFields {
+                        sense.senseOption = .feel
+                        sense.isChangedSense = true
+                        return
+                    }
+                case .feel:
+                    if !sense.areEmptyFields {
+                        sense.senseOption = .smell
+                        sense.isChangedSense = true
+                        return
+                    }
+                case .smell:
+                    if !sense.areEmptyFields {
+                        sense.senseOption = .palate
+                        sense.isChangedSense = true
+                        return
+                    }
+                case .palate:
+                    if !sense.areEmptyFields {
+                        print("finish")
+                        return
+                    }
+                }
             }
         }
     }

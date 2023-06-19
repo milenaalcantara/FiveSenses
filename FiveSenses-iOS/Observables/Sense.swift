@@ -30,8 +30,12 @@ class Sense: ObservableObject {
         return senseOption.progress
     }
     
-    var description: String {
-        return senseOption.description
+    var iosDescription: String {
+        return senseOption.iosDescription
+    }
+    
+    var watchDescription: String {
+        return senseOption.watchDescription
     }
     
     var placeholder: String {

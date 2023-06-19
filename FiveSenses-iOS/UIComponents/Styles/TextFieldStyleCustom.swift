@@ -10,16 +10,18 @@ import SwiftUI
 struct TextFieldStyleCustom: TextFieldStyle {
     
     func _body(configuration: TextField<Self._Label>) -> some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 12.0)
-                .stroke() // sem isso ficava com fundo preto "???"
+        GeometryReader { geometry in
+            ZStack {
+                RoundedRectangle(cornerRadius: 12.0)
+                    .stroke() // sem isso ficava com fundo preto "???"
+                    
                 
-            
-            configuration
-                .padding(.leading)
-                .foregroundColor(.gray)
+                configuration
+                    .padding(.leading)
+                    .foregroundColor(.gray)
+            }
+            .frame(width: geometry.size.width * 0.9, height: 54)
         }
-        .frame(width: UIScreen.main.bounds.size.width * 0.9,height: 54)
     }
 }
 

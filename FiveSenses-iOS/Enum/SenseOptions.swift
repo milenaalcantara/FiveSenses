@@ -61,7 +61,7 @@ enum SenseOptions: Int, CaseIterable {
         }
     }
     
-    var description: String {
+    var iosDescription: String {
         switch self {
         case .vision:
             return "Digite 5 coisas que você está vendo"
@@ -73,6 +73,21 @@ enum SenseOptions: Int, CaseIterable {
             return "Digite 2 aromas que você pode sentir"
         case .palate:
             return "Digite 1 coisa que você pode provar"
+        }
+    }
+    
+    var watchDescription: String {
+        switch self {
+        case .vision:
+            return "Pense em 5 imagens"
+        case .hearing:
+            return "Pense em 4 sons"
+        case .feel:
+            return "Toque em 3 objetos"
+        case .smell:
+            return "Pense em 2 aromas"
+        case .palate:
+            return "Pense em 1 sabor"
         }
     }
     

@@ -28,8 +28,11 @@ struct HeaderSenseView: View {
             }
             
             ProgressView(value: sense.progress)
-                .progressViewStyle(BarProgressStyle())
-                .padding(.vertical, 20)
+                .progressViewStyle(BarProgressStyle(height: 30))
+                .padding()
+            
+            Text(sense.iosDescription)
+                .padding(.bottom, 40)
         }
     }
 }

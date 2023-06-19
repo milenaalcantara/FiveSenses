@@ -20,9 +20,6 @@ struct InputFieldsCollection: View {
     
     var body: some View {
         VStack {
-            Text(sense.description)
-                .padding(.bottom, 40)
-            
             ForEach($textFieldModels) { $model in
                 TextFieldCustom(isEmptyField: $model.isEmpty)
                     .padding(.vertical, 10)

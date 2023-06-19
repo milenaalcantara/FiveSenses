@@ -8,14 +8,31 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var sense: Sense
+    @State private var pulse: CGFloat = 1
+    @State private var isVisibleButton: Bool = false
+    @State var timeElapsed: Int = 0
+    @State private var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        GeometryReader { geometry in
+            VStack {
+                Spacer()
+                
+                Text("Vamos descobrir o que podemos realizar com nossos sentidos.")
+                    .multilineTextAlignment(.center)
+                
+                Spacer()
+                
+                NavigationLink {
+                    SenseView()
+                } label: {
+                    Text("Iniciar")
+                }
+            }
+            .frame(width: geometry.size.width, height: geometry.size.height)
         }
-        .padding()
+        .navigationBarBackButtonHidden()
     }
 }
 
