@@ -39,6 +39,9 @@ struct ContentView: View {
                 .task {
                     sense.senseOption = .vision
                 }
+                .task {
+                    sense.senseOption = .vision
+                }
             }
             .frame(width: geometry.size.width, height: geometry.size.height)
         }
