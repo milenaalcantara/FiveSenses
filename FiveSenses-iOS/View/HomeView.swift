@@ -11,7 +11,7 @@ struct HomeView: View {
     @EnvironmentObject var sense: Sense
     
     var body: some View {
-        GeometryReader { geometry in
+        NavigationView {
             VStack {
                 Spacer()
                 
@@ -28,14 +28,13 @@ struct HomeView: View {
                 }
                 .task {
                     sense.senseOption = .vision
+                    print("chamando senseView")
                 }
                 .frame(maxWidth: .infinity)
                 .frame(height: 54)
                 .background(.black).cornerRadius(12)
                 .padding()
             }
-            .frame(width: geometry.size.width, height: geometry.size.height)
-            
         }
         .navigationBarBackButtonHidden()
     }
