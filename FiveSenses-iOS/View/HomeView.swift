@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import CloudKit
 
 struct HomeView: View {
     @EnvironmentObject var sense: Sense
+    let container = CKContainer(identifier: "iCloud.locaisVisitados")
     
     var body: some View {
         NavigationView {
@@ -21,7 +23,7 @@ struct HomeView: View {
                 Spacer()
                 
                 NavigationLink {
-                    SenseView()
+                    SenseView(vm: PlaceListViewModel(container: container))
                 } label: {
                     Text("Iniciar")
                         .foregroundColor(.white)

@@ -12,7 +12,7 @@ struct ContentView: View {
 
     @EnvironmentObject var sense: Sense
     @AppStorage("hasSeenOnboarding") private var hasSeenOnboarding = false
-//    let container = CKContainer(identifier: "iCloud.mapaPlacesLocation")
+    let container = CKContainer(identifier: "iCloud.locaisVisitados")
 
     var body: some View {
         TabView {
@@ -20,7 +20,7 @@ struct ContentView: View {
                 .tabItem {
                     Label("Exercício", systemImage: "book")
                 }
-            MapaView() //vm: PlaceListViewModel(container: container)
+            MapaView(vm: PlaceListViewModel(container: container))
                 .tabItem {
                     Label("Mapa", systemImage: "map")
                 }

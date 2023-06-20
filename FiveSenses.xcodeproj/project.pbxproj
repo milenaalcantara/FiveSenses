@@ -9,19 +9,18 @@
 /* Begin PBXBuildFile section */
 		080E78952A39F74B0013B163 /* FaceidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080E78942A39F74B0013B163 /* FaceidView.swift */; };
 		080E78992A3A049F0013B163 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080E78982A3A049F0013B163 /* ContentView.swift */; };
+		080E78A12A3CA11C0013B163 /* OnboardingTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080E789E2A3CA11B0013B163 /* OnboardingTwo.swift */; };
+		080E78A22A3CA11C0013B163 /* OnboardingThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080E789F2A3CA11B0013B163 /* OnboardingThree.swift */; };
+		080E78A32A3CA11C0013B163 /* OnboardingOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080E78A02A3CA11C0013B163 /* OnboardingOne.swift */; };
 		451F73FF2A40D4DB0025CEC2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378ED522A2F765D00FE9584 /* ContentView.swift */; };
 		451F74002A40D54A0025CEC2 /* InputFieldsCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378ED882A3A003B00FE9584 /* InputFieldsCollection.swift */; };
 		451F74012A40D5690025CEC2 /* TextFieldCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378ED822A39E65500FE9584 /* TextFieldCustom.swift */; };
 		451F74022A40D5730025CEC2 /* TextFieldStyleCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378ED7E2A37620700FE9584 /* TextFieldStyleCustom.swift */; };
-		080E78A12A3CA11C0013B163 /* OnboardingTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080E789E2A3CA11B0013B163 /* OnboardingTwo.swift */; };
-		080E78A22A3CA11C0013B163 /* OnboardingThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080E789F2A3CA11B0013B163 /* OnboardingThree.swift */; };
-		080E78A32A3CA11C0013B163 /* OnboardingOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080E78A02A3CA11C0013B163 /* OnboardingOne.swift */; };
 		454A47D42A3CA0EE00C28341 /* MapaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454A47D32A3CA0EE00C28341 /* MapaView.swift */; };
 		454A47D62A3CA12800C28341 /* LocationDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454A47D52A3CA12800C28341 /* LocationDataManager.swift */; };
 		454A47D82A3CA16A00C28341 /* Double+IsAlmostEqual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454A47D72A3CA16A00C28341 /* Double+IsAlmostEqual.swift */; };
 		454A47DA2A3CA19600C28341 /* PlaceListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454A47D92A3CA19600C28341 /* PlaceListViewModel.swift */; };
 		454A47DC2A3CA1B100C28341 /* PlacesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454A47DB2A3CA1B100C28341 /* PlacesList.swift */; };
-		454A47E02A3CA5B700C28341 /* ColorSenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454A47DF2A3CA5B700C28341 /* ColorSenses.swift */; };
 		4584BBF02A41D3F9008B443F /* LocationDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454A47D52A3CA12800C28341 /* LocationDataManager.swift */; };
 		4584BBF12A41D402008B443F /* PlaceListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454A47D92A3CA19600C28341 /* PlaceListViewModel.swift */; };
 		4584BBF22A41D42C008B443F /* Double+IsAlmostEqual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454A47D72A3CA16A00C28341 /* Double+IsAlmostEqual.swift */; };
@@ -126,7 +125,6 @@
 		454A47D92A3CA19600C28341 /* PlaceListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceListViewModel.swift; sourceTree = "<group>"; };
 		454A47DB2A3CA1B100C28341 /* PlacesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesList.swift; sourceTree = "<group>"; };
 		454A47DD2A3CA2BA00C28341 /* FiveSenses-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "FiveSenses-iOS.entitlements"; sourceTree = "<group>"; };
-		454A47DF2A3CA5B700C28341 /* ColorSenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSenses.swift; sourceTree = "<group>"; };
 		4584BBF52A41DF1A008B443F /* FiveSenses-WatchOS Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "FiveSenses-WatchOS Watch App.entitlements"; sourceTree = "<group>"; };
 		4584BBF62A41E283008B443F /* FiveSenses-WatchOS-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "FiveSenses-WatchOS-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		F33D67162A3FE7AA0090F7C2 /* SenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenseView.swift; sourceTree = "<group>"; };
