@@ -16,9 +16,10 @@ struct FiveSenses_iOSApp: App {
 
     var body: some Scene {
         WindowGroup {
-            NavigationStack {
-                Onboarding_View()
-            }.environmentObject(sense)
+            ContentView().environmentObject(sense)
+//            NavigationStack {
+//                OnboardingView()
+//            }.environmentObject(sense)
         }
         
     }

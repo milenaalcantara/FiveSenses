@@ -8,8 +8,36 @@
 import SwiftUI
 
 struct HomeView: View {
+    @EnvironmentObject var sense: Sense
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        GeometryReader { geometry in
+            VStack {
+                Spacer()
+                
+                Text("Vamos descobrir o que podemos realizar com nossos sentidos.")
+                    .multilineTextAlignment(.center)
+                
+                Spacer()
+                
+                NavigationLink {
+                    SenseView()
+                } label: {
+                    Text("Iniciar")
+                        .foregroundColor(.white)
+                }
+                .task {
+                    sense.senseOption = .vision
+                }
+                .frame(maxWidth: .infinity)
+                .frame(height: 54)
+                .background(.black).cornerRadius(12)
+                .padding()
+            }
+            .frame(width: geometry.size.width, height: geometry.size.height)
+            
+        }
+        .navigationBarBackButtonHidden()
     }
 }
 

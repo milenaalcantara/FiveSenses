@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SenseView: View {
     @EnvironmentObject var sense: Sense
+    @State private var isFinished: Bool = false
 
     @State var title = "Próximo"
     
@@ -57,6 +58,8 @@ struct SenseView: View {
                     }
                 case .palate:
                     if !sense.areEmptyFields {
+                        isFinished = true
+//                        NavigationLink( destination: SenseView(), isActive: $isFinished)
                         return
                     }
                 }

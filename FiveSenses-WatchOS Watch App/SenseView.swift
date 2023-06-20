@@ -28,7 +28,7 @@ struct SenseView: View {
                             .foregroundColor(sense.color.opacity(0.9))
                             .scaleEffect(pulse)
                             .shadow(color: sense.color, radius: 14)
-                            .onAppear{
+                            .onAppear {
                                 withAnimation(.easeInOut.repeatForever(autoreverses: true).speed(0.25)) {
                                     pulse = 1.2 * pulse
                                 }
@@ -89,7 +89,6 @@ struct SenseView: View {
                                     .background(.clear)
                             }
                             .frame(width: 60, height: 60)
-
                         }
                         
                     }

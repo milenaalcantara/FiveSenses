@@ -29,6 +29,9 @@ struct ContentView: View {
                 } label: {
                     Text("Iniciar")
                 }
+                .task {
+                    sense.senseOption = .vision
+                }
             }
             .frame(width: geometry.size.width, height: geometry.size.height)
         }
