@@ -13,7 +13,7 @@ struct FinishView: View {
             ContentView()
         } label: {
             HStack {
-                Text("Refazer")
+                Text("Redo")
                 Image(systemName: "arrow.counterclockwise")
             }
         }

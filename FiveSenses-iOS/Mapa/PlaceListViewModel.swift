@@ -11,7 +11,7 @@ import CloudKit
 enum RecordType: String {
     case placeList = "PlacesList"
 }
-class PlaceListViewModel: ObservableObject {
+class PlaceListViewModel: ObservableObject{
 
     private var database: CKDatabase
     private var container: CKContainer

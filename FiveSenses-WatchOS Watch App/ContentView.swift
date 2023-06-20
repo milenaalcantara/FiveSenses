@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CloudKit
 
 struct ContentView: View {
     @EnvironmentObject var sense: Sense
@@ -13,21 +14,30 @@ struct ContentView: View {
     @State private var isVisibleButton: Bool = false
     @State var timeElapsed: Int = 0
     @State private var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    let container = CKContainer(identifier: "iCloud.mapaPlacesLocation")
     
     var body: some View {
         GeometryReader { geometry in
             VStack {
                 Spacer()
-                
-                Text("Vamos descobrir o que podemos realizar com nossos sentidos.")
+
+                Text("Let's find out what we can accomplish with our senses.")
                     .multilineTextAlignment(.center)
                 
                 Spacer()
                 
                 NavigationLink {
-                    SenseView()
+                    FiveSenses_WatchOS_Watch_App.SenseView(
+                        vm: PlaceListViewModel(
+                            container:
+                                 container
+                        )
+                    )
                 } label: {
-                    Text("Iniciar")
+                    Text("Start")
+                }
+                .task {
+                    sense.senseOption = .vision
                 }
             }
             .frame(width: geometry.size.width, height: geometry.size.height)
