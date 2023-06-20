@@ -46,37 +46,33 @@ struct MapaView: View {
     }
     var mapview: some View {
 
-        Map(coordinateRegion: $region, annotationItems: vm.places) {
-            MapAnnotation(coordinate: $0.placeList.coordinate) {
-                ForEach(vm.places, id: \.recordID) { place in
-                    ZStack {
-                        VStack(alignment: .trailing, spacing: -20) {
-                            Rectangle()
-                                .frame(width: 60, height: 40)
-                                .cornerRadius(10)
-                                .foregroundColor(ColorSenses.pinLocation)
-                            Rectangle()
-                                .frame(width: 25, height: 25)
-                                .rotationEffect(Angle(degrees: 30))
-                                .foregroundColor(ColorSenses.pinLocation)
-                                .padding(.trailing, 11)
-                        }
-
-                        HStack (alignment: .center ,spacing: 10){
-                            Image("PinImage")
-                                .frame(width: 5, height: 5)
-                            Text("\(place.numbersRepeated)") // colocar aqui o numero de vezes q se rep
-                                .foregroundColor(.black)
-                        }
-                        .padding()
+        Map(coordinateRegion: $region, annotationItems: vm.places) { place in
+            MapAnnotation(coordinate: place.placeList.coordinate) {
+                ZStack {
+                    VStack(alignment: .trailing, spacing: -20) {
+                        Rectangle()
+                            .frame(width: 60, height: 40)
+                            .cornerRadius(10)
+                            .foregroundColor(ColorSenses.pinLocation)
+                        Rectangle()
+                            .frame(width: 25, height: 25)
+                            .rotationEffect(Angle(degrees: 30))
+                            .foregroundColor(ColorSenses.pinLocation)
+                            .padding(.trailing, 11)
                     }
+
+                    HStack (alignment: .center ,spacing: 10){
+                        Image("PinImage")
+                            .frame(width: 5, height: 5)
+                        Text("\(place.numbersRepeated)") // colocar aqui o numero de vezes q se rep
+                            .foregroundColor(.black)
+                    }
+                    .padding()
                 }
             }
 
         }
         .onAppear {
-            latitude = locationDataManager.locationManager.location?.coordinate.latitude ?? 0.0
-            longitude = locationDataManager.locationManager.location?.coordinate.longitude ?? 0.0
             Task {
                 try await vm.populatePlaces()
             }

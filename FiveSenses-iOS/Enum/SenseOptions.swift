@@ -64,45 +64,45 @@ enum SenseOptions: Int, CaseIterable {
     var iosDescription: String {
         switch self {
         case .vision:
-            return "Digite 5 coisas que você está vendo"
+            return "Enter 5 things you are seeing"
         case .hearing:
-            return "Digite 4 sons que você está ouvindo"
+            return "Enter 4 sounds you are hearing"
         case .feel:
-            return "Digite 3 coisas que você pode pegar"
+            return "Enter 3 things you can take"
         case .smell:
-            return "Digite 2 aromas que você pode sentir"
+            return "Enter 2 scents you can smell"
         case .palate:
-            return "Digite 1 coisa que você pode provar"
+            return "Type 1 thing you can taste"
         }
     }
     
     var watchDescription: String {
         switch self {
         case .vision:
-            return "Pense em 5 imagens"
+            return "Think of 5 images"
         case .hearing:
-            return "Pense em 4 sons"
+            return "Think of 4 sounds"
         case .feel:
-            return "Toque em 3 objetos"
+            return "think of 3 objects"
         case .smell:
-            return "Pense em 2 aromas"
+            return "Think of 2 scents"
         case .palate:
-            return "Pense em 1 sabor"
+            return "Think of 1 flavor"
         }
     }
     
     var placeholder: String {
         switch self {
         case .vision:
-            return "O que você está vendo?"
+            return "What are you seeing?"
         case .hearing:
-            return "O que você está ouvindo?"
+            return "What are you listening?"
         case .feel:
-            return "O que você consegue tocar?"
+            return "What can you play?"
         case .smell:
-            return "Que aroma sente agora?"
+            return "What scent do you smell now?"
         case .palate:
-            return "Que sabor sentiria?"
+            return "What would it taste like?"
         }
     }
 }

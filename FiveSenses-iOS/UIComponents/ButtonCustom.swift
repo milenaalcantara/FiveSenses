@@ -31,8 +31,8 @@ struct ButtonCustom: View {
 
 struct ButtonCustom_Previews: PreviewProvider {
     static var previews: some View {
-        ButtonCustom(backgroundColor: .black, foregroundColor: .white, font: .body, title: "Próximo", height: 54) {
-            print("próximo")
+        ButtonCustom(backgroundColor: .black, foregroundColor: .white, font: .body, title: "Next", height: 54) {
+            print("Next")
         }
     }
 }

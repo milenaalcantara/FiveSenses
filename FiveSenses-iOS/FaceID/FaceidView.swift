@@ -10,8 +10,8 @@ import LocalAuthentication
 
 struct FaceidView: View {
     @State private var unlocked = false
-    @State private var text = "5SENSE BLOQUEADO"
-    @State private var subtext = "Use o FaceID para desbloquear o aplicativo."
+    @State private var text = "5SENSE LOCKED"
+    @State private var subtext = "Use FaceID to unlock the app."
     @State private var isShowingDetailView = false //Booleano
     @EnvironmentObject var sense: Sense
     
@@ -28,7 +28,7 @@ struct FaceidView: View {
                 Spacer()
                 Text(subtext)
                 Spacer()
-                Button("Usar o FaceID"){
+                Button("Use FaceID"){
                     authenticate()
                 }.buttonStyle(.borderedProminent)
                 NavigationLink(destination: ContentView().navigationBarBackButtonHidden(), isActive: $isShowingDetailView) { }
