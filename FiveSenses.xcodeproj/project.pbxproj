@@ -214,13 +214,11 @@
 		080E789D2A3CA0D90013B163 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				F37A893F2A4135CD00667784 /* Alternative */,
 				080E78A02A3CA11C0013B163 /* OnboardingOne.swift */,
 				080E789F2A3CA11B0013B163 /* OnboardingThree.swift */,
 				080E789E2A3CA11B0013B163 /* OnboardingTwo.swift */,
 				F33D672D2A40B5380090F7C2 /* OnboardingView.swift */,
-				F37A89392A4121E200667784 /* OnboardingItemView.swift */,
-				F37A893B2A41220B00667784 /* OnboardingItem.swift */,
-				F37A893D2A41256B00667784 /* Onboarding.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -399,6 +397,16 @@
 				F378ED932A3B516600FE9584 /* Sense.swift */,
 			);
 			path = Observables;
+			sourceTree = "<group>";
+		};
+		F37A893F2A4135CD00667784 /* Alternative */ = {
+			isa = PBXGroup;
+			children = (
+				F37A89392A4121E200667784 /* OnboardingItemView.swift */,
+				F37A893B2A41220B00667784 /* OnboardingItem.swift */,
+				F37A893D2A41256B00667784 /* Onboarding.swift */,
+			);
+			path = Alternative;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
