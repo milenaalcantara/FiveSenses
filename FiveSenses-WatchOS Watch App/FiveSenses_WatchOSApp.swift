@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct FiveSenses_WatchOS_Watch_AppApp: App {
+    @StateObject var sense: Sense = Sense()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+                ContentView()
+            }.environmentObject(sense)
         }
     }
 }

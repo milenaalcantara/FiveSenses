@@ -6,10 +6,32 @@
 //
 
 import SwiftUI
+import CloudKit
 
 struct ContentView: View {
+
+    @EnvironmentObject var sense: Sense
+    @AppStorage("hasSeenOnboarding") private var hasSeenOnboarding = false
+//    let container = CKContainer(identifier: "iCloud.mapaPlacesLocation")
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView {
+            HomeView()
+                .tabItem {
+                    Label("Exercício", systemImage: "book")
+                }
+            MapaView() //vm: PlaceListViewModel(container: container)
+                .tabItem {
+                    Label("Mapa", systemImage: "map")
+                }
+        }
+        .fullScreenCover(isPresented: .constant(!hasSeenOnboarding)) {
+            Onboarding() {
+                    hasSeenOnboarding = true
+                }
+                
+            
+        }
     }
 }
 
@@ -18,3 +40,5 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+

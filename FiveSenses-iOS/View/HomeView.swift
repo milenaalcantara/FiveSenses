@@ -1,18 +1,14 @@
 //
-//  ContentView.swift
-//  FiveSenses-WatchOS Watch App
+//  HomeView.swift
+//  FiveSenses-iOS
 //
-//  Created by Milena Lima de Alcântara on 06/06/23.
+//  Created by Milena Lima de Alcântara on 19/06/23.
 //
 
 import SwiftUI
 
-struct ContentView: View {
+struct HomeView: View {
     @EnvironmentObject var sense: Sense
-    @State private var pulse: CGFloat = 1
-    @State private var isVisibleButton: Bool = false
-    @State var timeElapsed: Int = 0
-    @State private var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
         GeometryReader { geometry in
@@ -28,19 +24,25 @@ struct ContentView: View {
                     SenseView()
                 } label: {
                     Text("Iniciar")
+                        .foregroundColor(.white)
                 }
                 .task {
                     sense.senseOption = .vision
                 }
+                .frame(maxWidth: .infinity)
+                .frame(height: 54)
+                .background(.black).cornerRadius(12)
+                .padding()
             }
             .frame(width: geometry.size.width, height: geometry.size.height)
+            
         }
         .navigationBarBackButtonHidden()
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        HomeView()
     }
 }
