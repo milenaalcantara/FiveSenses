@@ -28,7 +28,8 @@ struct MapaView: View {
     
     var body: some View {
         VStack {
-            Text("Em desenvolvimento...")
+            Text("Esta tela mostrará os locais em que precisou realizar o exercício e a frequência que precisou utilizá-lo. Em desenvolvimento...")
+                .font(.body)
 //            buttonSave
 //            location
         }

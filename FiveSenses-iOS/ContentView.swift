@@ -18,11 +18,11 @@ struct ContentView: View {
         TabView {
             HomeView()
                 .tabItem {
-                    Label("Main", systemImage: "star.fill")
+                    Label("Exercício", systemImage: "book")
                 }
             MapaView() //vm: PlaceListViewModel(container: container)
                 .tabItem {
-                    Label("Mapa", systemImage: "star")
+                    Label("Mapa", systemImage: "map")
                 }
         }
         .fullScreenCover(isPresented: .constant(!hasSeenOnboarding)) {
