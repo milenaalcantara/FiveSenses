@@ -32,15 +32,11 @@
 		F378ECC12A2F713300FE9584 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F378ECC02A2F713300FE9584 /* Assets.xcassets */; };
 		F378ECC42A2F713300FE9584 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F378ECC32A2F713300FE9584 /* Preview Assets.xcassets */; };
 		F378ECCE2A2F713300FE9584 /* FiveSenses_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378ECCD2A2F713300FE9584 /* FiveSenses_iOSTests.swift */; };
-		F378ECD82A2F713300FE9584 /* FiveSenses_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378ECD72A2F713300FE9584 /* FiveSenses_iOSUITests.swift */; };
-		F378ECDA2A2F713300FE9584 /* FiveSenses_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378ECD92A2F713300FE9584 /* FiveSenses_iOSUITestsLaunchTests.swift */; };
 		F378ED4C2A2F765D00FE9584 /* FiveSenses-WatchOS Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = F378ED4B2A2F765D00FE9584 /* FiveSenses-WatchOS Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F378ED512A2F765D00FE9584 /* FiveSenses_WatchOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378ED502A2F765D00FE9584 /* FiveSenses_WatchOSApp.swift */; };
 		F378ED552A2F765D00FE9584 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F378ED542A2F765D00FE9584 /* Assets.xcassets */; };
 		F378ED582A2F765D00FE9584 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F378ED572A2F765D00FE9584 /* Preview Assets.xcassets */; };
 		F378ED622A2F765E00FE9584 /* FiveSenses_WatchOS_Watch_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378ED612A2F765E00FE9584 /* FiveSenses_WatchOS_Watch_AppTests.swift */; };
-		F378ED6C2A2F765E00FE9584 /* FiveSenses_WatchOS_Watch_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378ED6B2A2F765E00FE9584 /* FiveSenses_WatchOS_Watch_AppUITests.swift */; };
-		F378ED6E2A2F765E00FE9584 /* FiveSenses_WatchOS_Watch_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378ED6D2A2F765E00FE9584 /* FiveSenses_WatchOS_Watch_AppUITestsLaunchTests.swift */; };
 		F378ED7F2A37620700FE9584 /* TextFieldStyleCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378ED7E2A37620700FE9584 /* TextFieldStyleCustom.swift */; };
 		F378ED832A39E65500FE9584 /* TextFieldCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378ED822A39E65500FE9584 /* TextFieldCustom.swift */; };
 		F378ED852A39F4D000FE9584 /* ButtonCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378ED842A39F4D000FE9584 /* ButtonCustom.swift */; };
@@ -133,8 +129,6 @@
 		F378ECC92A2F713300FE9584 /* FiveSenses-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FiveSenses-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F378ECCD2A2F713300FE9584 /* FiveSenses_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveSenses_iOSTests.swift; sourceTree = "<group>"; };
 		F378ECD32A2F713300FE9584 /* FiveSenses-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FiveSenses-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F378ECD72A2F713300FE9584 /* FiveSenses_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveSenses_iOSUITests.swift; sourceTree = "<group>"; };
-		F378ECD92A2F713300FE9584 /* FiveSenses_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveSenses_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F378ED462A2F765D00FE9584 /* FiveSenses-WatchOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FiveSenses-WatchOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F378ED4B2A2F765D00FE9584 /* FiveSenses-WatchOS Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FiveSenses-WatchOS Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F378ED502A2F765D00FE9584 /* FiveSenses_WatchOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveSenses_WatchOSApp.swift; sourceTree = "<group>"; };
@@ -144,8 +138,6 @@
 		F378ED5D2A2F765E00FE9584 /* FiveSenses-WatchOS Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FiveSenses-WatchOS Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F378ED612A2F765E00FE9584 /* FiveSenses_WatchOS_Watch_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveSenses_WatchOS_Watch_AppTests.swift; sourceTree = "<group>"; };
 		F378ED672A2F765E00FE9584 /* FiveSenses-WatchOS Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FiveSenses-WatchOS Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F378ED6B2A2F765E00FE9584 /* FiveSenses_WatchOS_Watch_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveSenses_WatchOS_Watch_AppUITests.swift; sourceTree = "<group>"; };
-		F378ED6D2A2F765E00FE9584 /* FiveSenses_WatchOS_Watch_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveSenses_WatchOS_Watch_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F378ED7E2A37620700FE9584 /* TextFieldStyleCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldStyleCustom.swift; sourceTree = "<group>"; };
 		F378ED822A39E65500FE9584 /* TextFieldCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCustom.swift; sourceTree = "<group>"; };
 		F378ED842A39F4D000FE9584 /* ButtonCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCustom.swift; sourceTree = "<group>"; };
@@ -246,10 +238,8 @@
 			children = (
 				F378ECBB2A2F713200FE9584 /* FiveSenses-iOS */,
 				F378ECCC2A2F713300FE9584 /* FiveSenses-iOSTests */,
-				F378ECD62A2F713300FE9584 /* FiveSenses-iOSUITests */,
 				F378ED4F2A2F765D00FE9584 /* FiveSenses-WatchOS Watch App */,
 				F378ED602A2F765E00FE9584 /* FiveSenses-WatchOS Watch AppTests */,
-				F378ED6A2A2F765E00FE9584 /* FiveSenses-WatchOS Watch AppUITests */,
 				F378ECBA2A2F713200FE9584 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -300,15 +290,6 @@
 			path = "FiveSenses-iOSTests";
 			sourceTree = "<group>";
 		};
-		F378ECD62A2F713300FE9584 /* FiveSenses-iOSUITests */ = {
-			isa = PBXGroup;
-			children = (
-				F378ECD72A2F713300FE9584 /* FiveSenses_iOSUITests.swift */,
-				F378ECD92A2F713300FE9584 /* FiveSenses_iOSUITestsLaunchTests.swift */,
-			);
-			path = "FiveSenses-iOSUITests";
-			sourceTree = "<group>";
-		};
 		F378ED4F2A2F765D00FE9584 /* FiveSenses-WatchOS Watch App */ = {
 			isa = PBXGroup;
 			children = (
@@ -337,15 +318,6 @@
 				F378ED612A2F765E00FE9584 /* FiveSenses_WatchOS_Watch_AppTests.swift */,
 			);
 			path = "FiveSenses-WatchOS Watch AppTests";
-			sourceTree = "<group>";
-		};
-		F378ED6A2A2F765E00FE9584 /* FiveSenses-WatchOS Watch AppUITests */ = {
-			isa = PBXGroup;
-			children = (
-				F378ED6B2A2F765E00FE9584 /* FiveSenses_WatchOS_Watch_AppUITests.swift */,
-				F378ED6D2A2F765E00FE9584 /* FiveSenses_WatchOS_Watch_AppUITestsLaunchTests.swift */,
-			);
-			path = "FiveSenses-WatchOS Watch AppUITests";
 			sourceTree = "<group>";
 		};
 		F378ED7C2A3761CD00FE9584 /* View */ = {
@@ -695,8 +667,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F378ECD82A2F713300FE9584 /* FiveSenses_iOSUITests.swift in Sources */,
-				F378ECDA2A2F713300FE9584 /* FiveSenses_iOSUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -734,8 +704,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F378ED6C2A2F765E00FE9584 /* FiveSenses_WatchOS_Watch_AppUITests.swift in Sources */,
-				F378ED6E2A2F765E00FE9584 /* FiveSenses_WatchOS_Watch_AppUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
