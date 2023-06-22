@@ -29,7 +29,6 @@ struct HomeView: View {
                     Text("Vamos descobrir o que podemos realizar com nossos sentidos.")
                         .multilineTextAlignment(.center)
                         .padding([.top, .leading, .trailing], 40)
-
                     NavigationLink {
 //                        SenseView(imageIcon: $imageIcon, vm: PlaceListViewModel(container: container))
                         SenseView(imageIcon: $imageIcon, vm: PlaceListViewModel(container: container))

@@ -18,13 +18,13 @@ struct BarProgressStyle: ProgressViewStyle {
         
         GeometryReader { geometry in
             RoundedRectangle(cornerRadius: 12.0)
-                .fill(sense.color.opacity(0.3))
+                .fill(Color("Color_rose").opacity(0.3))
                 .frame(
                     width: geometry.size.width
                 )
                 .overlay(alignment: .leading) {
                     RoundedRectangle(cornerRadius: 12.0)
-                        .fill(sense.color.opacity(0.9))
+                        .fill(Color("Color_rose").opacity(0.9))
                         .frame(width: geometry.size.width * progress * 0.89)
                 }
         }

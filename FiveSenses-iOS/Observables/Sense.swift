@@ -19,12 +19,8 @@ class Sense: ObservableObject {
         return senseOption.rawValue
     }
     
-    var color: Color {
-        return senseOption.color
-    }
-    
-    var icon: String {
-        senseOption.icon
+    var imageName: String {
+        senseOption.imageName
     }
     
     var progress: Double {

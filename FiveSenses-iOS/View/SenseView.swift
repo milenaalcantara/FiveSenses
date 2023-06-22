@@ -23,11 +23,6 @@ struct SenseView: View {
     @State var title = "Próximo"
     let container = CKContainer(identifier: "iCLoud.locaisVisitados")
     
-//    init(imageIcon: String, vm: PlaceListViewModel) {
-//        self.imageIcon = imageIcon
-//        _vm = StateObject(wrappedValue: vm)
-//    }
-    
     var body: some View {
         NavigationView {
             VStack(alignment: .center) {

@@ -50,9 +50,9 @@ struct SenseView: View {
     var animationCircle: some View {
 
         Circle()
-            .foregroundColor(sense.color.opacity(0.9))
+            .foregroundColor(Color("Color_rose").opacity(0.9))
             .scaleEffect(pulse)
-            .shadow(color: sense.color, radius: 14)
+            .shadow(color: Color("Color_rose"), radius: 14)
             .onAppear{
                 withAnimation(.easeInOut.repeatForever(autoreverses: true).speed(0.25)) {
                     pulse = 1.2 * pulse

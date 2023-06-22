@@ -14,23 +14,21 @@ struct HeaderSenseView: View {
     
     var body: some View {
         VStack {
-            ZStack {
-                Circle()
-                    .fill(sense.color.opacity(0.9))
-                    .frame(
-                        width: widthScreen * 0.2,
-                        height: widthScreen * 0.2
-                    )
-                
-                Image(systemName: sense.icon)
-                    .foregroundColor(.white.opacity(0.95))
-                    .font(.title)
+            HStack(alignment: .center) {
+                ForEach(SenseOptions.allCases, id: \.self) { sense in
+                    ImageCustom(item: .init(name: sense.imageName, width: widthScreen * 0.15))
+                }
+//                ImageCustom(item: .init(name: sense.imageName, width: widthScreen * 0.15))
+//                ImageCustom(item: .init(name: sense.imageName, width: widthScreen * 0.15))
+//                ImageCustom(item: .init(name: sense.imageName, width: widthScreen * 0.15))
+//                ImageCustom(item: .init(name: sense.imageName, width: widthScreen * 0.15))
+//                ImageCustom(item: .init(name: sense.imageName, width: widthScreen * 0.15))
             }
-            
+
             ProgressView(value: sense.progress)
                 .progressViewStyle(BarProgressStyle(height: 30))
                 .padding()
-            
+
             Text(sense.iosDescription)
                 .padding(.bottom, 20)
         }

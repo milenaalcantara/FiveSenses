@@ -16,33 +16,18 @@ enum SenseOptions: Int, CaseIterable {
     case smell = 2
     case palate = 1
     
-    var icon: String {
+    var imageName: String {
         switch self {
         case .vision:
-            return "eye"
+            return "vision"
         case .hearing:
-            return "ear"
+            return "hearing"
         case .feel:
-            return "hand.raised"
+            return "feel"
         case .smell:
-            return "nose"
+            return "smell"
         case .palate:
-            return "mouth"
-        }
-    }
-    
-    var color: Color {
-        switch self {
-        case .vision:
-            return .purple
-        case .hearing:
-            return .cyan
-        case .feel:
-            return .green
-        case .smell:
-            return .orange
-        case .palate:
-            return .red
+            return "palate"
         }
     }
     
