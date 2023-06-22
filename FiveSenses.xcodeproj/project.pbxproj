@@ -9,9 +9,6 @@
 /* Begin PBXBuildFile section */
 		080E78952A39F74B0013B163 /* FaceidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080E78942A39F74B0013B163 /* FaceidView.swift */; };
 		080E78992A3A049F0013B163 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080E78982A3A049F0013B163 /* ContentView.swift */; };
-		080E78A12A3CA11C0013B163 /* OnboardingTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080E789E2A3CA11B0013B163 /* OnboardingTwo.swift */; };
-		080E78A22A3CA11C0013B163 /* OnboardingThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080E789F2A3CA11B0013B163 /* OnboardingThree.swift */; };
-		080E78A32A3CA11C0013B163 /* OnboardingOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080E78A02A3CA11C0013B163 /* OnboardingOne.swift */; };
 		454A47D42A3CA0EE00C28341 /* MapaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454A47D32A3CA0EE00C28341 /* MapaView.swift */; };
 		454A47D62A3CA12800C28341 /* LocationDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454A47D52A3CA12800C28341 /* LocationDataManager.swift */; };
 		454A47D82A3CA16A00C28341 /* Double+IsAlmostEqual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454A47D72A3CA16A00C28341 /* Double+IsAlmostEqual.swift */; };
@@ -20,7 +17,6 @@
 		F33D67172A3FE7AA0090F7C2 /* SenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33D67162A3FE7AA0090F7C2 /* SenseView.swift */; };
 		F33D67192A3FED6F0090F7C2 /* FinishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33D67182A3FED6F0090F7C2 /* FinishView.swift */; };
 		F33D671B2A3FF3C40090F7C2 /* SenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33D671A2A3FF3C40090F7C2 /* SenseView.swift */; };
-		F33D672E2A40B5380090F7C2 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33D672D2A40B5380090F7C2 /* OnboardingView.swift */; };
 		F33D67332A40B5B60090F7C2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33D67322A40B5B60090F7C2 /* HomeView.swift */; };
 		F33D673A2A40BDA70090F7C2 /* ColorSenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33D67392A40BDA70090F7C2 /* ColorSenses.swift */; };
 		F378ECBD2A2F713200FE9584 /* FiveSenses_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378ECBC2A2F713200FE9584 /* FiveSenses_iOSApp.swift */; };
@@ -109,9 +105,6 @@
 /* Begin PBXFileReference section */
 		080E78942A39F74B0013B163 /* FaceidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceidView.swift; sourceTree = "<group>"; };
 		080E78982A3A049F0013B163 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		080E789E2A3CA11B0013B163 /* OnboardingTwo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingTwo.swift; sourceTree = "<group>"; };
-		080E789F2A3CA11B0013B163 /* OnboardingThree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingThree.swift; sourceTree = "<group>"; };
-		080E78A02A3CA11C0013B163 /* OnboardingOne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingOne.swift; sourceTree = "<group>"; };
 		454A47D32A3CA0EE00C28341 /* MapaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapaView.swift; sourceTree = "<group>"; };
 		454A47D52A3CA12800C28341 /* LocationDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDataManager.swift; sourceTree = "<group>"; };
 		454A47D72A3CA16A00C28341 /* Double+IsAlmostEqual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+IsAlmostEqual.swift"; sourceTree = "<group>"; };
@@ -121,7 +114,6 @@
 		F33D67162A3FE7AA0090F7C2 /* SenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenseView.swift; sourceTree = "<group>"; };
 		F33D67182A3FED6F0090F7C2 /* FinishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishView.swift; sourceTree = "<group>"; };
 		F33D671A2A3FF3C40090F7C2 /* SenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenseView.swift; sourceTree = "<group>"; };
-		F33D672D2A40B5380090F7C2 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		F33D67322A40B5B60090F7C2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = "FiveSenses-iOS/View/HomeView.swift"; sourceTree = SOURCE_ROOT; };
 		F33D67392A40BDA70090F7C2 /* ColorSenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSenses.swift; sourceTree = "<group>"; };
 		F378ECB92A2F713200FE9584 /* FiveSenses-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FiveSenses-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -215,10 +207,6 @@
 			isa = PBXGroup;
 			children = (
 				F37A893F2A4135CD00667784 /* Alternative */,
-				080E78A02A3CA11C0013B163 /* OnboardingOne.swift */,
-				080E789F2A3CA11B0013B163 /* OnboardingThree.swift */,
-				080E789E2A3CA11B0013B163 /* OnboardingTwo.swift */,
-				F33D672D2A40B5380090F7C2 /* OnboardingView.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -660,8 +648,6 @@
 				454A47D82A3CA16A00C28341 /* Double+IsAlmostEqual.swift in Sources */,
 				080E78952A39F74B0013B163 /* FaceidView.swift in Sources */,
 				F378ED7F2A37620700FE9584 /* TextFieldStyleCustom.swift in Sources */,
-				080E78A12A3CA11C0013B163 /* OnboardingTwo.swift in Sources */,
-				080E78A22A3CA11C0013B163 /* OnboardingThree.swift in Sources */,
 				F378ED832A39E65500FE9584 /* TextFieldCustom.swift in Sources */,
 				F37A893A2A4121E200667784 /* OnboardingItemView.swift in Sources */,
 				F37A893C2A41220B00667784 /* OnboardingItem.swift in Sources */,
@@ -679,10 +665,8 @@
 				080E78992A3A049F0013B163 /* ContentView.swift in Sources */,
 				F378ED8C2A3A5F8700FE9584 /* BarProgressStyle.swift in Sources */,
 				454A47D62A3CA12800C28341 /* LocationDataManager.swift in Sources */,
-				F33D672E2A40B5380090F7C2 /* OnboardingView.swift in Sources */,
 				F378ED8F2A3A768D00FE9584 /* SenseOptions.swift in Sources */,
 				F33D67332A40B5B60090F7C2 /* HomeView.swift in Sources */,
-				080E78A32A3CA11C0013B163 /* OnboardingOne.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -818,7 +802,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_ASSET_PATHS = "\"FiveSenses-iOS/Preview Content\"";
-				DEVELOPMENT_TEAM = 2P65JA735T;
+				DEVELOPMENT_TEAM = TQJ8B2DX6J;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -853,7 +837,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.milenaalcantara.FiveSenses-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = com.milenaalcantara.FiveSenses;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -904,7 +888,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"FiveSenses-iOS/Preview Content\"";
-				DEVELOPMENT_TEAM = 2P65JA735T;
+				DEVELOPMENT_TEAM = TQJ8B2DX6J;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -932,7 +916,7 @@
 				MARKETING_VERSION = 1.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.milenaalcantara.FiveSenses-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = com.milenaalcantara.FiveSenses;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;

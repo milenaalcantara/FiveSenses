@@ -11,6 +11,7 @@ struct SenseView: View {
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var sense: Sense
     @State private var isFinished: Bool = false
+    @Binding var imageIcon: String
 
     @State var title = "Próximo"
     
@@ -60,7 +61,9 @@ struct SenseView: View {
                         }
                     case .palate:
                         if !sense.areEmptyFields {
+                            guard let nextIconName = getNextIconName() else { return }
                             isFinished = true
+                            imageIcon = nextIconName
                             dismiss()
                             return
                         }
@@ -72,10 +75,18 @@ struct SenseView: View {
             }
         }
     }
-}
 
-struct SenseView_Previews: PreviewProvider {
-    static var previews: some View {
-        SenseView()
+    private func getNextIconName() -> String? {
+        guard let lastImageIconStringCharacter = imageIcon.map({String($0)}).last else { return nil }
+        guard let lastImageIndex = Int(lastImageIconStringCharacter) else { return nil }
+        let nextImageIconIndex = lastImageIndex < 4 ? lastImageIndex + 1 : 4
+
+        return "face0\(nextImageIconIndex)"
     }
 }
+
+//struct SenseView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SenseView()
+//    }
+//}
