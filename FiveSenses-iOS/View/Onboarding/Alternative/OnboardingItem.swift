@@ -12,4 +12,6 @@ struct OnboardingItem: Identifiable {
     var illustration: String?
     var title: String?
     var content: String?
+    var height: CGFloat = 250
+    var width: CGFloat = 250
 }

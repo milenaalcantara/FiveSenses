@@ -24,7 +24,7 @@ class Sense: ObservableObject {
     }
     
     var icon: String {
-        return senseOption.icon
+        senseOption.icon
     }
     
     var progress: Double {

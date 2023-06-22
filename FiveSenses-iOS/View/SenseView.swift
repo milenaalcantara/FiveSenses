@@ -13,6 +13,7 @@ struct SenseView: View {
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var sense: Sense
     @State private var isFinished: Bool = false
+    @Binding var imageIcon: String
     @StateObject var locationDataManager = LocationDataManager()
     @StateObject private var vm: PlaceListViewModel
 
@@ -72,7 +73,9 @@ struct SenseView: View {
                         }
                     case .palate:
                         if !sense.areEmptyFields {
+                            guard let nextIconName = getNextIconName() else { return }
                             isFinished = true
+                            imageIcon = nextIconName
                             return
                         }
                     }
@@ -123,12 +126,24 @@ struct SenseView: View {
             $0.latitude.isAlmostEqual(to: latitudePlace, tolerance: 0.00001) &&
             $0.longitude.isAlmostEqual(to: longitudePlace, tolerance: 0.00001)
         }
-
-        if let place = filtered.first {
-            return place
-        } else {
-            return nil
-        }
+    }
+        
+    private func getNextIconName() -> String? {
+        guard let lastImageIconStringCharacter = imageIcon.map({String($0)}).last else { return nil }
+        guard let lastImageIndex = Int(lastImageIconStringCharacter) else { return nil }
+        let nextImageIconIndex = lastImageIndex < 4 ? lastImageIndex + 1 : 4
     }
 }
+
+struct SenseView_Previews: PreviewProvider {
+    static var previews: some View {
+        SenseView()
+    }
+}
+
+//struct SenseView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SenseView()
+//    }
+//}
 

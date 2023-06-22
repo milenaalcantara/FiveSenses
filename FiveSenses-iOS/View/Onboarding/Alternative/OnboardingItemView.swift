@@ -30,7 +30,7 @@ struct OnboardingItemView: View {
             Image(item.illustration ?? "")
                 .resizable()
                 .scaledToFit()
-                .frame(width: 250, height: 250)
+                .frame(width: item.width, height: item.height)
             
             Text(item.title ?? "")
                 .font(.system(size: 25, weight: .bold, design: .rounded))

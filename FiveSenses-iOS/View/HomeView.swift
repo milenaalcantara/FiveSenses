@@ -10,35 +10,52 @@ import CloudKit
 
 struct HomeView: View {
     @EnvironmentObject var sense: Sense
+    @AppStorage("imageIcon") var imageIcon = "face01"
+
+    //funcao pra ver se é o dia atual, e resetar a face para a inicial
     let container = CKContainer(identifier: "iCloud.locaisVisitados")
-    
+
     var body: some View {
         NavigationView {
             VStack {
+                Image(imageIcon)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 200, height: 200)
+                    .padding(.top, 90)
+
                 Spacer()
-                
-                Text("Vamos descobrir o que podemos realizar com nossos sentidos.")
-                    .multilineTextAlignment(.center)
-                
-                Spacer()
-                
-                NavigationLink {
-                    SenseView(vm: PlaceListViewModel(container: container))
-                } label: {
-                    Text("Iniciar")
-                        .foregroundColor(.white)
+                VStack {
+                    Text("Vamos descobrir o que podemos realizar com nossos sentidos.")
+                        .multilineTextAlignment(.center)
+                        .padding([.top, .leading, .trailing], 40)
+
+                    NavigationLink {
+                        SenseView(imageIcon: $imageIconvm, vm: PlaceListViewModel(container: container))
+                    } label: {
+                        Text("Iniciar Exercício")
+                            .foregroundColor(.white)
+                    }
+                    .task {
+                        sense.senseOption = .vision
+                        print("chamando senseView")
+                    }
+                    .frame(maxWidth: 280)
+                    .frame(height: 30)
+                    .background(.black).cornerRadius(12)
+                    .padding([.bottom, .leading, .trailing], 40)
+//                    .padding(.bottom, 100)
                 }
-                .task {
-                    sense.senseOption = .vision
-                    print("chamando senseView")
+                .background {
+                    RoundedRectangle(cornerRadius: 20)
+                        .fill(.red)
+                        .padding(10)
                 }
-                .frame(maxWidth: .infinity)
-                .frame(height: 54)
-                .background(.black).cornerRadius(12)
-                .padding()
-            }
-        }
-        .navigationBarBackButtonHidden()
+
+
+
+            }.navigationTitle("Bem-vindo, usuário")
+        }.navigationBarBackButtonHidden()
     }
 }
 
