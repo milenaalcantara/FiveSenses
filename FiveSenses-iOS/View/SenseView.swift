@@ -38,59 +38,60 @@ struct SenseView: View {
                 Spacer()
                 
                 ButtonCustom(
-                    backgroundColor: .black,
-                    foregroundColor: .white,
-                    font: .body,
-                    title: title,
-                    height: 54
-                ) {
-                    switch sense.senseOption {
-                    case .vision:
-                        if !sense.areEmptyFields {
-                            sense.senseOption = .hearing
-                            sense.isChangedSense = true
-                            return
+                    item: .init(
+                        title: title,
+                        font: .body,
+                        backgroundColor: .black,
+                        foregroundColor: .white,
+                        height: 54
+                    ) {
+                        switch sense.senseOption {
+                        case .vision:
+                            if !sense.areEmptyFields {
+                                sense.senseOption = .hearing
+                                sense.isChangedSense = true
+                                return
+                            }
+                        case .hearing:
+                            if !sense.areEmptyFields {
+                                sense.senseOption = .feel
+                                sense.isChangedSense = true
+                                return
+                            }
+                        case .feel:
+                            if !sense.areEmptyFields {
+                                sense.senseOption = .smell
+                                sense.isChangedSense = true
+                                return
+                            }
+                        case .smell:
+                            if !sense.areEmptyFields {
+                                sense.senseOption = .palate
+                                sense.isChangedSense = true
+                                title = "Finished"
+                                return
+                            }
+                        case .palate:
+                            if !sense.areEmptyFields {
+                                isFinished = true
+                                return
+                            }
                         }
-                    case .hearing:
-                        if !sense.areEmptyFields {
-                            sense.senseOption = .feel
-                            sense.isChangedSense = true
-                            return
-                        }
-                    case .feel:
-                        if !sense.areEmptyFields {
-                            sense.senseOption = .smell
-                            sense.isChangedSense = true
-                            return
-                        }
-                    case .smell:
-                        if !sense.areEmptyFields {
-                            sense.senseOption = .palate
-                            sense.isChangedSense = true
-                            title = "Finished"
-                            return
-                        }
-                    case .palate:
-                        if !sense.areEmptyFields {
-                            isFinished = true
-                            return
-                        }
-                    }
-                }
+                    })
                 .alert(Text("Salvar"), isPresented: $isFinished, actions: {
-                            Button {
-                                buttonSave()
-                                dismiss()
-                            } label: {
-                                Text("Salvar")
-                            }
+                        Button {
+                            buttonSave()
+                            dismiss()
+                        } label: {
+                            Text("Salvar")
+                        }
 
-                            Button("Cancel", role: .cancel) {
+                        Button("Cancel", role: .cancel) {
 
-                            }
+                        }
 
-                        }, message: {
-                            Text("Deseja salvar a frequência que você realizou o exercício?")
+                    }, message: {
+                        Text("Deseja salvar a frequência que você realizou o exercício?")
                 })
                 .padding(.horizontal)
         

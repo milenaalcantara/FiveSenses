@@ -8,7 +8,6 @@
 import Foundation
 import SwiftUI
 
-
 enum SenseOptions: Int, CaseIterable {
     case vision = 5
     case hearing = 4
@@ -83,7 +82,7 @@ enum SenseOptions: Int, CaseIterable {
         case .hearing:
             return "Think of 4 sounds"
         case .feel:
-            return "think of 3 objects"
+            return "Think of 3 objects"
         case .smell:
             return "Think of 2 scents"
         case .palate:

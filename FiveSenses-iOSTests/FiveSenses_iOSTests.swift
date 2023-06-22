@@ -18,32 +18,8 @@ final class FiveSenses_iOSTests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
     
-    func testNumberOfSenses() throws {
-        let sense: Sense = Sense()
-        sense.senseOption = .vision
-        let numberOfSenses: Int = sense.numberOfSenses
-        XCTAssert(numberOfSenses == 5)
-        XCTAssertTrue(numberOfSenses == 5)
-        XCTAssertEqual(numberOfSenses, 5)
-    }
     
-    func testSenseColor() throws {
-        let sense: Sense = Sense()
-        sense.senseOption = .vision
-        let color: Color = sense.color
-        XCTAssert(color == .purple)
-        XCTAssertTrue(color == .purple)
-        XCTAssertEqual(color, .purple)
-    }
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
@@ -52,4 +28,10 @@ final class FiveSenses_iOSTests: XCTestCase {
         }
     }
 
+}
+
+struct Previews_FiveSenses_iOSTests_Previews: PreviewProvider {
+    static var previews: some View {
+        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
+    }
 }

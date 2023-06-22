@@ -7,32 +7,41 @@
 
 import SwiftUI
 
+struct ButtonItem {
+    let title: String?
+    let font: Font?
+    let backgroundColor: Color?
+    let foregroundColor: Color?
+    let height: CGFloat?
+    let handle: (() -> Void)?
+}
+
 struct ButtonCustom: View {
-    let backgroundColor: Color
-    let foregroundColor: Color
-    let font: Font
-    let title: String
-    let height: CGFloat
-    let action: () -> Void
+    let item: ButtonItem
     
     var body: some View {
         Button() {
-            action()
+            (item.handle ?? {})()
         } label: {
-            Text(title).font(font)
+            Text(item.title ??  "").font(item.font)
         }
         .frame(maxWidth: .infinity)
-        .frame(height: height)
-        .background(backgroundColor)
-        .foregroundColor(foregroundColor)
+        .frame(height: item.height)
+        .background(item.backgroundColor)
+        .foregroundColor(item.foregroundColor)
         .cornerRadius(12)
     }
 }
 
 struct ButtonCustom_Previews: PreviewProvider {
     static var previews: some View {
-        ButtonCustom(backgroundColor: .black, foregroundColor: .white, font: .body, title: "Next", height: 54) {
-            print("Next")
-        }
+        ButtonCustom(item: .init(
+            title: "Next",
+            font: .body,
+            backgroundColor: .black,
+            foregroundColor: .white,
+            height: 54,
+            handle: {}
+        ))
     }
 }

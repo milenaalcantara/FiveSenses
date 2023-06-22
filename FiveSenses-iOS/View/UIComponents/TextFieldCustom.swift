@@ -10,27 +10,25 @@ import SwiftUI
 struct TextFieldCustom: View {
     @EnvironmentObject var sense: Sense
     
+    @State var placeholder = ""
     @Binding var isEmptyField: Bool
     
-    @State var value: String = ""
-    @State var placeholder = ""
+    @StateObject var viewModel = TextFieldCustomViewModel()
     
     var body: some View {
         VStack {
-            TextField(placeholder , text: $value)
+            TextField(placeholder , text: $viewModel.value)
                 .onChange(of: sense.isChangedSense) {
                     if $0 {
-                        value = ""
+                        viewModel.value = ""
                     }
                 }
-                .onChange(of: value, perform: { newValue in
-                    if value.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-                        value = ""
-                        isEmptyField = true
-                    } else {
-                        isEmptyField = false
+                .onChange(
+                    of: viewModel.value,
+                    perform: {
+                        isEmptyField = viewModel.valueChanged(newValue: $0)
                     }
-                })
+                )
                 .textFieldStyle(TextFieldStyleCustom())
         }
         .onAppear {

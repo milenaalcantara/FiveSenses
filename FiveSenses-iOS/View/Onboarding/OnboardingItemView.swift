@@ -43,17 +43,17 @@ struct OnboardingItemView: View {
                 .padding(.horizontal, 20)
                 .padding(.bottom, 30)
             
-            ButtonCustom(
+            ButtonCustom(item: .init(
+                title: "Começar",
+                font: .system(size: 17, weight: .medium, design: .rounded),
                 backgroundColor: .black,
                 foregroundColor: .white,
-                font: .system(size: 17, weight: .medium, design: .rounded),
-                title: "Começar",
                 height: 54,
-                action: {
+                handle: {
                     presentationMode.wrappedValue.dismiss()
                     handler()
                 }
-            )
+            ))
             .padding(.horizontal)
             .padding(.vertical, 10)
             .padding(.top, 50)

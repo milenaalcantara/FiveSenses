@@ -1,0 +1,37 @@
+{
+  "configurations" : [
+    {
+      "id" : "4051BCB3-A3C6-48A9-811D-AC2CDC66C0E3",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:FiveSenses.xcodeproj",
+      "identifier" : "F378ECB82A2F713200FE9584",
+      "name" : "FiveSenses-iOS"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:FiveSenses.xcodeproj",
+        "identifier" : "F378ECC82A2F713300FE9584",
+        "name" : "FiveSenses-iOSTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:FiveSenses.xcodeproj",
+        "identifier" : "F378ECD22A2F713300FE9584",
+        "name" : "FiveSenses-iOSUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
