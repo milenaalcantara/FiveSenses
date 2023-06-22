@@ -26,7 +26,8 @@ struct TextFieldCustom: View {
                 .onChange(of: value, perform: { newValue in
                     if value.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
                         value = ""
-                        isEmptyField = true
+                        // MARK: quando ta true crasha o app rever **
+//                        isEmptyField = true
                     } else {
                         isEmptyField = false
                     }

@@ -21,16 +21,15 @@ struct HomeView: View {
                 Image(imageIcon)
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 200, height: 200)
+                    .frame(width: 250, height: 250)
                     .padding(.top, 90)
 
                 Spacer()
                 VStack {
-                    Text("Vamos descobrir o que podemos realizar com nossos sentidos.")
-                        .multilineTextAlignment(.center)
+                    Text("5 Sense: Vamos descobrir o que podemos realizar com nossos sentidos.")
+                        .multilineTextAlignment(.leading)
                         .padding([.top, .leading, .trailing], 40)
                     NavigationLink {
-//                        SenseView(imageIcon: $imageIcon, vm: PlaceListViewModel(container: container))
                         SenseView(imageIcon: $imageIcon, vm: PlaceListViewModel(container: container))
                     } label: {
                         Text("Iniciar Exercício")
@@ -44,14 +43,12 @@ struct HomeView: View {
                     .frame(height: 30)
                     .background(.black).cornerRadius(12)
                     .padding([.bottom, .leading, .trailing], 40)
-//                    .padding(.bottom, 100)
                 }
                 .background {
                     RoundedRectangle(cornerRadius: 20)
-                        .fill(.red)
+                        .fill(Color("Color_cinza"))
                         .padding(10)
-                }
-
+                }.padding(.bottom, 60)
 
 
             }.navigationTitle("Bem-vindo, usuário")
