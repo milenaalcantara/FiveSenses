@@ -13,16 +13,16 @@ import CloudKit
 struct SenseView: View {
     @EnvironmentObject var sense: Sense
 
-    @StateObject var locationDataManager = LocationDataManager()
-    @StateObject var vm: PlaceListViewModel
+//    @StateObject var locationDataManager = LocationDataManager()
+//    @StateObject var vm: PlaceListViewModel
 
     @State private var pulse: CGFloat = 1
     @State private var isVisibleButton: Bool = false
     @State private var isFinished: Bool = false
     @State var timeElapsed: Int = 0
     @State private var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    @State var latitude = CLLocationDegrees()
-    @State var longitude = CLLocationDegrees()
+//    @State var latitude = CLLocationDegrees()
+//    @State var longitude = CLLocationDegrees()
     
     var body: some View {
         GeometryReader { geometry in
@@ -63,13 +63,14 @@ struct SenseView: View {
                     if timeElapsed > 1 {
                         isVisibleButton.toggle()
                     } else {
-                        buttonSave()
+//                        buttonSave()
                         isFinished = true
                     }
                 }
                 timeElapsed = 1 + timeElapsed
             }
     }
+    
     var buttonTypes: some View {
         Button {
             switch sense.senseOption {
@@ -122,38 +123,38 @@ struct SenseView: View {
             .font(.footnote)
     }
 
-    func buttonSave() {
+//    func buttonSave() {
+//
+//        latitude = locationDataManager.locationManager.location?.coordinate.latitude ?? 0.0
+//        longitude = locationDataManager.locationManager.location?.coordinate.longitude ?? 0.0
+//
+//        var place = verifyList(latitude, longitude)
+//        /* se ja existir um lugar com aquela latidude altera o numero de repeticoes e
+//         salva o novo local
+//         */
+//        if place != nil {
+//            place?.placeList.numbersRepeated += 1
+//            vm.saveItem(place!.placeList)
+//
+//        } else {
+//            vm.saveNewItem(name: "aqui", numbersRepeated: 1, latitude: latitude, longitude: longitude)
+//
+//        }
+//    }
 
-        latitude = locationDataManager.locationManager.location?.coordinate.latitude ?? 0.0
-        longitude = locationDataManager.locationManager.location?.coordinate.longitude ?? 0.0
-
-        var place = verifyList(latitude, longitude)
-        /* se ja existir um lugar com aquela latidude altera o numero de repeticoes e
-         salva o novo local
-         */
-        if place != nil {
-            place?.placeList.numbersRepeated += 1
-            vm.saveItem(place!.placeList)
-
-        } else {
-            vm.saveNewItem(name: "aqui", numbersRepeated: 1, latitude: latitude, longitude: longitude)
-
-        }
-    }
-
-    func verifyList(_ latitudePlace: Double, _ longitudePlace: Double) -> PlaceViewModel? {
-        let collection = vm.places
-        let filtered = collection.filter {
-            $0.latitude.isAlmostEqual(to: latitudePlace, tolerance: 0.00001) &&
-            $0.longitude.isAlmostEqual(to: longitudePlace, tolerance: 0.00001)
-        }
-
-        if let place = filtered.first {
-            return place
-        } else {
-            return nil
-        }
-    }
+//    func verifyList(_ latitudePlace: Double, _ longitudePlace: Double) -> PlaceViewModel? {
+//        let collection = vm.places
+//        let filtered = collection.filter {
+//            $0.latitude.isAlmostEqual(to: latitudePlace, tolerance: 0.00001) &&
+//            $0.longitude.isAlmostEqual(to: longitudePlace, tolerance: 0.00001)
+//        }
+//
+//        if let place = filtered.first {
+//            return place
+//        } else {
+//            return nil
+//        }
+//    }
 }
 
 extension View {
