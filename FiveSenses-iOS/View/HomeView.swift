@@ -31,7 +31,8 @@ struct HomeView: View {
                         .padding([.top, .leading, .trailing], 40)
 
                     NavigationLink {
-                        SenseView(imageIcon: $imageIconvm, vm: PlaceListViewModel(container: container))
+//                        SenseView(imageIcon: $imageIcon, vm: PlaceListViewModel(container: container))
+                        SenseView(imageIcon: $imageIcon, vm: PlaceListViewModel(container: container))
                     } label: {
                         Text("Iniciar Exercício")
                             .foregroundColor(.white)

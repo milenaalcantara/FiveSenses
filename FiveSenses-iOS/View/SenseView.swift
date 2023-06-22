@@ -15,7 +15,7 @@ struct SenseView: View {
     @State private var isFinished: Bool = false
     @Binding var imageIcon: String
     @StateObject var locationDataManager = LocationDataManager()
-    @StateObject private var vm: PlaceListViewModel
+    @StateObject var vm: PlaceListViewModel
 
     @State var latitude = CLLocationDegrees()
     @State var longitude = CLLocationDegrees()
@@ -23,9 +23,10 @@ struct SenseView: View {
     @State var title = "Próximo"
     let container = CKContainer(identifier: "iCLoud.locaisVisitados")
     
-    init(vm: PlaceListViewModel) {
-        _vm = StateObject(wrappedValue: vm)
-    }
+//    init(imageIcon: String, vm: PlaceListViewModel) {
+//        self.imageIcon = imageIcon
+//        _vm = StateObject(wrappedValue: vm)
+//    }
     
     var body: some View {
         NavigationView {
@@ -96,7 +97,7 @@ struct SenseView: View {
                             Text("Deseja salvar a frequência que você realizou o exercício?")
                 })
                 .padding(.horizontal)
-        
+//
             }
         }
     }
@@ -126,20 +127,27 @@ struct SenseView: View {
             $0.latitude.isAlmostEqual(to: latitudePlace, tolerance: 0.00001) &&
             $0.longitude.isAlmostEqual(to: longitudePlace, tolerance: 0.00001)
         }
+
+        if let place = filtered.first {
+            return place
+        } else {
+            return nil
+        }
     }
         
     private func getNextIconName() -> String? {
         guard let lastImageIconStringCharacter = imageIcon.map({String($0)}).last else { return nil }
         guard let lastImageIndex = Int(lastImageIconStringCharacter) else { return nil }
         let nextImageIconIndex = lastImageIndex < 4 ? lastImageIndex + 1 : 4
+        return "face0\(nextImageIconIndex)"
     }
 }
 
-struct SenseView_Previews: PreviewProvider {
-    static var previews: some View {
-        SenseView()
-    }
-}
+//struct SenseView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SenseView()
+//    }
+//}
 
 //struct SenseView_Previews: PreviewProvider {
 //    static var previews: some View {
