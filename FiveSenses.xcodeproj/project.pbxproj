@@ -23,6 +23,7 @@
 		4584BBF12A41D402008B443F /* PlaceListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454A47D92A3CA19600C28341 /* PlaceListViewModel.swift */; };
 		4584BBF22A41D42C008B443F /* Double+IsAlmostEqual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454A47D72A3CA16A00C28341 /* Double+IsAlmostEqual.swift */; };
 		4584BBF32A41DD03008B443F /* PlacesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454A47DB2A3CA1B100C28341 /* PlacesList.swift */; };
+		F335C4C72A45D45000BE19BD /* NextSenseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F335C4C62A45D45000BE19BD /* NextSenseButton.swift */; };
 		F33D67172A3FE7AA0090F7C2 /* SenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33D67162A3FE7AA0090F7C2 /* SenseView.swift */; };
 		F33D67192A3FED6F0090F7C2 /* FinishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33D67182A3FED6F0090F7C2 /* FinishView.swift */; };
 		F33D671B2A3FF3C40090F7C2 /* SenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33D671A2A3FF3C40090F7C2 /* SenseView.swift */; };
@@ -117,6 +118,7 @@
 		454A47D92A3CA19600C28341 /* PlaceListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceListViewModel.swift; sourceTree = "<group>"; };
 		454A47DB2A3CA1B100C28341 /* PlacesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesList.swift; sourceTree = "<group>"; };
 		454A47DD2A3CA2BA00C28341 /* FiveSenses-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "FiveSenses-iOS.entitlements"; sourceTree = "<group>"; };
+		F335C4C62A45D45000BE19BD /* NextSenseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextSenseButton.swift; sourceTree = "<group>"; };
 		F33D67162A3FE7AA0090F7C2 /* SenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenseView.swift; sourceTree = "<group>"; };
 		F33D67182A3FED6F0090F7C2 /* FinishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishView.swift; sourceTree = "<group>"; };
 		F33D671A2A3FF3C40090F7C2 /* SenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenseView.swift; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				F36219B22A450C8A003802B7 /* ImageCustom.swift */,
+				F335C4C62A45D45000BE19BD /* NextSenseButton.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -685,6 +688,7 @@
 				4584BBF32A41DD03008B443F /* PlacesList.swift in Sources */,
 				451F74002A40D54A0025CEC2 /* InputFieldsCollection.swift in Sources */,
 				F378ED952A3B518700FE9584 /* Sense.swift in Sources */,
+				F335C4C72A45D45000BE19BD /* NextSenseButton.swift in Sources */,
 				F378ED972A3B51AA00FE9584 /* BarProgressStyle.swift in Sources */,
 				F33D67172A3FE7AA0090F7C2 /* SenseView.swift in Sources */,
 				F378ED962A3B518F00FE9584 /* SenseOptions.swift in Sources */,

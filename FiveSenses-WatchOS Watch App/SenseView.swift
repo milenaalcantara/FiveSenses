@@ -37,28 +37,27 @@ struct SenseView: View {
                 
                 ImageCustomView()
                     .frame(width: 36)
+                
+                Spacer(minLength: 20)
+                
+                NextSenseButton(isEnabledButton: $isEnabledButton, isFinished: $isFinished, timeElapsed: $timeElapsed)
                     .onReceive(timer) { _ in
-                        if timeElapsed == sense.numberOfSenses {
+                        if timeElapsed == (sense.numberOfSenses * 2) {
                             if timeElapsed > 1 {
                                 withAnimation {
                                     isEnabledButton.toggle()
                                 }
                             } else {
-                                buttonSave()
-                                isFinished = true
+                                saveLocation()
                             }
                         }
                         timeElapsed = 1 + timeElapsed
                     }
-                
-                Spacer(minLength: 20)
-                
-                NextSenseButton
             }
         }
         .alert(Text("Salvar"), isPresented: $isFinished, actions: {
                     Button {
-                        buttonSave()
+                        saveLocation()
                         dismiss()
                     } label: {
                         Text("Salvar")
@@ -73,55 +72,13 @@ struct SenseView: View {
         })
     }
     
-    var NextSenseButton: some View {
-        Button {
-            switch sense.senseOption {
-            case .vision:
-                isEnabledButton.toggle()
-                sense.senseOption = .hearing
-                timeElapsed = 0
-                return
-            case .hearing:
-                isEnabledButton.toggle()
-                sense.senseOption = .feel
-                timeElapsed = 0
-                return
-            case .feel:
-                isEnabledButton.toggle()
-                sense.senseOption = .smell
-                timeElapsed = 0
-                return
-            case .smell:
-                isEnabledButton.toggle()
-                sense.senseOption = .palate
-                timeElapsed = 0
-                return
-            case .palate:
-                dismiss()
-                isFinished = true
-                return
-            }
-        } label: {
-            Text(isFinished ? "Finalizar" : "Próximo")
-                .font(.body)
-                .foregroundColor(.black )
-                
-        }
-        .frame(height: 36)
-        .background(.white )
-        .clipShape(RoundedRectangle(cornerRadius: 12))
-        .disabled(isEnabledButton)
-        .padding(.horizontal, 20)
-        .opacity(isEnabledButton ? 0 : 1)
-    }
-    
     var textSense: some View {
         Text(sense.watchDescription)
             .font(.footnote)
             .padding()
     }
 
-    func buttonSave() {
+    func saveLocation() {
 
         latitude = locationDataManager.locationManager.location?.coordinate.latitude ?? 0.0
         longitude = locationDataManager.locationManager.location?.coordinate.longitude ?? 0.0
