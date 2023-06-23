@@ -66,13 +66,13 @@ enum SenseOptions: Int, CaseIterable {
         case .vision:
             return "Think of 5 things you are selling"
         case .hearing:
-            return "Think of 4 sounds"
+            return "Think of 4 things you are hearing"
         case .feel:
-            return "think of 3 objects"
+            return "Think of 3 things you can touch"
         case .smell:
-            return "Think of 2 scents"
+            return "Think of 2 smells you can smell"
         case .palate:
-            return "Think of 1 flavor"
+            return "Think of 1 thing you can prove"
         }
     }
     

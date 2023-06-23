@@ -229,6 +229,14 @@
 			path = Mapa;
 			sourceTree = "<group>";
 		};
+		F335C4C32A45D0F200BE19BD /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				F36219B22A450C8A003802B7 /* ImageCustom.swift */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
 		F33D67382A40BD990090F7C2 /* Color */ = {
 			isa = PBXGroup;
 			children = (
@@ -297,6 +305,7 @@
 		F378ED4F2A2F765D00FE9584 /* FiveSenses-WatchOS Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				F335C4C32A45D0F200BE19BD /* UIComponents */,
 				F36219B12A450929003802B7 /* FiveSenses-WatchOS_Watch_App.entitlements */,
 				F378ED502A2F765D00FE9584 /* FiveSenses_WatchOSApp.swift */,
 				F378ED522A2F765D00FE9584 /* ContentView.swift */,
@@ -304,7 +313,6 @@
 				F378ED562A2F765D00FE9584 /* Preview Content */,
 				F33D67162A3FE7AA0090F7C2 /* SenseView.swift */,
 				F33D67182A3FED6F0090F7C2 /* FinishView.swift */,
-				F36219B22A450C8A003802B7 /* ImageCustom.swift */,
 			);
 			path = "FiveSenses-WatchOS Watch App";
 			sourceTree = "<group>";

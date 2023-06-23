@@ -11,6 +11,8 @@ import CloudKit
 
 
 struct SenseView: View {
+    @Environment(\.dismiss) var dismiss
+    
     @EnvironmentObject var sense: Sense
 
     @StateObject var locationDataManager = LocationDataManager()
@@ -36,9 +38,11 @@ struct SenseView: View {
                 ImageCustomView()
                     .frame(width: 36)
                     .onReceive(timer) { _ in
-                        if timeElapsed == (sense.numberOfSenses) {
+                        if timeElapsed == sense.numberOfSenses {
                             if timeElapsed > 1 {
-                                isEnabledButton.toggle()
+                                withAnimation {
+                                    isEnabledButton.toggle()
+                                }
                             } else {
                                 buttonSave()
                                 isFinished = true
@@ -50,13 +54,23 @@ struct SenseView: View {
                 Spacer(minLength: 20)
                 
                 NextSenseButton
-                    
-                
-                if isFinished {
-                    navigationFinish
-                }
             }
         }
+        .alert(Text("Salvar"), isPresented: $isFinished, actions: {
+                    Button {
+                        buttonSave()
+                        dismiss()
+                    } label: {
+                        Text("Salvar")
+                    }
+
+                    Button("Cancel", role: .cancel) {
+
+                    }
+
+                }, message: {
+                    Text("Deseja salvar a frequência que você realizou o exercício?")
+        })
     }
     
     var NextSenseButton: some View {
@@ -83,33 +97,22 @@ struct SenseView: View {
                 timeElapsed = 0
                 return
             case .palate:
+                dismiss()
+                isFinished = true
                 return
             }
         } label: {
-//            Image(systemName: "arrow.forward.circle")
-            Text("Próximo")
+            Text(isFinished ? "Finalizar" : "Próximo")
                 .font(.body)
-                .foregroundColor(isEnabledButton ? .black.opacity(0.9) : .black )
+                .foregroundColor(.black )
                 
         }
         .frame(height: 36)
-        .background(isEnabledButton ? .white.opacity(0.5) : .white )
+        .background(.white )
         .clipShape(RoundedRectangle(cornerRadius: 12))
         .disabled(isEnabledButton)
         .padding(.horizontal, 20)
-    }
-    
-    var navigationFinish: some View {
-        NavigationLink {
-            FinishView()
-        } label: {
-            Image(systemName: "arrow.forward.circle")
-                .font(.largeTitle)
-                .foregroundColor(.black)
-                .background(Color.primary)
-        }
-        .frame(height: 20)
-        
+        .opacity(isEnabledButton ? 0 : 1)
     }
     
     var textSense: some View {

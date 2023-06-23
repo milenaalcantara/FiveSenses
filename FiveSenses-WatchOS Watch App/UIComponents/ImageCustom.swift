@@ -22,7 +22,7 @@ struct ImageCustomView: View {
                 .scaleEffect(scale)
                 .onAppear{
                     withAnimation(.easeInOut.repeatForever(autoreverses: true).speed(0.25)) {
-                        scale = 1.1 * scale
+                        scale = 1.2 * scale
                     }
                 }
         }
