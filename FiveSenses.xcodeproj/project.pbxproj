@@ -28,6 +28,7 @@
 		F33D671B2A3FF3C40090F7C2 /* SenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33D671A2A3FF3C40090F7C2 /* SenseView.swift */; };
 		F33D67332A40B5B60090F7C2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33D67322A40B5B60090F7C2 /* HomeView.swift */; };
 		F33D673A2A40BDA70090F7C2 /* ColorSenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33D67392A40BDA70090F7C2 /* ColorSenses.swift */; };
+		F36219B32A450C8A003802B7 /* ImageCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36219B22A450C8A003802B7 /* ImageCustom.swift */; };
 		F378ECBD2A2F713200FE9584 /* FiveSenses_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378ECBC2A2F713200FE9584 /* FiveSenses_iOSApp.swift */; };
 		F378ECC12A2F713300FE9584 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F378ECC02A2F713300FE9584 /* Assets.xcassets */; };
 		F378ECC42A2F713300FE9584 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F378ECC32A2F713300FE9584 /* Preview Assets.xcassets */; };
@@ -122,6 +123,7 @@
 		F33D67322A40B5B60090F7C2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = "FiveSenses-iOS/View/HomeView.swift"; sourceTree = SOURCE_ROOT; };
 		F33D67392A40BDA70090F7C2 /* ColorSenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSenses.swift; sourceTree = "<group>"; };
 		F36219B12A450929003802B7 /* FiveSenses-WatchOS_Watch_App.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "FiveSenses-WatchOS_Watch_App.entitlements"; sourceTree = "<group>"; };
+		F36219B22A450C8A003802B7 /* ImageCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCustom.swift; sourceTree = "<group>"; };
 		F378ECB92A2F713200FE9584 /* FiveSenses-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FiveSenses-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F378ECBC2A2F713200FE9584 /* FiveSenses_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveSenses_iOSApp.swift; sourceTree = "<group>"; };
 		F378ECC02A2F713300FE9584 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -208,7 +210,9 @@
 		080E789D2A3CA0D90013B163 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				F37A893F2A4135CD00667784 /* Alternative */,
+				F37A89392A4121E200667784 /* OnboardingItemView.swift */,
+				F37A893B2A41220B00667784 /* OnboardingItem.swift */,
+				F37A893D2A41256B00667784 /* Onboarding.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -300,6 +304,7 @@
 				F378ED562A2F765D00FE9584 /* Preview Content */,
 				F33D67162A3FE7AA0090F7C2 /* SenseView.swift */,
 				F33D67182A3FED6F0090F7C2 /* FinishView.swift */,
+				F36219B22A450C8A003802B7 /* ImageCustom.swift */,
 			);
 			path = "FiveSenses-WatchOS Watch App";
 			sourceTree = "<group>";
@@ -369,16 +374,6 @@
 				F378ED932A3B516600FE9584 /* Sense.swift */,
 			);
 			path = Observables;
-			sourceTree = "<group>";
-		};
-		F37A893F2A4135CD00667784 /* Alternative */ = {
-			isa = PBXGroup;
-			children = (
-				F37A89392A4121E200667784 /* OnboardingItemView.swift */,
-				F37A893B2A41220B00667784 /* OnboardingItem.swift */,
-				F37A893D2A41256B00667784 /* Onboarding.swift */,
-			);
-			path = Alternative;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -676,6 +671,7 @@
 			files = (
 				F378ED902A3B405B00FE9584 /* ButtonCustom.swift in Sources */,
 				451F74022A40D5730025CEC2 /* TextFieldStyleCustom.swift in Sources */,
+				F36219B32A450C8A003802B7 /* ImageCustom.swift in Sources */,
 				F378ED512A2F765D00FE9584 /* FiveSenses_WatchOSApp.swift in Sources */,
 				451F73FF2A40D4DB0025CEC2 /* ContentView.swift in Sources */,
 				4584BBF32A41DD03008B443F /* PlacesList.swift in Sources */,
@@ -880,7 +876,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"FiveSenses-iOS/Preview Content\"";
-				DEVELOPMENT_TEAM = TQJ8B2DX6J;
+				DEVELOPMENT_TEAM = 2P65JA735T;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;

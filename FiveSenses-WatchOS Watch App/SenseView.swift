@@ -13,84 +13,72 @@ import CloudKit
 struct SenseView: View {
     @EnvironmentObject var sense: Sense
 
-//    @StateObject var locationDataManager = LocationDataManager()
-//    @StateObject var vm: PlaceListViewModel
+    @StateObject var locationDataManager = LocationDataManager()
+    @StateObject var vm: PlaceListViewModel
 
     @State private var pulse: CGFloat = 1
-    @State private var isVisibleButton: Bool = false
+    @State private var isEnabledButton: Bool = true
     @State private var isFinished: Bool = false
     @State var timeElapsed: Int = 0
     @State private var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-//    @State var latitude = CLLocationDegrees()
-//    @State var longitude = CLLocationDegrees()
+    @State var latitude = CLLocationDegrees()
+    @State var longitude = CLLocationDegrees()
     
     var body: some View {
-        GeometryReader { geometry in
+        HStack {
             VStack {
-                HStack {
-                    ZStack {
-                        animationCircle
-                            .frame(
-                                width: geometry.size.width * 0.5,
-                                height: geometry.size.width * 0.5
-                            )
-                        buttonTypes
-                        if isFinished {
-                            navigationFinish
-                        }
-                    }
-                }
-                .frame(width: geometry.size.width, height: geometry.size.height * 0.8)
                 textSense
+                    .fixedSize(horizontal: false, vertical: true)
+                    .multilineTextAlignment(.center)
+                
+                Spacer(minLength: 20)
+                
+                ImageCustomView()
+                    .frame(width: 36)
+                    .onReceive(timer) { _ in
+                        if timeElapsed == (sense.numberOfSenses) {
+                            if timeElapsed > 1 {
+                                isEnabledButton.toggle()
+                            } else {
+                                buttonSave()
+                                isFinished = true
+                            }
+                        }
+                        timeElapsed = 1 + timeElapsed
+                    }
+                
+                Spacer(minLength: 20)
+                
+                NextSenseButton
+                    
+                
+                if isFinished {
+                    navigationFinish
+                }
             }
-            .frame(width: geometry.size.width, height: geometry.size.height)
         }
     }
-
-    var animationCircle: some View {
-
-        Circle()
-            .foregroundColor(Color("Color_rose").opacity(0.9))
-            .scaleEffect(pulse)
-            .shadow(color: Color("Color_rose"), radius: 14)
-            .onAppear{
-                withAnimation(.easeInOut.repeatForever(autoreverses: true).speed(0.25)) {
-                    pulse = 1.2 * pulse
-                }
-            }
-            .onReceive(timer) { _ in
-                if timeElapsed == (sense.numberOfSenses) {
-                    if timeElapsed > 1 {
-                        isVisibleButton.toggle()
-                    } else {
-//                        buttonSave()
-                        isFinished = true
-                    }
-                }
-                timeElapsed = 1 + timeElapsed
-            }
-    }
     
-    var buttonTypes: some View {
+    var NextSenseButton: some View {
         Button {
             switch sense.senseOption {
             case .vision:
-                isVisibleButton.toggle()
+                isEnabledButton.toggle()
                 sense.senseOption = .hearing
                 timeElapsed = 0
                 return
             case .hearing:
-                isVisibleButton.toggle()
+                isEnabledButton.toggle()
                 sense.senseOption = .feel
                 timeElapsed = 0
                 return
             case .feel:
-                isVisibleButton.toggle()
+                isEnabledButton.toggle()
                 sense.senseOption = .smell
                 timeElapsed = 0
                 return
             case .smell:
-                isVisibleButton.toggle()
+                isEnabledButton.toggle()
                 sense.senseOption = .palate
                 timeElapsed = 0
                 return
@@ -98,63 +86,70 @@ struct SenseView: View {
                 return
             }
         } label: {
-            Image(systemName: "arrow.forward.circle")
-                .font(.largeTitle)
-                .foregroundColor(.white.opacity(0.8))
-                .background(.clear)
+//            Image(systemName: "arrow.forward.circle")
+            Text("Próximo")
+                .font(.body)
+                .foregroundColor(isEnabledButton ? .black.opacity(0.9) : .black )
+                
         }
-        .background(.clear)
-        .frame(width: 60, height: 60)
-        .hiddenConditionally(isHidden: !isVisibleButton)
+        .frame(height: 36)
+        .background(isEnabledButton ? .white.opacity(0.5) : .white )
+        .clipShape(RoundedRectangle(cornerRadius: 12))
+        .disabled(isEnabledButton)
+        .padding(.horizontal, 20)
     }
+    
     var navigationFinish: some View {
         NavigationLink {
             FinishView()
         } label: {
             Image(systemName: "arrow.forward.circle")
                 .font(.largeTitle)
-                .foregroundColor(.white.opacity(0.8))
-                .background(.clear)
+                .foregroundColor(.black)
+                .background(Color.primary)
         }
-        .frame(width: 60, height: 60)
+        .frame(height: 20)
+        
     }
+    
     var textSense: some View {
         Text(sense.watchDescription)
             .font(.footnote)
+            .padding()
     }
 
-//    func buttonSave() {
-//
-//        latitude = locationDataManager.locationManager.location?.coordinate.latitude ?? 0.0
-//        longitude = locationDataManager.locationManager.location?.coordinate.longitude ?? 0.0
-//
-//        var place = verifyList(latitude, longitude)
-//        /* se ja existir um lugar com aquela latidude altera o numero de repeticoes e
-//         salva o novo local
-//         */
-//        if place != nil {
-//            place?.placeList.numbersRepeated += 1
-//            vm.saveItem(place!.placeList)
-//
-//        } else {
-//            vm.saveNewItem(name: "aqui", numbersRepeated: 1, latitude: latitude, longitude: longitude)
-//
-//        }
-//    }
+    func buttonSave() {
 
-//    func verifyList(_ latitudePlace: Double, _ longitudePlace: Double) -> PlaceViewModel? {
-//        let collection = vm.places
-//        let filtered = collection.filter {
-//            $0.latitude.isAlmostEqual(to: latitudePlace, tolerance: 0.00001) &&
-//            $0.longitude.isAlmostEqual(to: longitudePlace, tolerance: 0.00001)
-//        }
-//
-//        if let place = filtered.first {
-//            return place
-//        } else {
-//            return nil
-//        }
-//    }
+        latitude = locationDataManager.locationManager.location?.coordinate.latitude ?? 0.0
+        longitude = locationDataManager.locationManager.location?.coordinate.longitude ?? 0.0
+
+        var place = verifyList(latitude, longitude)
+        /* se ja existir um lugar com aquela latidude altera o numero de repeticoes e
+         salva o novo local
+         */
+        if place != nil {
+            place?.placeList.numbersRepeated += 1
+            vm.saveItem(place!.placeList)
+
+        } else {
+            vm.saveNewItem(name: "aqui", numbersRepeated: 1, latitude: latitude, longitude: longitude)
+
+        }
+    }
+
+    func verifyList(_ latitudePlace: Double, _ longitudePlace: Double) -> PlaceViewModel? {
+        let collection = vm.places
+        let filtered = collection.filter {
+            $0.latitude.isAlmostEqual(to: latitudePlace, tolerance: 0.00001) &&
+            $0.longitude.isAlmostEqual(to: longitudePlace, tolerance: 0.00001)
+        }
+
+        if let place = filtered.first {
+            return place
+        } else {
+            return nil
+        }
+    }
 }
 
 extension View {

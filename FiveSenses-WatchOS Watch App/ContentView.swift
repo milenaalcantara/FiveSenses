@@ -14,7 +14,7 @@ struct ContentView: View {
     @State private var isVisibleButton: Bool = false
     @State var timeElapsed: Int = 0
     @State private var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-//    let container = CKContainer(identifier: "iCloud.locaisVisitados")
+    let container = CKContainer(identifier: "iCloud.locaisVisitados")
     
     var body: some View {
         GeometryReader { geometry in
@@ -28,10 +28,10 @@ struct ContentView: View {
                 
                 NavigationLink {
                     FiveSenses_WatchOS_Watch_App.SenseView(
-//                        vm: PlaceListViewModel(
-//                            container:
-//                                 container
-//                        )
+                        vm: PlaceListViewModel(
+                            container:
+                                 container
+                        )
                     )
                 } label: {
                     Text("Start")

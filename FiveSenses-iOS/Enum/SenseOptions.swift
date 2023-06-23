@@ -64,7 +64,7 @@ enum SenseOptions: Int, CaseIterable {
     var watchDescription: String {
         switch self {
         case .vision:
-            return "Think of 5 images"
+            return "Think of 5 things you are selling"
         case .hearing:
             return "Think of 4 sounds"
         case .feel:
