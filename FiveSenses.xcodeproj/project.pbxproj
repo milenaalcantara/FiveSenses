@@ -10,6 +10,9 @@
 		080E78952A39F74B0013B163 /* FaceidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080E78942A39F74B0013B163 /* FaceidView.swift */; };
 		080E78992A3A049F0013B163 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080E78982A3A049F0013B163 /* ContentView.swift */; };
 		08DE8BC72A44A6EA00BF5E5A /* ImageCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DE8BC62A44A6EA00BF5E5A /* ImageCustom.swift */; };
+		08DE8BCB2A4536B400BF5E5A /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DE8BCA2A4536B400BF5E5A /* SplashScreenView.swift */; };
+		08DE8BCE2A45389D00BF5E5A /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 08DE8BCD2A45389D00BF5E5A /* Lottie */; };
+		08DE8BD22A45399100BF5E5A /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DE8BD12A45399100BF5E5A /* LottieView.swift */; };
 		451F73FF2A40D4DB0025CEC2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378ED522A2F765D00FE9584 /* ContentView.swift */; };
 		451F74002A40D54A0025CEC2 /* InputFieldsCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378ED882A3A003B00FE9584 /* InputFieldsCollection.swift */; };
 		451F74012A40D5690025CEC2 /* TextFieldCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378ED822A39E65500FE9584 /* TextFieldCustom.swift */; };
@@ -114,6 +117,8 @@
 		080E78942A39F74B0013B163 /* FaceidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceidView.swift; sourceTree = "<group>"; };
 		080E78982A3A049F0013B163 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		08DE8BC62A44A6EA00BF5E5A /* ImageCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCustom.swift; sourceTree = "<group>"; };
+		08DE8BCA2A4536B400BF5E5A /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		08DE8BD12A45399100BF5E5A /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		454A47D32A3CA0EE00C28341 /* MapaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapaView.swift; sourceTree = "<group>"; };
 		454A47D52A3CA12800C28341 /* LocationDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDataManager.swift; sourceTree = "<group>"; };
 		454A47D72A3CA16A00C28341 /* Double+IsAlmostEqual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+IsAlmostEqual.swift"; sourceTree = "<group>"; };
@@ -163,6 +168,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08DE8BCE2A45389D00BF5E5A /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +282,8 @@
 				F378ED922A3B515600FE9584 /* Observables */,
 				F378ED8D2A3A767D00FE9584 /* Enum */,
 				F378ECBC2A2F713200FE9584 /* FiveSenses_iOSApp.swift */,
+				08DE8BCA2A4536B400BF5E5A /* SplashScreenView.swift */,
+				08DE8BD12A45399100BF5E5A /* LottieView.swift */,
 				080E78982A3A049F0013B163 /* ContentView.swift */,
 				F378ECC02A2F713300FE9584 /* Assets.xcassets */,
 				F378ECC22A2F713300FE9584 /* Preview Content */,
@@ -423,6 +431,9 @@
 			dependencies = (
 			);
 			name = "FiveSenses-iOS";
+			packageProductDependencies = (
+				08DE8BCD2A45389D00BF5E5A /* Lottie */,
+			);
 			productName = "FiveSenses-iOS";
 			productReference = F378ECB92A2F713200FE9584 /* FiveSenses-iOS.app */;
 			productType = "com.apple.product-type.application";
@@ -579,6 +590,9 @@
 				Base,
 			);
 			mainGroup = F378ECAE2A2F710700FE9584;
+			packageReferences = (
+				08DE8BCC2A45389D00BF5E5A /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = F378ECBA2A2F713200FE9584 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -657,6 +671,7 @@
 			files = (
 				454A47D82A3CA16A00C28341 /* Double+IsAlmostEqual.swift in Sources */,
 				080E78952A39F74B0013B163 /* FaceidView.swift in Sources */,
+				08DE8BD22A45399100BF5E5A /* LottieView.swift in Sources */,
 				F378ED7F2A37620700FE9584 /* TextFieldStyleCustom.swift in Sources */,
 				F378ED832A39E65500FE9584 /* TextFieldCustom.swift in Sources */,
 				F37A893A2A4121E200667784 /* OnboardingItemView.swift in Sources */,
@@ -678,6 +693,7 @@
 				454A47D62A3CA12800C28341 /* LocationDataManager.swift in Sources */,
 				F378ED8F2A3A768D00FE9584 /* SenseOptions.swift in Sources */,
 				F33D67332A40B5B60090F7C2 /* HomeView.swift in Sources */,
+				08DE8BCB2A4536B400BF5E5A /* SplashScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -820,7 +836,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_ASSET_PATHS = "\"FiveSenses-iOS/Preview Content\"";
-				DEVELOPMENT_TEAM = TQJ8B2DX6J;
+				DEVELOPMENT_TEAM = 2P65JA735T;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -1874,6 +1890,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		08DE8BCC2A45389D00BF5E5A /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		08DE8BCD2A45389D00BF5E5A /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 08DE8BCC2A45389D00BF5E5A /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F378ECAF2A2F710700FE9584 /* Project object */;
 }

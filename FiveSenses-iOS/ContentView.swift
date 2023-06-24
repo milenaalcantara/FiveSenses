@@ -14,6 +14,8 @@ struct ContentView: View {
     @AppStorage("hasSeenOnboarding") private var hasSeenOnboarding = false
     let container = CKContainer(identifier: "iCloud.locaisVisitados")
 
+    let hasFinishSplash: Bool
+
     var body: some View {
         TabView {
             HomeView()
@@ -25,19 +27,21 @@ struct ContentView: View {
                     Label("Mapa", systemImage: "map")
                 }
         }
-        .fullScreenCover(isPresented: .constant(!hasSeenOnboarding)) {
+        .opacity(hasSeenOnboarding ? 1 : 0)
+        .navigationBarBackButtonHidden(!hasSeenOnboarding)
+        .fullScreenCover(isPresented: .constant(!hasSeenOnboarding && hasFinishSplash)) {
             Onboarding() {
-                    hasSeenOnboarding = true
-                }
-                
-            
+                hasSeenOnboarding = true
+                UINavigationBar.setAnimationsEnabled(true)
+            }
         }
+        .navigationBarBackButtonHidden()
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(hasFinishSplash: true)
     }
 }
 

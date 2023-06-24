@@ -55,9 +55,3 @@ struct HomeView: View {
         }.navigationBarBackButtonHidden()
     }
 }
-
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
-    }
-}

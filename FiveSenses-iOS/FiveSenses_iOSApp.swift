@@ -14,12 +14,18 @@ struct FiveSenses_iOSApp: App {
     @StateObject var sense: Sense = Sense()
     // let container = CKContainer(identifier: "iCloud.mapaPlacesLocation")
 
+    @State var endedSplash: Bool = false
+    @AppStorage("hasSeenOnboarding") private var hasSeenOnboarding = false
+
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(sense)
-//            NavigationStack {
-//                OnboardingView()
-//            }.environmentObject(sense)
+            ZStack {
+                NavigationStack {
+                    ContentView(hasFinishSplash: endedSplash)
+                        .environmentObject(sense)
+                }
+                SplashScreenView(ended: $endedSplash)
+            }
         }
         
     }
