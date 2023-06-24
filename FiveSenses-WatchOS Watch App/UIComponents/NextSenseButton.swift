@@ -51,7 +51,7 @@ struct NextSenseButton: View {
         .clipShape(RoundedRectangle(cornerRadius: 12))
         .disabled(isEnabledButton)
         .padding(.horizontal, 20)
-        .opacity(isEnabledButton ? 0.8 : 1)
+        .opacity(isEnabledButton ? 0.3 : 1)
     }
 }
 
