@@ -16,7 +16,7 @@ struct HomeView: View {
     let container = CKContainer(identifier: "iCloud.locaisVisitados")
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 LottieView(name: animationName)
                     .frame(width: 250, height: 250)
@@ -38,13 +38,14 @@ struct HomeView: View {
                         Text("Iniciar Exercício")
                             .foregroundColor(.white)
                             .padding(.horizontal)
+                            .frame(maxWidth: 320)
+                            .frame(height: 54)
+                            .background(.black).cornerRadius(12)
                     }
                     .task {
                         sense.senseOption = .vision
                     }
-                    .frame(maxWidth: 320)
-                    .frame(height: 54)
-                    .background(.black).cornerRadius(12)
+
                     .padding(.bottom, 40)
                     .padding(.top, 10)
                     .padding(.horizontal, 10)

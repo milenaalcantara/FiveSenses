@@ -24,13 +24,12 @@ struct SenseView: View {
     
     let container = CKContainer(identifier: "iCLoud.locaisVisitados")
 
-    init(vm: PlaceListViewModel, imageIcon: Binding<String>) {
+    init(vm: PlaceListViewModel, animationName: Binding<String>) {
         _vm = StateObject(wrappedValue: vm)
-        _imageIcon = imageIcon
+        _animationName = animationName
     }
 
     var body: some View {
-        NavigationView {
             VStack {
                 ScrollView {
                     VStack(alignment: .center) {
@@ -69,16 +68,15 @@ struct SenseView: View {
                         }, message: {
                             Text("Deseja salvar a frequência que você realizou o exercício?")
                 })
+                .navigationBarTitleDisplayMode(.automatic)
                 .padding(.horizontal)
                 .onAppear {
                     Task {
                         try await vm.populatePlaces()
                     }
                 }
-//
             }
-        }
-
+            .navigationBarTitleDisplayMode(.inline)
     }
     
     func buttonSave() {
@@ -103,8 +101,8 @@ struct SenseView: View {
     func verifyList(_ latitudePlace: Double, _ longitudePlace: Double) -> PlaceViewModel? {
         let collection = vm.places
         let filtered = collection.filter {
-            $0.latitude.isAlmostEqual(to: latitudePlace, tolerance: 0.000001) &&
-            $0.longitude.isAlmostEqual(to: longitudePlace, tolerance: 0.000001)
+            $0.latitude.isAlmostEqual(to: latitudePlace, tolerance: 0.0001) &&
+            $0.longitude.isAlmostEqual(to: longitudePlace, tolerance: 0.0001)
         }
 
         if let place = filtered.first {

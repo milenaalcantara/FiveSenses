@@ -20,12 +20,12 @@ struct ButtonCustom: View {
             action()
         } label: {
             Text(title).font(font)
+                .frame(maxWidth: .infinity)
+                .frame(height: height)
+                .background(backgroundColor)
+                .foregroundColor(foregroundColor)
+                .cornerRadius(12)
         }
-        .frame(maxWidth: .infinity)
-        .frame(height: height)
-        .background(backgroundColor)
-        .foregroundColor(foregroundColor)
-        .cornerRadius(12)
     }
 }
 
