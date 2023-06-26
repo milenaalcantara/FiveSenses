@@ -11,6 +11,7 @@ import CloudKit
 
 struct SenseView: View {
     @Environment(\.dismiss) var dismiss
+
     @EnvironmentObject var sense: Sense
     
     @StateObject var locationDataManager = LocationDataManager()
@@ -22,21 +23,29 @@ struct SenseView: View {
     @Binding var animationName: String
     
     let container = CKContainer(identifier: "iCLoud.locaisVisitados")
-    
+
+    init(vm: PlaceListViewModel, imageIcon: Binding<String>) {
+        _vm = StateObject(wrappedValue: vm)
+        _imageIcon = imageIcon
+    }
+
     var body: some View {
         NavigationView {
-            VStack(alignment: .center) {
-                HeaderSenseView()
-                
-                InputFieldsCollection()
-                    .id(sense.senseOption.rawValue)
-                    .padding(.horizontal)
-                
+            VStack {
+                ScrollView {
+                    VStack(alignment: .center) {
+                        HeaderSenseView()
+                        InputFieldsCollection()
+                            .id(sense.senseOption.rawValue)
+                            .padding(.horizontal)
+                    }
+                }
+
                 Spacer()
-                
+
                 ButtonCustom(
-                    backgroundColor: .black,
-                    foregroundColor: .white,
+                    backgroundColor: Color("Black"),
+                    foregroundColor: Color("White"),
                     font: .body,
                     title: sense.titleNextButton,
                     height: 54
@@ -60,10 +69,16 @@ struct SenseView: View {
                         }, message: {
                             Text("Deseja salvar a frequência que você realizou o exercício?")
                 })
-                .padding()
+                .padding(.horizontal)
+                .onAppear {
+                    Task {
+                        try await vm.populatePlaces()
+                    }
+                }
 //
             }
         }
+
     }
     
     func buttonSave() {
@@ -88,17 +103,18 @@ struct SenseView: View {
     func verifyList(_ latitudePlace: Double, _ longitudePlace: Double) -> PlaceViewModel? {
         let collection = vm.places
         let filtered = collection.filter {
-            $0.latitude.isAlmostEqual(to: latitudePlace, tolerance: 0.00001) &&
-            $0.longitude.isAlmostEqual(to: longitudePlace, tolerance: 0.00001)
+            $0.latitude.isAlmostEqual(to: latitudePlace, tolerance: 0.000001) &&
+            $0.longitude.isAlmostEqual(to: longitudePlace, tolerance: 0.000001)
         }
 
         if let place = filtered.first {
             return place
+            
         } else {
             return nil
         }
     }
-        
+
     private func getNextIconName() -> String? {
         guard let lastImageIconStringCharacter = animationName.map({String($0)}).last else { return nil }
         guard let lastImageIndex = Int(lastImageIconStringCharacter) else { return nil }

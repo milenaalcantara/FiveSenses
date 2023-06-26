@@ -30,6 +30,7 @@ struct HomeView: View {
                         .font(Font.body)
                         .multilineTextAlignment(.leading)
                         .padding([.top, .leading, .trailing], 40)
+                        .foregroundColor(Color(uiColor: .black))
                     
                     NavigationLink {
                         SenseView(vm: PlaceListViewModel(container: container), animationName: $animationName)
