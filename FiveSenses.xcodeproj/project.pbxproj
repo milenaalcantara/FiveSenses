@@ -791,7 +791,7 @@
 				CODE_SIGN_ENTITLEMENTS = "FiveSenses-iOS/FiveSenses-iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_ASSET_PATHS = "\"FiveSenses-iOS/Preview Content\"";
 				DEVELOPMENT_TEAM = 2P65JA735T;
@@ -881,7 +881,7 @@
 				CODE_SIGN_ENTITLEMENTS = "FiveSenses-iOS/FiveSenses-iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"FiveSenses-iOS/Preview Content\"";
 				DEVELOPMENT_TEAM = 2P65JA735T;
@@ -1255,7 +1255,7 @@
 				CODE_SIGN_ENTITLEMENTS = "FiveSenses-WatchOS Watch App/FiveSenses-WatchOS_Watch_App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_ASSET_PATHS = "\"FiveSenses-WatchOS Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = 2P65JA735T;
@@ -1341,7 +1341,7 @@
 				CODE_SIGN_ENTITLEMENTS = "FiveSenses-WatchOS Watch App/FiveSenses-WatchOS_Watch_App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"FiveSenses-WatchOS Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = 2P65JA735T;
