@@ -24,12 +24,10 @@ struct ImageCustom: View {
             .scaledToFill()
             .frame(width: item.width ?? 50, height: item.width ?? 50)
             .scaleEffect(scale)
-
             .onAppear {
                 if sense.imageName == item.name {
                     withAnimation(.easeIn.speed(0.5)) {
                         scale = 1.2
-                        print("auquiiii")
                     }
                 } else {
                     withAnimation(.easeOut.speed(0.5)) {
@@ -48,18 +46,6 @@ struct ImageCustom: View {
                     }
                 }
             }
-//            .onChange(of: sense.senseOption) { newValue in
-//                if sense.imageName == item.name {
-//                    withAnimation(.easeIn.speed(0.5)) {
-//                        scale = scale * 1.2
-//                        print("auquiiii")
-//                    }
-//                } else {
-//                    withAnimation(.easeOut.speed(0.5)) {
-//                        scale = scale * 1
-//                    }
-//                }
-//            }
         
     }
 }

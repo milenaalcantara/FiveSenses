@@ -10,10 +10,7 @@ import CloudKit
 
 struct ContentView: View {
     @EnvironmentObject var sense: Sense
-    @State private var pulse: CGFloat = 1
-    @State private var isVisibleButton: Bool = false
-    @State var timeElapsed: Int = 0
-    @State private var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    
     let container = CKContainer(identifier: "iCloud.locaisVisitados")
     
     var body: some View {
@@ -23,11 +20,13 @@ struct ContentView: View {
 
                 Text("Let's find out what we can accomplish with our senses.")
                     .multilineTextAlignment(.center)
+                    .padding(.horizontal, 20)
                 
                 Spacer()
                 
                 NavigationLink {
-                    FiveSenses_WatchOS_Watch_App.SenseView(
+//                    FiveSenses_WatchOS_Watch_App.
+                    SenseView(
                         vm: PlaceListViewModel(
                             container:
                                  container
@@ -35,10 +34,12 @@ struct ContentView: View {
                     )
                 } label: {
                     Text("Start")
+                        .foregroundColor(.black )
                 }
-                .task {
-                    sense.senseOption = .vision
-                }
+                .frame(height: 36)
+                .background(.white )
+                .clipShape(RoundedRectangle(cornerRadius: 12))
+                .padding(.horizontal, 20)
                 .task {
                     sense.senseOption = .vision
                 }
