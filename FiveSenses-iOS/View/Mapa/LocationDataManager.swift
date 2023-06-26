@@ -7,34 +7,64 @@
 
 import Foundation
 import CoreLocation
+import Combine
 
-class LocationDataManager : NSObject, CLLocationManagerDelegate, ObservableObject {
+class LocationDataManager : NSObject, ObservableObject {
 
-    @Published var authorizationStatus: CLAuthorizationStatus?
-    var locationManager = CLLocationManager()
+    private let geocoder = CLGeocoder()
 
-   override init() {
-      super.init()
-      locationManager.delegate = self
-   }
+    private let locationManager = CLLocationManager()
+    
+    let objectWillChange = PassthroughSubject<Void, Never>()
+
+    @Published var status: CLAuthorizationStatus? {
+        willSet { objectWillChange.send() }
+    }
+
+    @Published var location: CLLocation? {
+        willSet { objectWillChange.send() }
+    }
+    @Published var placemark: CLPlacemark? {
+        willSet { objectWillChange.send() }
+    }
+
+    override init() {
+       super.init()
+
+       self.locationManager.delegate = self
+       self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+       self.locationManager.requestWhenInUseAuthorization()
+       self.locationManager.startUpdatingLocation()
+     }
+
+    private func geocode() {
+        guard let location = self.location else { return }
+        geocoder.reverseGeocodeLocation(location, completionHandler: { (places, error) in
+          if error == nil {
+            self.placemark = places?[0]
+          } else {
+            self.placemark = nil
+          }
+        })
+    }
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
             switch manager.authorizationStatus {
             case .authorizedWhenInUse:
-                authorizationStatus = .authorizedWhenInUse
-                locationManager.requestLocation()
+                status = .authorizedWhenInUse
+//                locationManager.requestLocation()
                 break
 
             case .restricted:
-                authorizationStatus = .restricted
+                status = .restricted
                 break
 
             case .denied:
-                authorizationStatus = .denied
+                status = .denied
                 break
 
             case .notDetermined:
-                authorizationStatus = .notDetermined
+                status = .notDetermined
                 manager.requestWhenInUseAuthorization()
                 break
 
@@ -42,12 +72,21 @@ class LocationDataManager : NSObject, CLLocationManagerDelegate, ObservableObjec
                 break
             }
         }
+}
 
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-           print("Os dados estão disponíveis")
+extension LocationDataManager: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+             print("error:: \(error.localizedDescription)")
+        }
+
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        self.status = status
     }
 
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-           print("error: \(error.localizedDescription)")
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.first else { return }
+        self.location = location
+        self.geocode()
     }
 }

@@ -29,8 +29,6 @@ struct ContentView: View {
             Onboarding() {
                     hasSeenOnboarding = true
                 }
-                
-            
         }
     }
 }

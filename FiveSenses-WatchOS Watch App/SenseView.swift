@@ -124,8 +124,8 @@ struct SenseView: View {
 
     func buttonSave() {
 
-        latitude = locationDataManager.locationManager.location?.coordinate.latitude ?? 0.0
-        longitude = locationDataManager.locationManager.location?.coordinate.longitude ?? 0.0
+        latitude = locationDataManager.location?.coordinate.latitude ?? 0.0
+        longitude = locationDataManager.location?.coordinate.longitude ?? 0.0
 
         var place = verifyList(latitude, longitude)
         /* se ja existir um lugar com aquela latidude altera o numero de repeticoes e
