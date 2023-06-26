@@ -29,8 +29,9 @@ struct HomeView: View {
                     Text("5 Sense: Vamos descobrir o que podemos realizar com nossos sentidos.")
                         .multilineTextAlignment(.leading)
                         .padding([.top, .leading, .trailing], 40)
+                        .foregroundColor(Color(uiColor: .black))
                     NavigationLink {
-                        SenseView(imageIcon: $imageIcon, vm: PlaceListViewModel(container: container))
+                        SenseView(vm: PlaceListViewModel(container: container), imageIcon: $imageIcon)
                     } label: {
                         Text("Iniciar Exercício")
                             .foregroundColor(.white)

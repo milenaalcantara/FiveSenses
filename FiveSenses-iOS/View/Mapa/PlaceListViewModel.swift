@@ -11,16 +11,12 @@ import CloudKit
 enum RecordType: String {
     case placeList = "PlacesList"
 }
-class PlaceListViewModel: ObservableObject{
+class PlaceListViewModel: ObservableObject {
 
     private var database: CKDatabase
     private var container: CKContainer
-    private var latitude = CLLocationDegrees()
-    private var longitude = CLLocationDegrees()
-
 
     @Published var places: [PlaceViewModel] = []
-    @Published var locationDataManager = LocationDataManager()
 
     init(container: CKContainer) {
         self.container = container
@@ -63,6 +59,19 @@ class PlaceListViewModel: ObservableObject{
         }
     }
 
+    func deleteItem(_ recordID: CKRecord.ID) async throws {
+
+        database.delete(withRecordID: recordID) { deletedRecordID, error in
+            if let error = error {
+                print(error)
+            } else {
+                Task {
+                    try await self.populatePlaces()
+                }
+            }
+        }
+    }
+
     func populatePlaces() async throws {
 
 
@@ -81,37 +90,37 @@ class PlaceListViewModel: ObservableObject{
         }
     }
     
-    func saveLocation() {
-        latitude = locationDataManager.locationManager.location?.coordinate.latitude ?? 0.0
-        longitude = locationDataManager.locationManager.location?.coordinate.longitude ?? 0.0
-
-        var place = verifyList(latitude, longitude)
-        /* se ja existir um lugar com aquela latidude altera o numero de repeticoes e
-         salva o novo local
-         */
-        if place != nil {
-            place?.placeList.numbersRepeated += 1
-            saveItem(place!.placeList)
-
-        } else {
-            saveNewItem(name: "aqui", numbersRepeated: 1, latitude: latitude, longitude: longitude)
-
-        }
-    }
-
-    func verifyList(_ latitudePlace: Double, _ longitudePlace: Double) -> PlaceViewModel? {
-        let collection = places
-        let filtered = collection.filter {
-            $0.latitude.isAlmostEqual(to: latitudePlace, tolerance: 0.00001) &&
-            $0.longitude.isAlmostEqual(to: longitudePlace, tolerance: 0.00001)
-        }
-
-        if let place = filtered.first {
-            return place
-        } else {
-            return nil
-        }
-    }
+//    func saveLocation() {
+//        latitude = locationDataManager.locationManager.location?.coordinate.latitude ?? 0.0
+//        longitude = locationDataManager.locationManager.location?.coordinate.longitude ?? 0.0
+//
+//        var place = verifyList(latitude, longitude)
+//        /* se ja existir um lugar com aquela latidude altera o numero de repeticoes e
+//         salva o novo local
+//         */
+//        if place != nil {
+//            place?.placeList.numbersRepeated += 1
+//            saveItem(place!.placeList)
+//
+//        } else {
+//            saveNewItem(name: "aqui", numbersRepeated: 1, latitude: latitude, longitude: longitude)
+//
+//        }
+//    }
+//
+//    func verifyList(_ latitudePlace: Double, _ longitudePlace: Double) -> PlaceViewModel? {
+//        let collection = places
+//        let filtered = collection.filter {
+//            $0.latitude.isAlmostEqual(to: latitudePlace, tolerance: 0.001) &&
+//            $0.longitude.isAlmostEqual(to: longitudePlace, tolerance: 0.001)
+//        }
+//
+//        if let place = filtered.first {
+//            return place
+//        } else {
+//            return nil
+//        }
+//    }
 
 }
 

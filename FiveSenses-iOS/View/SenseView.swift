@@ -11,57 +11,67 @@ import CloudKit
 
 struct SenseView: View {
     @Environment(\.dismiss) var dismiss
+
     @EnvironmentObject var sense: Sense
-    @State private var isFinished: Bool = false
+
     @Binding var imageIcon: String
+
     @StateObject var locationDataManager = LocationDataManager()
     @StateObject var vm: PlaceListViewModel
 
+    @State private var isFinished: Bool = false
     @State var latitude = CLLocationDegrees()
     @State var longitude = CLLocationDegrees()
-
     @State var title = "Próximo"
     let container = CKContainer(identifier: "iCLoud.locaisVisitados")
-    
+
+    init(vm: PlaceListViewModel, imageIcon: Binding<String>) {
+        _vm = StateObject(wrappedValue: vm)
+        _imageIcon = imageIcon
+    }
+
     var body: some View {
         NavigationView {
-            VStack(alignment: .center) {
-                HeaderSenseView()
-                
-                InputFieldsCollection()
-                    .id(sense.senseOption.rawValue)
-                    .padding(.horizontal)
-                
+            VStack {
+                ScrollView {
+                    VStack(alignment: .center) {
+                        HeaderSenseView()
+                        InputFieldsCollection()
+                            .id(sense.senseOption.rawValue)
+                            .padding(.horizontal)
+                    }
+                }
+
                 Spacer()
-                
+
                 ButtonCustom(
-                    backgroundColor: .black,
-                    foregroundColor: .white,
+                    backgroundColor: Color("Black"),
+                    foregroundColor: Color("White"),
                     font: .body,
                     title: title,
                     height: 54
                 ) {
                     switch sense.senseOption {
                     case .vision:
-                        if !sense.areEmptyFields {
+                        if sense.areEmptyFields {
                             sense.senseOption = .hearing
                             sense.isChangedSense = true
                             return
                         }
                     case .hearing:
-                        if !sense.areEmptyFields {
+                        if sense.areEmptyFields {
                             sense.senseOption = .feel
                             sense.isChangedSense = true
                             return
                         }
                     case .feel:
-                        if !sense.areEmptyFields {
+                        if sense.areEmptyFields {
                             sense.senseOption = .smell
                             sense.isChangedSense = true
                             return
                         }
                     case .smell:
-                        if !sense.areEmptyFields {
+                        if sense.areEmptyFields {
                             sense.senseOption = .palate
                             sense.isChangedSense = true
                             title = "Finished"
@@ -77,24 +87,29 @@ struct SenseView: View {
                     }
                 }
                 .alert(Text("Salvar"), isPresented: $isFinished, actions: {
-                            Button {
-                                buttonSave()
-                                dismiss()
-                            } label: {
-                                Text("Salvar")
-                            }
+                    Button {
+                        buttonSave()
+                        dismiss()
+                    } label: {
+                        Text("Salvar")
+                    }
 
-                            Button("Cancel", role: .cancel) {
+                    Button("Cancel", role: .cancel) {
 
-                            }
+                    }
 
-                        }, message: {
-                            Text("Deseja salvar a frequência que você realizou o exercício?")
+                }, message: {
+                    Text("Deseja salvar a frequência que você realizou o exercício?")
                 })
                 .padding(.horizontal)
-//
+                .onAppear {
+                    Task {
+                        try await vm.populatePlaces()
+                    }
+                }
             }
         }
+
     }
     
     func buttonSave() {
@@ -119,17 +134,18 @@ struct SenseView: View {
     func verifyList(_ latitudePlace: Double, _ longitudePlace: Double) -> PlaceViewModel? {
         let collection = vm.places
         let filtered = collection.filter {
-            $0.latitude.isAlmostEqual(to: latitudePlace, tolerance: 0.00001) &&
-            $0.longitude.isAlmostEqual(to: longitudePlace, tolerance: 0.00001)
+            $0.latitude.isAlmostEqual(to: latitudePlace, tolerance: 0.000001) &&
+            $0.longitude.isAlmostEqual(to: longitudePlace, tolerance: 0.000001)
         }
 
         if let place = filtered.first {
             return place
+            
         } else {
             return nil
         }
     }
-        
+
     private func getNextIconName() -> String? {
         guard let lastImageIconStringCharacter = imageIcon.map({String($0)}).last else { return nil }
         guard let lastImageIndex = Int(lastImageIconStringCharacter) else { return nil }
@@ -137,16 +153,4 @@ struct SenseView: View {
         return "face0\(nextImageIconIndex)"
     }
 }
-
-//struct SenseView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SenseView()
-//    }
-//}
-
-//struct SenseView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SenseView()
-//    }
-//}
 
