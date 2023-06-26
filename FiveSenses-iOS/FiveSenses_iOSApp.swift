@@ -20,11 +20,11 @@ struct FiveSenses_iOSApp: App {
     var body: some Scene {
         WindowGroup {
             ZStack {
-                NavigationStack {
-                    ContentView(hasFinishSplash: endedSplash)
-                        .environmentObject(sense)
+                ContentView(hasFinishSplash: endedSplash)
+                    .environmentObject(sense)
+                if !endedSplash {
+                    SplashScreenView(ended: $endedSplash)
                 }
-                SplashScreenView(ended: $endedSplash)
             }
         }
         

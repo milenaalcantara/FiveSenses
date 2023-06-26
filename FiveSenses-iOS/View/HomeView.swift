@@ -29,6 +29,7 @@ struct HomeView: View {
                     Text("5 Sense: Vamos descobrir o que podemos realizar com nossos sentidos.")
                         .multilineTextAlignment(.leading)
                         .padding([.top, .leading, .trailing], 40)
+                    
                     NavigationLink {
                         SenseView(imageIcon: $imageIcon, vm: PlaceListViewModel(container: container))
                     } label: {
@@ -40,7 +41,7 @@ struct HomeView: View {
                         print("chamando senseView")
                     }
                     .frame(maxWidth: 280)
-                    .frame(height: 30)
+                    .frame(height: 54)
                     .background(.black).cornerRadius(12)
                     .padding([.bottom, .leading, .trailing], 40)
                 }
