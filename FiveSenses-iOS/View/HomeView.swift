@@ -11,7 +11,22 @@ import CloudKit
 struct HomeView: View {
     @EnvironmentObject var sense: Sense
     @AppStorage("animationName") var animationName = "face_01"
+    let nameHost: String = "\(ProcessInfo().hostName)"
 
+
+    func removeLocal(of string: String) -> String {
+        let revertedString = string
+            .map {String($0)}
+            .reversed()
+
+        var wordWithoutLocal = [String]()
+
+        for (i, validChar) in revertedString.enumerated() where i > 5 {
+            wordWithoutLocal.append(String(validChar))
+        }
+
+        return wordWithoutLocal.reversed().joined()
+    }
     //funcao pra ver se é o dia atual, e resetar a face para a inicial
     let container = CKContainer(identifier: "iCloud.locaisVisitados")
 
@@ -25,7 +40,7 @@ struct HomeView: View {
 
                 Spacer()
                 VStack {
-                    Text("5 Sense: Vamos descobrir o que podemos realizar com nossos sentidos.")
+                    Text("5 Sense: Let's find out what we can accomplish with our senses.")
                         .fontWeight(Font.Weight.medium)
                         .font(Font.body)
                         .multilineTextAlignment(.leading)
@@ -35,7 +50,7 @@ struct HomeView: View {
                     NavigationLink {
                         SenseView(vm: PlaceListViewModel(container: container), animationName: $animationName)
                     } label: {
-                        Text("Iniciar Exercício")
+                        Text("Start Exercise")
                             .foregroundColor(.white)
                             .padding(.horizontal)
                             .frame(maxWidth: 320)
@@ -58,7 +73,8 @@ struct HomeView: View {
                 .padding(.bottom, 60)
 
 
-            }.navigationTitle("Bem-vindo, usuário")
+            }.navigationTitle("Welcome, \(removeLocal(of: nameHost))")
         }.navigationBarBackButtonHidden()
     }
+
 }

@@ -56,17 +56,17 @@ struct SenseView: View {
                         animationName = nextIconName
                     }
                 }
-                .alert(Text("Salvar"), isPresented: $sense.isFinished, actions: {
+                .alert(Text("Save"), isPresented: $sense.isFinished, actions: {
                             Button {
                                 buttonSave()
                                 dismiss()
                             } label: {
-                                Text("Salvar")
+                                Text("Save")
                             }
 
                             Button("Cancel", role: .cancel) {}
                         }, message: {
-                            Text("Deseja salvar a frequência que você realizou o exercício?")
+                            Text("Do you want to save how often you performed the exercise?")
                 })
                 .navigationBarTitleDisplayMode(.automatic)
                 .padding(.horizontal)
