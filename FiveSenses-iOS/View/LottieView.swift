@@ -18,6 +18,7 @@ struct LottieView: UIViewRepresentable {
 
         animationView.animation = .asset(name)
         animationView.contentMode = .scaleAspectFit
+        animationView.loopMode = .loop
         animationView.play()
 
         view.addSubview(animationView)
@@ -30,7 +31,7 @@ struct LottieView: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: UIViewType, context: Context) {
-
+        uiView.reloadInputViews()
     }
 }
 

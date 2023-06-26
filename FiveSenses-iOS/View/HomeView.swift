@@ -10,7 +10,7 @@ import CloudKit
 
 struct HomeView: View {
     @EnvironmentObject var sense: Sense
-    @AppStorage("imageIcon") var imageIcon = "face01"
+    @AppStorage("animationName") var animationName = "face_01"
 
     //funcao pra ver se é o dia atual, e resetar a face para a inicial
     let container = CKContainer(identifier: "iCloud.locaisVisitados")
@@ -18,38 +18,42 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Image(imageIcon)
-                    .resizable()
-                    .scaledToFit()
+                LottieView(name: animationName)
                     .frame(width: 250, height: 250)
                     .padding(.top, 90)
+                    .id(animationName)
 
                 Spacer()
                 VStack {
                     Text("5 Sense: Vamos descobrir o que podemos realizar com nossos sentidos.")
+                        .fontWeight(Font.Weight.medium)
+                        .font(Font.body)
                         .multilineTextAlignment(.leading)
                         .padding([.top, .leading, .trailing], 40)
                     
                     NavigationLink {
-                        SenseView(imageIcon: $imageIcon, vm: PlaceListViewModel(container: container))
+                        SenseView(vm: PlaceListViewModel(container: container), animationName: $animationName)
                     } label: {
                         Text("Iniciar Exercício")
                             .foregroundColor(.white)
+                            .padding(.horizontal)
                     }
                     .task {
                         sense.senseOption = .vision
-                        print("chamando senseView")
                     }
-                    .frame(maxWidth: 280)
+                    .frame(maxWidth: 320)
                     .frame(height: 54)
                     .background(.black).cornerRadius(12)
-                    .padding([.bottom, .leading, .trailing], 40)
+                    .padding(.bottom, 40)
+                    .padding(.top, 10)
+                    .padding(.horizontal, 10)
                 }
                 .background {
-                    RoundedRectangle(cornerRadius: 20)
+                    RoundedRectangle(cornerRadius: 12)
                         .fill(Color("Color_cinza"))
                         .padding(10)
-                }.padding(.bottom, 60)
+                }
+                .padding(.bottom, 60)
 
 
             }.navigationTitle("Bem-vindo, usuário")

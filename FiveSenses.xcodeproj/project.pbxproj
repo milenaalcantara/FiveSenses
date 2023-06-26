@@ -286,7 +286,6 @@
 				F378ED922A3B515600FE9584 /* Observables */,
 				F378ED8D2A3A767D00FE9584 /* Enum */,
 				F378ECBC2A2F713200FE9584 /* FiveSenses_iOSApp.swift */,
-				08DE8BD12A45399100BF5E5A /* LottieView.swift */,
 				080E78982A3A049F0013B163 /* ContentView.swift */,
 				F378ECC02A2F713300FE9584 /* Assets.xcassets */,
 				F378ECC22A2F713300FE9584 /* Preview Content */,
@@ -343,6 +342,7 @@
 		F378ED7C2A3761CD00FE9584 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				08DE8BD12A45399100BF5E5A /* LottieView.swift */,
 				08DE8BCA2A4536B400BF5E5A /* SplashScreenView.swift */,
 				F378ED7D2A3761D800FE9584 /* UIComponents */,
 				454A47D22A3CA0B100C28341 /* Mapa */,

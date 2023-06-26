@@ -90,4 +90,14 @@ enum SenseOptions: Int, CaseIterable {
             return "What would it taste like?"
         }
     }
+    
+    var titleNextButton: String {
+        switch self {
+        case .palate:
+            return "Finished"
+        default:
+            return "Próximo"
+            
+        }
+    }
 }

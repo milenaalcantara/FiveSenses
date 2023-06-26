@@ -12,15 +12,15 @@ import CloudKit
 struct SenseView: View {
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var sense: Sense
-    @State private var isFinished: Bool = false
-    @Binding var imageIcon: String
+    
     @StateObject var locationDataManager = LocationDataManager()
     @StateObject var vm: PlaceListViewModel
-
+    
     @State var latitude = CLLocationDegrees()
     @State var longitude = CLLocationDegrees()
-
-    @State var title = "Próximo"
+    
+    @Binding var animationName: String
+    
     let container = CKContainer(identifier: "iCLoud.locaisVisitados")
     
     var body: some View {
@@ -38,45 +38,17 @@ struct SenseView: View {
                     backgroundColor: .black,
                     foregroundColor: .white,
                     font: .body,
-                    title: title,
+                    title: sense.titleNextButton,
                     height: 54
                 ) {
-                    switch sense.senseOption {
-                    case .vision:
-                        if !sense.areEmptyFields {
-                            sense.senseOption = .hearing
-                            sense.isChangedSense = true
-                            return
-                        }
-                    case .hearing:
-                        if !sense.areEmptyFields {
-                            sense.senseOption = .feel
-                            sense.isChangedSense = true
-                            return
-                        }
-                    case .feel:
-                        if !sense.areEmptyFields {
-                            sense.senseOption = .smell
-                            sense.isChangedSense = true
-                            return
-                        }
-                    case .smell:
-                        if !sense.areEmptyFields {
-                            sense.senseOption = .palate
-                            sense.isChangedSense = true
-                            title = "Finished"
-                            return
-                        }
-                    case .palate:
-                        if !sense.areEmptyFields {
-                            guard let nextIconName = getNextIconName() else { return }
-                            isFinished = true
-                            imageIcon = nextIconName
-                            return
-                        }
+                    sense.toggleSense()
+                    
+                    if sense.isFinished {
+                        guard let nextIconName = getNextIconName() else { return }
+                        animationName = nextIconName
                     }
                 }
-                .alert(Text("Salvar"), isPresented: $isFinished, actions: {
+                .alert(Text("Salvar"), isPresented: $sense.isFinished, actions: {
                             Button {
                                 buttonSave()
                                 dismiss()
@@ -84,14 +56,11 @@ struct SenseView: View {
                                 Text("Salvar")
                             }
 
-                            Button("Cancel", role: .cancel) {
-
-                            }
-
+                            Button("Cancel", role: .cancel) {}
                         }, message: {
                             Text("Deseja salvar a frequência que você realizou o exercício?")
                 })
-                .padding(.horizontal)
+                .padding()
 //
             }
         }
@@ -131,22 +100,10 @@ struct SenseView: View {
     }
         
     private func getNextIconName() -> String? {
-        guard let lastImageIconStringCharacter = imageIcon.map({String($0)}).last else { return nil }
+        guard let lastImageIconStringCharacter = animationName.map({String($0)}).last else { return nil }
         guard let lastImageIndex = Int(lastImageIconStringCharacter) else { return nil }
         let nextImageIconIndex = lastImageIndex < 4 ? lastImageIndex + 1 : 4
-        return "face0\(nextImageIconIndex)"
+        return "face_0\(nextImageIconIndex)"
     }
 }
-
-//struct SenseView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SenseView()
-//    }
-//}
-
-//struct SenseView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SenseView()
-//    }
-//}
 

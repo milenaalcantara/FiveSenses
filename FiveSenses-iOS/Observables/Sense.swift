@@ -13,6 +13,7 @@ class Sense: ObservableObject {
     
     @Published var isChangedSense: Bool = false
     @Published var areEmptyFields: Bool = true
+    @Published var isFinished: Bool = false
 
     
     var numberOfSenses: Int {
@@ -37,5 +38,43 @@ class Sense: ObservableObject {
     
     var placeholder: String {
         return senseOption.placeholder
+    }
+    
+    var titleNextButton: String {
+        return senseOption.titleNextButton
+    }
+    
+    func toggleSense() {
+        switch senseOption {
+        case .vision:
+            if !areEmptyFields {
+                senseOption = .hearing
+                isChangedSense = true
+                return
+            }
+        case .hearing:
+            if !areEmptyFields {
+                senseOption = .feel
+                isChangedSense = true
+                return
+            }
+        case .feel:
+            if !areEmptyFields {
+                senseOption = .smell
+                isChangedSense = true
+                return
+            }
+        case .smell:
+            if !areEmptyFields {
+                senseOption = .palate
+                isChangedSense = true
+                return
+            }
+        case .palate:
+            if !areEmptyFields {
+                isFinished = true
+                return
+            }
+        }
     }
 }
