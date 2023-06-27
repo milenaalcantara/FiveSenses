@@ -71,7 +71,7 @@ struct SenseView: View {
                             Text("Do you want to save how often you performed the exercise?")
                 })
                 .navigationBarTitleDisplayMode(.automatic)
-                .padding(.horizontal)
+                .padding()
                 .onAppear {
                     Task {
                         try await vm.populatePlaces()
