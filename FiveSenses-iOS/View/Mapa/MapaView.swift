@@ -64,7 +64,7 @@ struct MapaView: View {
 
                         }
                     }
-                    showSheet.toggle()
+                    showSheet = true
                 } label: {
                     ZStack {
                         Image("Union")
@@ -82,9 +82,9 @@ struct MapaView: View {
                     VStack(alignment: .leading, spacing: 20) {
                         Text("\(locationName)")
                         Text(place.numbersRepeated > 1 ?
-                        "Você usou o 5Sense \(place.numbersRepeated) vezes neste local!"
+                        "You used 5Sense \(place.numbersRepeated) times in this place!"
                         :
-                        "Você usou o 5Sense \(place.numbersRepeated) vez neste local!")
+                        "You used 5Sense \(place.numbersRepeated) time in this place")
                         .presentationDetents([.large, .fraction(0.4)])
 
                         Spacer()
@@ -92,7 +92,7 @@ struct MapaView: View {
                         ButtonCustom(backgroundColor: Color("Black"),
                                      foregroundColor: Color("White"),
                                      font: .body,
-                                     title: "Deletar",
+                                     title: "Delete",
                                      height: 54) {
                             Task {
                                 try await vm.deleteItem(place.recordID)
