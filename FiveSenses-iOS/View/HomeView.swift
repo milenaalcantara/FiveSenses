@@ -41,7 +41,7 @@ struct HomeView: View {
 
                 Spacer()
                 VStack {
-                    Text("5 Sense: Let's find out what we can accomplish with our senses.")
+                    Text("Let's find out what we can accomplish with our senses.")
                         .fontWeight(Font.Weight.medium)
                         .font(Font.body)
                         .multilineTextAlignment(.leading)
@@ -50,6 +50,7 @@ struct HomeView: View {
                     
                     NavigationLink {
                         SenseView(vm: PlaceListViewModel(container: container), animationName: $animationName)
+                            
                     } label: {
                         Text("Start Exercise")
                             .foregroundColor(.white)

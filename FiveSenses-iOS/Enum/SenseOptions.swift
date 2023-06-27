@@ -96,7 +96,7 @@ enum SenseOptions: Int, CaseIterable {
         case .palate:
             return "Finished"
         default:
-            return "Próximo"
+            return "Next"
             
         }
     }

@@ -79,6 +79,18 @@ struct SenseView: View {
                 }
             }
             .navigationBarTitleDisplayMode(.inline)
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(leading:
+                Button(action: {
+                    dismiss()
+                }) {
+                    HStack {
+                        Image(systemName: "chevron.left")
+                            .foregroundColor(.gray)
+                        Text("Back")
+                            .foregroundColor(.gray)
+                    }
+            })
     }
     
     func buttonSave() {
