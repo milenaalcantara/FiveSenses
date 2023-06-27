@@ -11,7 +11,8 @@ import CloudKit
 struct HomeView: View {
     @EnvironmentObject var sense: Sense
     @AppStorage("animationName") var animationName = "face_01"
-    let nameHost: String = "\(ProcessInfo().hostName)"
+    let nameHost = UserDefaults.standard.string(forKey: "nameHost")
+//    let nameHost: String = "\(ProcessInfo().hostName)"
 
 
     func removeLocal(of string: String) -> String {
@@ -73,7 +74,7 @@ struct HomeView: View {
                 .padding(.bottom, 60)
 
 
-            }.navigationTitle("Welcome, \(removeLocal(of: nameHost))")
+            }.navigationTitle("Welcome, \(removeLocal(of: nameHost ?? "User"))")
         }.navigationBarBackButtonHidden()
     }
 

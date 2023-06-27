@@ -31,6 +31,8 @@ struct SenseView: View {
 
     var body: some View {
             VStack {
+//                HeaderSenseView()
+                
                 ScrollView {
                     VStack(alignment: .center) {
                         HeaderSenseView()
@@ -93,7 +95,7 @@ struct SenseView: View {
             vm.saveItem(place!.placeList)
 
         } else {
-            vm.saveNewItem(name: "aqui", numbersRepeated: 1, latitude: latitude, longitude: longitude)
+            vm.saveNewItem(name: "new practice", numbersRepeated: 1, latitude: latitude, longitude: longitude)
 
         }
     }

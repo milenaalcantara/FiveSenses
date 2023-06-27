@@ -35,6 +35,7 @@ struct OnboardingItemView: View {
             Text(item.title ?? "")
                 .font(.system(size: 25, weight: .bold, design: .rounded))
                 .padding(.bottom, 20)
+            
             Text(item.content ?? "")
                 .font(.system(
                     size: 17, weight: .medium, design: .rounded

@@ -18,6 +18,8 @@ struct Onboarding: View {
     @State var sizeProportion: Double = 1
     @State var redCircleOffset: (x: Double, y: Double) = (0.6, -0.1)
     @State var blueCircleOffset: (x: Double, y: Double) = (-0.6, 0.3)
+    
+    let nameHost: String = "\(ProcessInfo().hostName)"
 
     var body: some View {
         ZStack(alignment: .top) {
@@ -51,15 +53,15 @@ struct Onboarding: View {
             TabView(selection: $selectedTab) {
                 OnboardingItemView(item: .init(
                     illustration: "IllustrationOne",
-                    title: "Bem-Vindo ao 5Sense",
-                    content: "5 Sentidos, é uma prática de concentração plena, com objetivo de relaxar a mente em momentos de tensão."
+                    title: "Welcome to 5Senses",
+                    content: "It is a practice of full concentration, which aims to relax the mind in moments of tension. Let’s follow step by step."
                 ), index: 0, handler: {})
                 .tag(0)
 
                 OnboardingItemView(item: .init(
                     illustration: "IllustrationTwo",
-                    title: "Sobre Exercícios",
-                    content: "A cada novo sentido, pense em coisas diferentes",
+                    title: "About the Exercises",
+                    content: "With each new sense, think of different elements.",
                     height: 350,
                     width: 350
                 ), index: 1, handler: {})
@@ -67,8 +69,8 @@ struct Onboarding: View {
 
                 OnboardingItemView(item: .init(
                     illustration: "IllustrationThree",
-                    title: "Relaxe e Aproveite!",
-                    content: "Você pode praticar quantas vezes forem necessárias."
+                    title: "Relax and Enjoy!",
+                    content: "You can practice as many times as necessary."
                 ), index: 2, handler: handler)
                 .tag(2)
             }
@@ -87,6 +89,7 @@ struct Onboarding: View {
                     case 2:
                         redCircleOffset = (-0.9, 0.9)
                         blueCircleOffset = (0.1, 0.2)
+                        saveName()
                     default:
                         break
                     }
@@ -98,6 +101,10 @@ struct Onboarding: View {
                 }
             }
         }
+    }
+    
+    func saveName() {
+        UserDefaults.standard.set(nameHost, forKey: "nameHost")
     }
 }
 
