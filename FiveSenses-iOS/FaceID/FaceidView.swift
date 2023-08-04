@@ -10,8 +10,8 @@ import LocalAuthentication
 
 struct FaceidView: View {
     @State private var unlocked = false
-    @State private var text = "5SENSE LOCKED"
-    @State private var subtext = "Use FaceID to unlock the app."
+    @State private var text = "5SENSES BLOQUEADO"
+    @State private var subtext = "Use o FaceID para desbloquear o aplicativo."
     @State private var isShowingDetailView = false //Booleano
     @EnvironmentObject var sense: Sense
     
@@ -51,11 +51,11 @@ struct FaceidView: View {
                     //Quando o Face ID For sucesso ele seta para true.
 
                 } else {
-                    text = "There was a problem!"
+                    text = "HÁ um problema!"
                 }
             }
         } else {
-            text = "Phone does not have Biometrics"
+            text = "Telefone não possui biometria"
         }
     }
 }

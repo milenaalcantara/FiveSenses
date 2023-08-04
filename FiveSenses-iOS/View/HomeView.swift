@@ -41,7 +41,7 @@ struct HomeView: View {
 
                 Spacer()
                 VStack {
-                    Text("Let's find out what we can accomplish with our senses.")
+                    Text("Vamos descobrir o que podemos realizar com nossos sentidos.")
                         .fontWeight(Font.Weight.medium)
                         .font(Font.body)
                         .multilineTextAlignment(.leading)
@@ -52,7 +52,7 @@ struct HomeView: View {
                         SenseView(vm: PlaceListViewModel(container: container), animationName: $animationName)
                             
                     } label: {
-                        Text("Start Exercise")
+                        Text("Iniciar exercício")
                             .foregroundColor(.white)
                             .padding(.horizontal)
                             .frame(maxWidth: 320)
@@ -75,7 +75,7 @@ struct HomeView: View {
                 .padding(.bottom, 60)
 
 
-            }.navigationTitle("Welcome, \(removeLocal(of: nameHost ?? "User"))")
+            }.navigationTitle("Bem-vindo, \(removeLocal(of: nameHost ?? "Usuário"))")
         }.navigationBarBackButtonHidden()
     }
 
