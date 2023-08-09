@@ -58,17 +58,17 @@ struct SenseView: View {
                         animationName = nextIconName
                     }
                 }
-                .alert(Text("Save"), isPresented: $sense.isFinished, actions: {
+                .alert(Text("Salvar"), isPresented: $sense.isFinished, actions: {
                             Button {
                                 buttonSave()
                                 dismiss()
                             } label: {
-                                Text("Save")
+                                Text("Salvar")
                             }
 
-                            Button("Cancel", role: .cancel) {}
+                            Button("Cancelar", role: .cancel) {}
                         }, message: {
-                            Text("Do you want to save how often you performed the exercise?")
+                            Text("Deseja salvar a frequência com que executou o exercício?")
                 })
                 .navigationBarTitleDisplayMode(.automatic)
                 .padding()
@@ -87,7 +87,7 @@ struct SenseView: View {
                     HStack {
                         Image(systemName: "chevron.left")
                             .foregroundColor(.gray)
-                        Text("Back")
+                        Text("Voltar")
                             .foregroundColor(.gray)
                     }
             })
@@ -107,7 +107,7 @@ struct SenseView: View {
             vm.saveItem(place!.placeList)
 
         } else {
-            vm.saveNewItem(name: "new practice", numbersRepeated: 1, latitude: latitude, longitude: longitude)
+            vm.saveNewItem(name: "nova prática", numbersRepeated: 1, latitude: latitude, longitude: longitude)
 
         }
     }

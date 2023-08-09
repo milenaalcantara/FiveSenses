@@ -49,55 +49,54 @@ enum SenseOptions: Int, CaseIterable {
     var iosDescription: String {
         switch self {
         case .vision:
-            return "Enter 5 things you are seeing"
+            return "Digite 5 coisas que você está vendo"
         case .hearing:
-            return "Enter 4 sounds you are hearing"
+            return "Digite 4 coisas que você está ouvindo"
         case .feel:
-            return "Enter 3 things you can take"
+            return "Digite 3 coisas que você pode levar"
         case .smell:
-            return "Enter 2 scents you can smell"
+            return "Digite 2 aromas que você pode sentir"
         case .palate:
-            return "Type 1 thing you can taste"
+            return "Digite 1 coisa que você pode provar"
         }
     }
     
     var watchDescription: String {
         switch self {
         case .vision:
-            return "Think of 5 things you are selling"
+            return "Digite 5 coisas que você está vendo"
         case .hearing:
-            return "Think of 4 things you are hearing"
+            return "Digite 4 coisas que você está ouvindo"
         case .feel:
-            return "Think of 3 things you can touch"
+            return "Digite 3 coisas que você pode levar"
         case .smell:
-            return "Think of 2 smells you can smell"
+            return "Digite 2 aromas que você pode sentir"
         case .palate:
-            return "Think of 1 thing you can prove"
+            return "Digite 1 coisa que você pode provar"
         }
     }
     
     var placeholder: String {
         switch self {
         case .vision:
-            return "What are you seeing?"
+            return "O que você está vendo?"
         case .hearing:
-            return "What are you listening?"
+            return "O que você está ouvindo?"
         case .feel:
-            return "What can you play?"
+            return "O que você pode jogar?"
         case .smell:
-            return "What scent do you smell now?"
+            return "Que perfume você sente agora?"
         case .palate:
-            return "What would it taste like?"
+            return "Qual seria o gosto?"
         }
     }
     
     var titleNextButton: String {
         switch self {
         case .palate:
-            return "Finished"
+            return "Finalizado"
         default:
-            return "Next"
-            
+            return "Próximo"
         }
     }
 }

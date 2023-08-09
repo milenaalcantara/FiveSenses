@@ -53,15 +53,15 @@ struct Onboarding: View {
             TabView(selection: $selectedTab) {
                 OnboardingItemView(item: .init(
                     illustration: "IllustrationOne",
-                    title: "Welcome to 5Senses",
-                    content: "It is a practice of full concentration, which aims to relax the mind in moments of tension. Let’s follow step by step."
+                    title: "Bem-vindo ao 5Senses",
+                    content: "É uma prática de concentração total, que visa relaxar a mente em momentos de tensão. Vamos seguir passo a passo."
                 ), index: 0, handler: {})
                 .tag(0)
 
                 OnboardingItemView(item: .init(
                     illustration: "IllustrationTwo",
-                    title: "About the Exercises",
-                    content: "With each new sense, think of different elements.",
+                    title: "Sobre os Exercícios",
+                    content: "A cada novo sentido, pense em elementos diferentes.",
                     height: 350,
                     width: 350
                 ), index: 1, handler: {})
@@ -69,8 +69,8 @@ struct Onboarding: View {
 
                 OnboardingItemView(item: .init(
                     illustration: "IllustrationThree",
-                    title: "Relax and Enjoy!",
-                    content: "You can practice as many times as necessary."
+                    title: "Relaxe e aproveite!",
+                    content: "Você pode praticar quantas vezes for necessário."
                 ), index: 2, handler: handler)
                 .tag(2)
             }

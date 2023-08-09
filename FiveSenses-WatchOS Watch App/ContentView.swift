@@ -18,7 +18,7 @@ struct ContentView: View {
             VStack {
                 Spacer()
 
-                Text("Let's find out what we can accomplish with our senses.")
+                Text("Vamos descobrir o que podemos realizar com nossos sentidos.")
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 20)
                 
@@ -33,7 +33,7 @@ struct ContentView: View {
                         )
                     )
                 } label: {
-                    Text("Start")
+                    Text("Começar")
                         .foregroundColor(.black )
                 }
                 .frame(height: 36)

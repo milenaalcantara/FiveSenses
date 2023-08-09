@@ -36,9 +36,9 @@ struct MapaView: View {
             case .authorizedWhenInUse:  // Location services are available.
                 mapview
             case .restricted, .denied:
-                Text("Current location data was restricted or denied.")
+                Text("Os dados de localização atuais foram restritos ou negados.")
             case .notDetermined:
-                Text("Finding your location...")
+                Text("Encontrando sua localização...")
                 ProgressView()
             default:
                 ProgressView()
@@ -56,7 +56,7 @@ struct MapaView: View {
                         reverseGeocoding(CLLocation(latitude: place.latitude, longitude: place.longitude)) { result in
                             switch result {
                             case .success(let local):
-                                locationName = local ?? "We do not identify this location, sorry"
+                                locationName = local ?? "Não identificamos este local, desculpe"
 
                             case .failure(let error):
                                 print(error.localizedDescription)
@@ -82,9 +82,9 @@ struct MapaView: View {
                     VStack(alignment: .leading, spacing: 20) {
                         Text("\(locationName)")
                         Text(place.numbersRepeated > 1 ?
-                        "You used 5Sense \(place.numbersRepeated) times in this place!"
+                        "Você usou o 5Sense \(place.numbersRepeated) vezes neste lugar!"
                         :
-                        "You used 5Sense \(place.numbersRepeated) time in this place")
+                        "Você usou o 5Sense \(place.numbersRepeated) uma vez neste lugar!")
                         .presentationDetents([.large, .fraction(0.4)])
 
                         Spacer()
@@ -92,7 +92,7 @@ struct MapaView: View {
                         ButtonCustom(backgroundColor: Color("Black"),
                                      foregroundColor: Color("White"),
                                      font: .body,
-                                     title: "Delete",
+                                     title: "Deletar",
                                      height: 54) {
                             Task {
                                 try await vm.deleteItem(place.recordID)
@@ -115,7 +115,7 @@ struct MapaView: View {
         var endereco: String? = ""
         geocoder.reverseGeocodeLocation(cllocation, completionHandler: {(placemarks, error) -> Void in
             if let error = error {
-                print("Failed to retrieve address")
+                print("Falha ao recuperar endereço")
                 completionHandler(.failure(error))
                 return
             }
@@ -127,7 +127,7 @@ struct MapaView: View {
             }
             else
             {
-                print("No Matching Address Found")
+                print("Nenhum endereço correspondente encontrado")
             }
         })
     }
