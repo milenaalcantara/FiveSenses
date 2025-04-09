@@ -4,9 +4,16 @@ FiveSenses é um aplicativo criado para ajudar a relaxar a mente durante momento
 
 Além da versão para iOS, o FiveSenses também possui uma versão para smartwatch, com um exercício de respiração para melhorar ainda mais a experiência de relaxamento.
 
-![Tela Inicial](images/tela-inicial.png)
+<div style="display: flex; flex-direction: row; margin-bottom: 20px;">
+  <img src="images/onboarding-1.png" alt="onboarding 1" width="200"/>
+  <img src="images/onboarding-2.png" alt="onboarding 2" width="200"/>
+  <img src="images/onboarding-3.png" alt="onboarding 3" width="200"/>
+</div>
 
-**[Disponível na App Store](linkdoapp)** 
+
+**Em breve na App Store** 
+
+
 ## Funcionalidades
 
 **Prática de Mindfulness dos 5 Sentidos:** Auxilia o usuário a identificar e descrever itens para cada um dos cinco sentidos.
