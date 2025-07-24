@@ -41,7 +41,7 @@ struct HomeView: View {
 
                 Spacer()
                 VStack {
-                    Text("5 Sense: Let's find out what we can accomplish with our senses.")
+                    Text("introduction")
                         .fontWeight(Font.Weight.medium)
                         .font(Font.body)
                         .multilineTextAlignment(.leading)
@@ -62,14 +62,14 @@ struct HomeView: View {
                         sense.senseOption = .vision
                     }
 
-                    .padding(.bottom, 40)
+                    .padding(.bottom, 30)
                     .padding(.top, 10)
                     .padding(.horizontal, 10)
                 }
                 .background {
                     RoundedRectangle(cornerRadius: 12)
                         .fill(Color("Color_cinza"))
-                        .padding(10)
+                        .frame(width: UIScreen.main.bounds.width * 0.9)
                 }
                 .padding(.bottom, 60)
 

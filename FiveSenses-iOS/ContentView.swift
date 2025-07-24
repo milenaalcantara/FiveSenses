@@ -21,16 +21,10 @@ struct ContentView: View {
             HomeView()
                 .tabItem {
                     Label("Exercise", systemImage: "text.book.closed.fill")
-//                    TabIcon(icon: UIImage(named: "book")!, size: CGSize(width: 40, height: 40))
-//
-//                    Text("Exercise").foregroundColor(.black)
                 }
             MapaView(vm: PlaceListViewModel(container: container))
                 .tabItem {
                     Label("Historic", systemImage: "map")
-//                    TabIcon(icon: UIImage(named: "map")!, size: CGSize(width: 40, height: 40))
-//
-//                    Text("Historic").foregroundColor(.black)
                 }
         }
         .opacity(hasSeenOnboarding ? 1 : 0)

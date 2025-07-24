@@ -47,57 +47,67 @@ enum SenseOptions: Int, CaseIterable {
     }
     
     var iosDescription: String {
+        let key: String
         switch self {
         case .vision:
-            return "Enter 5 things you are seeing"
+            key = "fiveSensesIOS"
         case .hearing:
-            return "Enter 4 sounds you are hearing"
+            key =  "fourSensesIOS"
         case .feel:
-            return "Enter 3 things you can take"
+            key = "threeSensesIOS"
         case .smell:
-            return "Enter 2 scents you can smell"
+            key = "twoSensesIOS"
         case .palate:
-            return "Type 1 thing you can taste"
+            key = "oneSenseIOS"
         }
+        
+        return NSLocalizedString(key, comment: "")
     }
     
     var watchDescription: String {
+        let key: String
         switch self {
         case .vision:
-            return "Think of 5 things you are selling"
-        case .hearing:
-            return "Think of 4 things you are hearing"
+            key = "fiveSensesWatch"        case .hearing:
+            key = "fourSensesWatch"
         case .feel:
-            return "Think of 3 things you can touch"
+            key = "threeSensesWatch"
         case .smell:
-            return "Think of 2 smells you can smell"
+            key = "twoSensesWatch"
         case .palate:
-            return "Think of 1 thing you can prove"
+            key = "oneSensesWatch"
         }
+        
+        return NSLocalizedString(key, comment: "")
     }
     
     var placeholder: String {
+        let key: String
         switch self {
         case .vision:
-            return "What are you seeing?"
+            key = "placeholderVision"
         case .hearing:
-            return "What are you listening?"
+            key = "placeholderHearing"
         case .feel:
-            return "What can you play?"
+            key = "placeholderFeel"
         case .smell:
-            return "What scent do you smell now?"
+            key = "placeholderSmell"
         case .palate:
-            return "What would it taste like?"
+            key = "placeholderPalate"
         }
+        
+        return NSLocalizedString(key, comment: "")
     }
     
     var titleNextButton: String {
+        let key: String
         switch self {
         case .palate:
-            return "Finished"
+            key = "finishedButton"
         default:
-            return "Próximo"
-            
+            key = "nextButton"
         }
+        
+        return NSLocalizedString(key, comment: "")
     }
 }

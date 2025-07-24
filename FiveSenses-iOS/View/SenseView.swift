@@ -63,15 +63,15 @@ struct SenseView: View {
                                 buttonSave()
                                 dismiss()
                             } label: {
-                                Text("Save")
+                                Text(NSLocalizedString("Save", comment: ""))
                             }
 
-                            Button("Cancel", role: .cancel) {}
+                            Button(NSLocalizedString("Cancel", comment: ""), role: .cancel) {}
                         }, message: {
                             Text("Do you want to save how often you performed the exercise?")
                 })
                 .navigationBarTitleDisplayMode(.automatic)
-                .padding(.horizontal)
+                .padding()
                 .onAppear {
                     Task {
                         try await vm.populatePlaces()

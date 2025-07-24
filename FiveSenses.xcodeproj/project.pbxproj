@@ -27,6 +27,8 @@
 		4584BBF22A41D42C008B443F /* Double+IsAlmostEqual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454A47D72A3CA16A00C28341 /* Double+IsAlmostEqual.swift */; };
 		4584BBF32A41DD03008B443F /* PlacesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454A47DB2A3CA1B100C28341 /* PlacesList.swift */; };
 		F335C4C72A45D45000BE19BD /* NextSenseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F335C4C62A45D45000BE19BD /* NextSenseButton.swift */; };
+		F33BEA502DF326B0004822B0 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F33BEA4F2DF326B0004822B0 /* Localizable.xcstrings */; };
+		F33BEA512DF326B0004822B0 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F33BEA4F2DF326B0004822B0 /* Localizable.xcstrings */; };
 		F33D67172A3FE7AA0090F7C2 /* SenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33D67162A3FE7AA0090F7C2 /* SenseView.swift */; };
 		F33D671B2A3FF3C40090F7C2 /* SenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33D671A2A3FF3C40090F7C2 /* SenseView.swift */; };
 		F33D67332A40B5B60090F7C2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33D67322A40B5B60090F7C2 /* HomeView.swift */; };
@@ -123,6 +125,7 @@
 		454A47DB2A3CA1B100C28341 /* PlacesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesList.swift; sourceTree = "<group>"; };
 		454A47DD2A3CA2BA00C28341 /* FiveSenses-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "FiveSenses-iOS.entitlements"; sourceTree = "<group>"; };
 		F335C4C62A45D45000BE19BD /* NextSenseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextSenseButton.swift; sourceTree = "<group>"; };
+		F33BEA4F2DF326B0004822B0 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		F33D67162A3FE7AA0090F7C2 /* SenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenseView.swift; sourceTree = "<group>"; };
 		F33D671A2A3FF3C40090F7C2 /* SenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenseView.swift; sourceTree = "<group>"; };
 		F33D67322A40B5B60090F7C2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = "FiveSenses-iOS/View/HomeView.swift"; sourceTree = SOURCE_ROOT; };
@@ -289,6 +292,7 @@
 				080E78982A3A049F0013B163 /* ContentView.swift */,
 				F378ECC02A2F713300FE9584 /* Assets.xcassets */,
 				F378ECC22A2F713300FE9584 /* Preview Content */,
+				F33BEA4F2DF326B0004822B0 /* Localizable.xcstrings */,
 			);
 			path = "FiveSenses-iOS";
 			sourceTree = "<group>";
@@ -560,11 +564,12 @@
 			};
 			buildConfigurationList = F378ECB22A2F710700FE9584 /* Build configuration list for PBXProject "FiveSenses" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = "pt-BR";
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
 			);
 			mainGroup = F378ECAE2A2F710700FE9584;
 			packageReferences = (
@@ -592,6 +597,7 @@
 			files = (
 				F378ECC42A2F713300FE9584 /* Preview Assets.xcassets in Resources */,
 				F378ECC12A2F713300FE9584 /* Assets.xcassets in Resources */,
+				F33BEA502DF326B0004822B0 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -622,6 +628,7 @@
 			files = (
 				F378ED582A2F765D00FE9584 /* Preview Assets.xcassets in Resources */,
 				F378ED552A2F765D00FE9584 /* Assets.xcassets in Resources */,
+				F33BEA512DF326B0004822B0 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -761,12 +768,14 @@
 		F378ECB32A2F710700FE9584 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				SWIFT_EMIT_LOC_STRINGS = YES;
 			};
 			name = Debug;
 		};
 		F378ECB42A2F710700FE9584 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				SWIFT_EMIT_LOC_STRINGS = YES;
 			};
 			name = Release;
 		};

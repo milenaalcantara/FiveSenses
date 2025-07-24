@@ -18,11 +18,6 @@ struct HeaderSenseView: View {
                 ForEach(SenseOptions.allCases, id: \.self) { sense in
                     ImageCustom(item: .init(name: sense.imageName, width: widthScreen * 0.15))
                 }
-//                ImageCustom(item: .init(name: sense.imageName, width: widthScreen * 0.15))
-//                ImageCustom(item: .init(name: sense.imageName, width: widthScreen * 0.15))
-//                ImageCustom(item: .init(name: sense.imageName, width: widthScreen * 0.15))
-//                ImageCustom(item: .init(name: sense.imageName, width: widthScreen * 0.15))
-//                ImageCustom(item: .init(name: sense.imageName, width: widthScreen * 0.15))
             }
 
             ProgressView(value: sense.progress)
