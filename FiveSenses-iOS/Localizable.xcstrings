@@ -55,6 +55,9 @@
         }
       }
     },
+    "App" : {
+
+    },
     "Cancel" : {
       "localizations" : {
         "en" : {
@@ -118,6 +121,9 @@
           }
         }
       }
+    },
+    "Fechar Atividade" : {
+
     },
     "Finding your location..." : {
       "localizations" : {
@@ -236,6 +242,12 @@
         }
       }
     },
+    "Histórico de Uso" : {
+
+    },
+    "Iniciar Atividade (Imersiva)" : {
+
+    },
     "introduction" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -286,6 +298,9 @@
           }
         }
       }
+    },
+    "Menu Inicial" : {
+
     },
     "nextButton" : {
       "extractionState" : "manual",
@@ -522,6 +537,9 @@
           }
         }
       }
+    },
+    "Última captura: %@" : {
+
     },
     "Use FaceID" : {
       "localizations" : {

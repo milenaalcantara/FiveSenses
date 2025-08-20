@@ -67,11 +67,7 @@ struct Onboarding: View {
                 ), index: 1, handler: {})
                 .tag(1)
 
-                OnboardingItemView(item: .init(
-                    illustration: "IllustrationThree",
-                    title: NSLocalizedString("invitationTitle", comment: ""),
-                    content: NSLocalizedString("invitationDescription", comment: ""),
-                ), index: 2, handler: handler)
+                OnboardingItemView(item: .init(illustration: "IllustrationThree", title: NSLocalizedString("invitationTitle", comment: ""), content: NSLocalizedString("invitationDescription", comment: "")), index: 2, handler: handler)
                 .tag(2)
             }
             .tabViewStyle(PageTabViewStyle())

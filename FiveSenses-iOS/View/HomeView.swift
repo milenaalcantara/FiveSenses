@@ -28,6 +28,7 @@ struct HomeView: View {
 
         return wordWithoutLocal.reversed().joined()
     }
+    
     //funcao pra ver se é o dia atual, e resetar a face para a inicial
     let container = CKContainer(identifier: "iCloud.locaisVisitados")
 
